@@ -8,4 +8,5 @@ class Person(models.Model):
 	position = models.CharField(max_length = 50)
 	desc = models.CharField(max_length = 300)
 	image = models.ImageField()
+	#addd sub functions from shell
 
