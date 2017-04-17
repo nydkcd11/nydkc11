@@ -9,7 +9,8 @@ def index(request):
 	context = {
 		'names_list' : names_list	
 	}
-	return HttpResponse(template.render(context, request))
+	#return HttpResponse(template.render(context, request))
+	return render(request, 'board/index.html', context)
 def results(request, person_id): #temp
 	obj = Person.objects.get(id=person_id)
 	output = ""
