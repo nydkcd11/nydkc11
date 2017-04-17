@@ -9,4 +9,5 @@ class Person(models.Model):
 	desc = models.CharField(max_length = 300)
 	image = models.ImageField()
 	#addd sub functions from shell
-
+	def __str__(self):
+		return self.name 

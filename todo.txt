@@ -1,0 +1,4 @@
+1) start making the first models (emphasis on uplinking first)
+2) start static html-ing the sites. we'll merge the the skeleton html and the art html later
+3) start making the other apps
+4) start research into methods of creatnig server (e.g. A P A C H E)
