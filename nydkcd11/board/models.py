@@ -7,7 +7,7 @@ class Person(models.Model):
 	school = models.CharField(max_length = 75)
 	position = models.CharField(max_length = 50)
 	desc = models.CharField(max_length = 300)
-	image = models.ImageField()
+	image = models.ImageField(upload_to="pictures/")
 	#addd sub functions from shell
 	def __str__(self):
 		return self.name 
