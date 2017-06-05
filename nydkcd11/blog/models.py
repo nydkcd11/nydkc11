@@ -5,7 +5,10 @@ class Post(models.Model):
 	author = models.CharField(max_length = 50)
 	pub_date = models.DateTimeField('date publshed')
 	body = models.CharField(max_length = 10000)
-
+	def __str__(self):
+		return self.title
+	def was_published_recently(self):
+		return self.pub_date >= timezone.now() - datetime.timedelta(days=1)
 class Image(models.Model):
 	post = models.ForeignKey(Post, on_delete = models.CASCADE)
 	desc = models.CharField(max_length = 1000)
