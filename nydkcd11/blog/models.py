@@ -17,7 +17,8 @@ class Image(models.Model):
 class Video(models.Model):
 	post = models.ForeignKey(Post, on_delete = models.CASCADE)
 	url = models.CharField(max_length = 1000)
-
+	def __str(self):
+		return self.post.title
 class Tag(models.Model):
 	post = models.ForeignKey(Post, on_delete = models.CASCADE)
 	name = models.CharField(max_length = 30)
