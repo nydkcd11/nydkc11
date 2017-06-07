@@ -7,3 +7,24 @@ FIX THE FUCKING IMAGE SHIT
 
 add social media stuff:
 nstagram @nydkcdivision11		Snapchat @nydkc11		Facebook Page :New York District Key Club Division 11		Facebook Group: [NYDKC] Division 11Sent on:10:01 pmFrom:floralei0101 Google Group: NYDKC Division 11
+
+
+6.4.17: i'm gonna stop work on the divisional boardmember page for now to work on the central blog system, which will be the website's true core.
+
+
+implement video and image for post
+continue progress on the blog
+
+start doing research on the following:
+	-cross google drive implemetnation (for divisonal photos)
+	-linking templates together
+	-creating home pages
+	-django and apache implementation
+	-cross work with server (either hosting externaly using an FTP client or hosting directly at home using computer)
+	-domain name capture
+begin initial work on:
+	-determing additional pages required
+	-designing pages (with bootstrap and everything)
+consult board on:
+	-website requirements
+	-site map
