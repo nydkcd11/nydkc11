@@ -19,6 +19,9 @@ class Video(models.Model):
 	url = models.CharField(max_length = 1000)
 	def __str__(self):
 		return self.post.title
+	def parse(self):
+		return 0
+		#supposed to generate an iframe 
 class Tag(models.Model):
 	post = models.ForeignKey(Post, on_delete = models.CASCADE)
 	name = models.CharField(max_length = 30)

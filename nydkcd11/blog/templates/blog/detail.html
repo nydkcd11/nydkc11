@@ -2,3 +2,6 @@
 <h2>{{post.author}}</h2>
 <h2>{{post.pub_date}}</h2>
 <p>{{post.body}}</p>
+{% for video in post.video_set.all() %}
+	<a href = "{{video.url}}">here is a video</a>
+{% endfor %}
