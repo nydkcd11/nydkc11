@@ -10,10 +10,12 @@ nstagram @nydkcdivision11		Snapchat @nydkc11		Facebook Page :New York District K
 
 
 6.4.17: i'm gonna stop work on the divisional boardmember page for now to work on the central blog system, which will be the website's true core.
+6.8.17: postpone video and image support to prioritize completion of the tutorial, and started contact us form to practice forms
+continue progress on the blog (MAINLY YOUTUBE)
 
+continue progress on contact
 
-fix the youtube problem
-continue progress on the blog
+begin artistic drafting of what the pages will look like
 
 start doing research on the following:
 	-cross google drive implemetnation (for divisonal photos)
