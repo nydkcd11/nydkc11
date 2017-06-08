@@ -4,8 +4,8 @@
 		<h3>{{post.author}}</h3>
 		<h3>{{post.pub_date}}</h3>
 		<p>{{post.body}}</p>
-		{% for video in post.video_set.all()%}
-			<a href = "{{video.url}}">here is a video</a>	
+		{% for video in post.video_set.all %}
+			<a href = "{{video.url}}"><h4>Here is a video</h4></a>
 		{% endfor %}
 	{% endfor %}
 {% else %}
