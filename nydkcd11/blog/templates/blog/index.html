@@ -1,6 +1,6 @@
 {% if latest_post_list %}
 	{% for post in latest_post_list %}
-		<a href = "{% url 'detail' post.id %}"><h1>{{post.title}}</h1></a>
+		<a href = "{% url 'blog:detail' post.id %}"><h1>{{post.title}}</h1></a>  <!-- blog:detail tags  funcion specifically to this app  -->
 		<h3>{{post.author}}</h3>
 		<h3>{{post.pub_date}}</h3>
 		<p>{{post.body}}</p>
