@@ -11,3 +11,10 @@ class Person(models.Model):
 	#addd sub functions from shell
 	def __str__(self):
 		return self.name 
+class DistrictBoard(models.Model):
+	name = models.CharField(max_length=50)
+	school = models.CharField(max_length=75)
+	position = models.CharField(max_length=50)
+	desc = models.TextField()
+	def __str__(self):
+		return self.name
