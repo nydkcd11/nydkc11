@@ -20,5 +20,4 @@ urlpatterns = [
     url(r'^admin/', admin.site.urls),
 	url(r'^board/', include('board.urls')),
 	url(r'^blog/', include('blog.urls')),
-	url(r'^contact/', include('contact.urls')),
 ]
