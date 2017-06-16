@@ -21,4 +21,5 @@ urlpatterns = [
 	url(r'^board/', include('board.urls')),
 	url(r'^blog/', include('blog.urls')),
 	url(r'^contact/', include('contact.urls')),
+	url(r'^resources/', include('resources.urls')),
 ]
