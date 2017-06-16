@@ -25,4 +25,8 @@ class Video(models.Model):
 class Tag(models.Model):
 	post = models.ForeignKey(Post, on_delete = models.CASCADE)
 	name = models.CharField(max_length = 30)
+class Link(models.Model):
+	link = models.ForeignKey(Post, on_delete = models.CASCADE)
+	name = models.CharField(max_length=30)
+	url = models.CharField(max_length=1000)
 # Create your models here.
