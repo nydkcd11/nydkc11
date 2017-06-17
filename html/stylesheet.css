@@ -6,9 +6,12 @@
 	text-align: center;
 }
 
-#icons > i{
-	padding: 1em;
+#icons > i,a{
+	/*padding: 1em;*/
 	display: inline-block;
+}
+#icons a{
+	padding:3em;
 }
 #footer_text{
 	text-align: center;
