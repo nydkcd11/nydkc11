@@ -1,3 +1,20 @@
 .navbar-nav > li{
 	float:none;
 }
+#icons{
+	text-align: center;
+}
+
+#icons > i{
+	padding: 1em;
+	display: inline-block;
+}
+#footer_text{
+	text-align: center;
+}
+body{
+	margin:0;	
+}
+#footer{
+	margin-bottom:0;
+}
