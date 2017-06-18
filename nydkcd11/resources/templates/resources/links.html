@@ -1,0 +1,5 @@
+<h1>Links</h1>
+{% for link in link_list%}
+	<h2>{{link.name}}</h2>	
+	<a href = "{{link.url}}">{{link.url}}</a>
+{% endfor %}

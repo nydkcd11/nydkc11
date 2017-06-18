@@ -29,4 +29,6 @@ class Link(models.Model):
 	link = models.ForeignKey(Post, on_delete = models.CASCADE)
 	name = models.CharField(max_length=30)
 	url = models.CharField(max_length=1000)
+	def __str__(self):
+		return self.name
 # Create your models here.
