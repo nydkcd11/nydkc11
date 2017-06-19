@@ -4,7 +4,8 @@ from django.template import loader
 from .models import Post
 # Create your views here.
 def index(request):
-	latest_post_list = Post.objects.order_by('-pub_date')[:5]
+	#latest_post_list = Post.objects.order_by('-pub_date')[:5]
+	latest_post_list = Post.objects.all()
 	template = loader.get_template('blog/index.html')
 	context = {
 		'latest_post_list': latest_post_list,	
