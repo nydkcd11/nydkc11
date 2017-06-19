@@ -13,4 +13,8 @@ def videos(request):
 		'video_list':video_list,	
 	}
 	return render(request,'resources/videos.html',context)
+def newsletter(request):
+	return HttpResponse("newsletter")
+def minutes(request):
+	return HttpResponse("minutes")
 # Create your views here.
