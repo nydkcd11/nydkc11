@@ -1,0 +1,6 @@
+<h1>Minutes</h1>
+<ul>
+	{% for minute in minutes_list %}
+		<li><a href = "{{minute.url}}">{{minute.__str__}}</a></li>
+	{% endfor %}
+</ul>

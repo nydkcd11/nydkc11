@@ -1,0 +1,6 @@
+<h1>Newsletters</h1>
+<ul>
+{% for new in newsletter_list %}
+	<li><a href = "{{new.url}}">{{new.month}} Newsletter</a></li>
+{% endfor %}
+</ul>
