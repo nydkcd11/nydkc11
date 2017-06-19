@@ -1,4 +1,4 @@
-from django.shortcuts import render
+from django.shortcuts import render,get_object_or_404
 from django.http import HttpResponse, Http404
 from .models import Person
 from django.template import loader
@@ -11,6 +11,10 @@ def index(request):
 	}
 	#return HttpResponse(template.render(context, request))
 	return render(request, 'board/index.html', context)
+def results(request,person_id):
+	person = get_object_or_404(Person, pk = person_id)
+	return render(request,'board/detail.html',{'person':person})	
+'''
 def results(request, person_id): #temp, some kind of 404 thing going?
 	try:
 		obj = Person.objects.get(id=person_id)
@@ -20,7 +24,7 @@ def results(request, person_id): #temp, some kind of 404 thing going?
 	except Person.DoesNotExist:
 		raise Http404("Not found")
 	return render(request,"board/detail.html",{'person':person})
-'''
+
 def details(request, person_id):
 	try:
 		person = Person.objects.get(pk=question_id)
