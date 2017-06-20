@@ -7,6 +7,7 @@ class Newsletter(models.Model):
 class Minutes(models.Model):
 	month = models.DateField()
 	url = models.CharField(max_length=100)
+	'''
 	def january():
 		return "January"
 	def february():
@@ -31,23 +32,24 @@ class Minutes(models.Model):
 		return "November"
 	def december():
 		return "December"
+	'''
 	def __str__(self):
 		options = {
 			1:"January",
-			2:"february",
-			3:"march",
-			4:"april",
-			5:"may",
-			6:"june",
-			7:"july",
-			8:"august",
-			9:"september",
-			10:"october",
-			11:"november",
-			12:"december",	
+			2:"February",
+			3:"March",
+			4:"April",
+			5:"May",
+			6:"June",
+			7:"July",
+			8:"August",
+			9:"September",
+			10:"October",
+			11:"November",
+			12:"December",	
 		}
 		number = self.month.month
-		return options[number]()
+		return options[number] + " Divisional Notes"
 
 	
 	
