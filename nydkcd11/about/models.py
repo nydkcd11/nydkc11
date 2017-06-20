@@ -4,7 +4,7 @@ class Division(models.Model):
 	school = models.CharField(max_length = 75)
 	position = models.CharField(max_length = 50)
 	desc = models.TextField()
-	image = models.ImageField(upload_to='images/')
+	image = models.ImageField(upload_to='division_photos/')
 	def __str__(self):
 		return self.name
 class School(models.Model):
