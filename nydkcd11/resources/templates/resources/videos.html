@@ -1,6 +1,5 @@
+{% load embed_video_tags %}
 <h1>Videos</h1>
-<ul>
-{% for video in video_list%}
-<li><a href = "{{video.url}}" target = "_blank">{{video.url}}</a></li>
+{% for video in video_list %}
+	{% video video.video '800x600' %}
 {% endfor %}
-</ul>

@@ -1,6 +1,7 @@
 <!DOCTYPE html>
 </html>
 {% load staticfiles %}
+{% load embed_video_tags  %}
 <head>
 	<title>test</title>
 	<link rel = "stylesheet" href = "{% static 'css/test.css' %}">
@@ -16,7 +17,7 @@
 			<h3>Videos</h3>
 		{% endif %}
 		{% for video in post.video_set.all %}
-			<a href = "{{video.url}}"><h4>Here is a video</h4></a>
+			{%video video.video '800x600' %}
 		{% endfor %}
 		{% if post.link_set.all.exists %}
 			<h3>Links</h3>
