@@ -1,5 +1,17 @@
-from django.shortcuts import render
+from django.shortcuts import render, redirect
 from django.http import HttpResponse
+from .forms import PostForm
 def index(request):
-	return HttpResponse("contact page: need to set up form, but databases already set up")
+	if request.method == "POST":
+		form = PostForm(request.POST)
+		if form.is_valid():
+			post = form.save(commit = False)
+			post.author = request.user
+			post.save()
+			return redirect('done')	
+	else:
+		form = PostForm()
+	return render(request,'contact/contact.html',{'form':form})
+def done(request):
+	return render(request,'contact/thanks.html')
 # Create your views here.

@@ -11,7 +11,7 @@ https://docs.djangoproject.com/en/1.10/ref/settings/
 """
 
 import os
-
+from os import path
 # Build paths inside the project like this: os.path.join(BASE_DIR, ...)
 BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 
@@ -26,6 +26,7 @@ SECRET_KEY = '0nv5*3azvk1r=vep=tzg_%4ugb!u4edl-5&$wmq*^22kku4%^d'
 DEBUG = True
 
 ALLOWED_HOSTS = []
+PROJECT_DIR_PATH = path.dirname(path.normpath(path.abspath(__file__)))
 
 
 # Application definition
@@ -67,6 +68,8 @@ TEMPLATES = [
                 'django.template.context_processors.request',
                 'django.contrib.auth.context_processors.auth',
                 'django.contrib.messages.context_processors.messages',
+				'django.template.context_processors.media',
+				'django.template.context_processors.static',
             ],
         },
     },
@@ -119,6 +122,9 @@ USE_L10N = True
 USE_TZ = True
 
 
+
+MEDIA_ROOT = 'media/'
+MEDIA_URL = '/media/'
 # Static files (CSS, JavaScript, Images)
 # https://docs.djangoproject.com/en/1.10/howto/static-files/
 
