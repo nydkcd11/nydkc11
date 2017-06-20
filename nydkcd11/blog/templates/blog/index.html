@@ -1,3 +1,11 @@
+<!DOCTYPE html>
+</html>
+{% load staticfiles %}
+<head>
+	<title>test</title>
+	<link rel = "stylesheet" href = "{% static 'css/test.css' %}">
+</head>
+<body>
 {% if latest_post_list %}
 	{% for post in latest_post_list %}
 		<a href = "{% url 'blog:detail' post.id %}"><h1>{{post.title}}</h1></a>  <!-- blog:detail tags  funcion specifically to this app  -->
@@ -20,3 +28,5 @@
 {% else %}
 	<p>no recent posts made</p>
 {% endif %}
+</body>
+</html>
