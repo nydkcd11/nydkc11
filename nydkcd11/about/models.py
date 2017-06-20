@@ -17,4 +17,7 @@ class School(models.Model):
 	url = models.CharField(max_length = 300, default = "#")
 	def __str__(self):
 		return self.school	
+class FAQ(models.Model):
+	question = models.CharField(max_length = 300)
+	answer = models.TextField()
 # Create your models here.
