@@ -16,6 +16,7 @@ class School(models.Model):
 	webmaster = models.CharField(max_length = 75, default = "N/A")
 	editor = models.CharField(max_length = 75, default = "N/A")
 	url = models.CharField(max_length = 300, default = "#")
+	image = models.ImageField(upload_to='school_photos/')
 	def __str__(self):
 		return self.school	
 class FAQ(models.Model):

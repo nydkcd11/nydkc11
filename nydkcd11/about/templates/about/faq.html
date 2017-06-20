@@ -1,0 +1,7 @@
+<h1>FAQ's</h1>
+<ol>
+	{% for faq in faq_list %}
+		<b><li>{{faq.question}}</li></b>
+		<p>{{faq.answer}}</p>
+	{% endfor %}
+</ol>

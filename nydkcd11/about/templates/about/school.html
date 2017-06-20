@@ -1,6 +1,7 @@
 <h1>Division 11 School List</h1>
 {% for school in school_list%}
-<a href = "{{school.url}}"><h2>{{school.school}}</h2></a>
+<a href = "{{school.url}}" target = "_blank"><h2>{{school.school}}</h2></a>
+<img src = "{{school.image.url}}">
 <p>President: {{school.pres}}</p>
 <p>Vice-President: {{school.vicepres}}</p>
 <p>Secretary: {{school.secretary}}</p>
