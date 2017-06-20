@@ -8,5 +8,6 @@ def division(request):
 	return render(request, 'about/division.html',{'member_list':member_list})
 	return HttpResponse("this is the divison page")
 def clubs(request):
-	return HttpResponse("this is the clubs page")
+	school_list = School.objects.all()
+	return render(request, 'about/school.html',{'school_list':school_list})
 # Create your views here.
