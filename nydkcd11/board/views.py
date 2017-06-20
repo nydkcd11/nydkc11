@@ -11,9 +11,11 @@ def index(request):
 	}
 	#return HttpResponse(template.render(context, request))
 	return render(request, 'board/index.html', context)
+'''
 def results(request,person_id):
 	person = get_object_or_404(Person, pk = person_id)
 	return render(request,'board/detail.html',{'person':person})	
+'''
 '''
 def results(request, person_id): #temp, some kind of 404 thing going?
 	try:
