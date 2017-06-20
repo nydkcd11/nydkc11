@@ -1,0 +1,7 @@
+<h1>Divisional Board Members</h1>
+{% for member in member_list%}
+	<h2>{{member.name}}</h2>
+	<h3>{{member.school}}</h3>
+	<h3>{{member.position}}</h3>
+	<p>{{member.desc}}</p>
+{% endfor %}
