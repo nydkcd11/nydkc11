@@ -14,23 +14,7 @@
 			<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>		
 			<link rel="stylesheet" type="text/css" href="{% static 'css/stylesheet.css' %}">
 			<script src="https://use.fontawesome.com/232a2abfd0.js"></script>
-			<style>
-				#homelist h1{
-					text-align: center;	
-					background-color: blue;
-					color: white;
-					padding: 1em;
-				}
-				#articles ul{
-					text-align: right;
-				}
-				#announcements ul{
-					text-align: left;	
-				}
-				#top img{
-				}
-			</style>
-
+			{% block csslink %}{% endblock %}
 		</head>
 		<body>
 			<div class = "container-fluid">

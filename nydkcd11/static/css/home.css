@@ -1,0 +1,18 @@
+
+#homelist h1{
+	text-align: center;	
+	background-color: blue;
+	color: white;
+	padding: 1em;
+}
+#articles ul{
+	text-align: right;
+}
+#announcements ul{
+	text-align: left;	
+}
+#top img{
+}
+.carousel-img{
+	margin:auto;	
+}

@@ -11,9 +11,11 @@ class Post(models.Model):
 		return self.pub_date >= timezone.now() - datetime.timedelta(days=1)
 class Image(models.Model):
 	post = models.ForeignKey(Post, on_delete = models.CASCADE)
+	title = models.CharField(max_length = 1000)
 	desc = models.CharField(max_length = 1000)
-	#image =  models.ImageField()
-
+	image =  models.ImageField(upload_to='image_main/')
+	def __str__(self):
+		return self.title
 class Video(models.Model):
 	post = models.ForeignKey(Post, on_delete = models.CASCADE)
 	url = models.CharField(max_length = 1000)
