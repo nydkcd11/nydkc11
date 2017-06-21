@@ -29,10 +29,10 @@
 						<a class="dropdown-toggle" data-toggle="dropdown" href="#">About
 						<span class="caret"></span></a>
 						<ul class="dropdown-menu">
-							<li><a href="#">Key Club FAQ's</a></li>
-							<li><a href="#">Divisional Board</a></li>
-							<li><a href="http://nydkc.org/who-we-are/district-board/meet-your-district-board/">District Board</a></li>
-							<li><a href="#">Club Boards</a></li>
+							<li><a href="{% url 'about:faq' %}">Key Club FAQ's</a></li>
+							<li><a href="{% url 'about:division' %}">Divisional Board</a></li>
+							<li><a href="http://nydkc.org/who-we-are/district-board/meet-your-district-board/" target = "_blank">District Board</a></li>
+							<li><a href="{% url 'about:clubs' %}">Club Boards</a></li>
 						</ul>
 					</li>
 					<li class="dropdown">
@@ -49,22 +49,21 @@
 						<a class="dropdown-toggle" data-toggle="dropdown" href="#">Resources
 						<span class="caret"></span></a>
 						<ul class="dropdown-menu">
-							<li><a href="#">Videos</a></li>
+							<li><a href="{% url 'resources:videos' %}">Videos</a></li>
 							<li><a href="#">Gallery</a></li>
-							<li><a href="#">Newsletter</a></li>
-							<li><a href="#">Divisional Minutes</a></li>
-							<li><a href = "#">Articles & Announcements</a></li>
+							<li><a href="{% url 'resources:newsletter' %}">Newsletter</a></li>
+							<li><a href="{% url 'resources:minutes' %}">Divisional Minutes</a></li>
+							<li><a href="#">Articles & Announcements</a></li>
 						</ul>
 					</li>
 					<li class = "dropdown">
 						<a class = "dropdown-toggle" data-toggle="dropdown" href="#">Forms<span class = "caret"></span></a>
 						<ul class ="dropdown-menu">
-							<li><a href="#">Event Sign-Up Sheets</a></li>
-							<li><a href="#">Paperwork</a></li>
-							<li><a href="#">Tutorials</a></li>
+							<li><a href="{% url 'forms:signup' %}">Event Sign-Up Sheets</a></li>
+							<li><a href="{% url 'forms:papers' %}">Paperwork</a></li>
 						</ul>
 					</li>
-					<li><a href="#">Contact Us</a></li>
+					<li><a href="{% url 'contact:index' %}">Contact Us</a></li>
 				</ul>
 			</nav>
 			{% block content %}
