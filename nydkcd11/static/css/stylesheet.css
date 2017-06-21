@@ -1,0 +1,29 @@
+@import url('https://fonts.googleapis.com/css?family=EB+Garamond|PT+Sans');
+.navbar-nav > li{
+	float:none;
+}
+#icons{
+	text-align: center;
+}
+
+#icons > i,a{
+	/*padding: 1em;*/
+	display: inline-block;
+}
+#icons a{
+	padding:3em;
+}
+#footer_text{
+	text-align: center;
+}
+body{
+	margin:0;	
+	height: 100%;
+}
+#footer{
+	margin-bottom:0;
+}
+.dropdown-menu{
+	width: 100%;
+	text-align: center;	
+}
