@@ -1,5 +1,10 @@
+{% extends 'index.html' %}
+{% block content %}
 {% load embed_video_tags %}
 <h1>Videos</h1>
+<div style = "margin:auto; width: 90%;">
 {% for video in video_list %}
 	{% video video.video '800x600' %}
 {% endfor %}
+</div>
+{% endblock %}
