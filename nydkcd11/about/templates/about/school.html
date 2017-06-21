@@ -1,10 +1,51 @@
-<h1>Division 11 School List</h1>
-{% for school in school_list%}
-<a href = "{{school.url}}" target = "_blank"><h2>{{school.school}}</h2></a>
-<img src = "{{school.image.url}}">
-<p>President: {{school.pres}}</p>
-<p>Vice-President: {{school.vicepres}}</p>
-<p>Secretary: {{school.secretary}}</p>
-<p>Treasurer: {{school.treasurer}}</p>
-<p>Webmaster: {{school.webmaster}}</p>
-{% endfor %}
+{% extends 'index.html' %}
+{% block content %}
+	<h1>Division 11 School List</h1>
+	{% for school in school_list %}
+		{% if forloop.counter0|divisibleby:3 %}
+			<div class = "row">
+				<div class = "col-md-4">
+					<div class = "panel panel-default">
+						<div class = "panel-heading"><a href = "{{school.url}}" target = "_blank">{{school.school}}</a></div>
+						<div class = "panel-body" style = "text-align:center;">
+							<img src = "{{school.image.url}}" class = "img img-responsive" style = "display: inline;">
+							<p>President: {{school.pres}}</p>
+							<p>Vice-President: {{school.vicepres}}</p>
+							<p>Secretary: {{school.secretary}}</p>
+							<p>Treasurer: {{school.treasurer}}</p>
+							<p>Webmaster: {{school.webmaster}}</p>
+						</div>
+					</div>
+				</div>
+		{% elif forloop.counter0|add:1|divisibleby:3 %}
+				<div class = "col-md-4">
+					<div class = "panel panel-default">
+						<div class = "panel-heading"><a href = "{{school.url}}" target = "_blank">{{school.school}}</a></div>
+						<div class = "panel-body" style = "text-align:center;">
+							<img src = "{{school.image.url}}" class = "img img-responsive" style = "display: inline;">
+							<p>President: {{school.pres}}</p>
+							<p>Vice-President: {{school.vicepres}}</p>
+							<p>Secretary: {{school.secretary}}</p>
+							<p>Treasurer: {{school.treasurer}}</p>
+							<p>Webmaster: {{school.webmaster}}</p>
+						</div>
+					</div>
+				</div>
+			</div>
+		{% else %}
+				<div class = "col-md-4">
+					<div class = "panel panel-default">
+						<div class = "panel-heading"><a href = "{{school.url}}" target = "_blank">{{school.school}}</a></div>
+						<div class = "panel-body" style = "text-align:center;">
+							<img src = "{{school.image.url}}" class = "img img-responsive" style = "display: inline;">
+							<p>President: {{school.pres}}</p>
+							<p>Vice-President: {{school.vicepres}}</p>
+							<p>Secretary: {{school.secretary}}</p>
+							<p>Treasurer: {{school.treasurer}}</p>
+							<p>Webmaster: {{school.webmaster}}</p>
+						</div>
+					</div>
+				</div>
+		{% endif %}
+	{% endfor %}
+{% endblock %}
