@@ -2,7 +2,7 @@
 <!DOCTYPE html>
 	<html>
 		<head>
-			<title>NYDKC D11</title>
+			{% block title %}<title>NYDKC D11</title>{% endblock %}
 			<link rel="icon" href="{% static 'img/favicon.ico' %}" type="image/x-icon"/>
 						<!-- Latest compiled and minified CSS -->
 			<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
@@ -19,7 +19,7 @@
 		<body>
 			<div class = "container-fluid">
 				<div style = "margin-left: auto; margin-right: auto; length: 90%; text-align: center;" id = "top">
-					<img src = "{% static 'img/key.png' %}" style = "margin-right: auto; margin-left: auto;" class = "img-responsive">
+					<a href = "/"><img src = "{% static 'img/key.png' %}" style = "margin-right: auto; margin-left: auto;" class = "img-responsive"></a>
 					<h1>NYDKC Division 11</h1>
 				</div>
 			</div>	
@@ -66,8 +66,10 @@
 					<li><a href="{% url 'contact:index' %}">Contact Us</a></li>
 				</ul>
 			</nav>
-			{% block content %}
-			{% endblock %}
+			<div class = "container">
+				{% block content %}
+				{% endblock %}
+			</div>
 						<div class = "jumbotron" id = "footer">
 				<div id = "icons">
 					<a href = "https://www.instagram.com/nydkcdivision11/" target = "_blank"><i class="fa fa-instagram fa-4x" aria-hidden="true"></i></a>
