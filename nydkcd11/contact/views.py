@@ -8,7 +8,7 @@ def index(request):
 			post = form.save(commit = False)
 			post.author = request.user
 			post.save()
-			return redirect('done')	
+			return redirect('contact:done')	
 	else:
 		form = PostForm()
 	return render(request,'contact/contact.html',{'form':form})

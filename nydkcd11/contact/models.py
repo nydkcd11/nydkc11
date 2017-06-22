@@ -5,7 +5,7 @@ class Contact(models.Model):
 	school = models.CharField(max_length=50)
 	email=models.CharField(max_length=50)
 	title=models.CharField(max_length=50)
-	text=models.TextField()
+	message = models.TextField()
 	def __str__(self):
 		return self.title
 # Create your models here.

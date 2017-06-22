@@ -1,10 +1,11 @@
 {% extends 'blog/detail.html' %}
-{% block content %}
+{% load embed_video_tags %}
+{% block utube %}
 {% if post.video_set.all.exists %}
 			<h3>Videos</h3>
 {% endif %}
 {% for video in post.video_set.all %}
-	<a href = "{{video.url}}"><h4>Here is a video</h4></a>
+	{% video video.video '800x600' %}
 {% endfor %}
 {% if post.link_set.all.exists %}
 	<h3>Links</h3>

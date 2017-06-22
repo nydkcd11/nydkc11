@@ -1,5 +1,12 @@
+{% extends 'index.html' %}
+{% block title %}<title>Contact Us | NYDKC Division 11</title>{% endblock %}
+{% block content %}
+{% load bootstrap3 %}
 <h1>Contact Us</h1>
 <form method = "POST">{% csrf_token %}
-	{{ form.as_p }}
-	<button type = "Submit">Save</button>
+	{% bootstrap_form form %}
+	{% buttons %}
+		<button type = "submit" class = "btn btn-primary">Submit</button>
+	{% endbuttons %}
 </form>
+{% endblock %}

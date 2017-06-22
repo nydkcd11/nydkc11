@@ -55,23 +55,12 @@
 					<div class ="col-md-6" id = "articles">
 						<h1>Articles</h1>
 						<ul class = "list-group">
-							<li class = "list-group-item">
-								<h2>The LTG's Greeting</h2>
-								<p>Come read some remarks from your LTG, Eric Zhao!</p>
-							</li>
-							<li class = "list-group-item">
-								<h2>May Divisional</h2>
-								<p>Hear some remarks about what happened during the May Divisional!</p>
-							</li>
-							<li class = "list-group-item">
-								<h2>LTC Thoughts & Opinions</h2>
-								<p>Curious about what LTC's all about? These Key Clubbers are happy to tell you!</p>
-							</li>
-							<li class = "list-group-item">
-								<h2>Vision Walk</h2>
-								<p>Hear some words/reflctions about the walk from some of the Key Clubbers who attended!</p>
-							</li>
-
+							{% for article in article_list %}
+								<li class = "list-group-item">
+									<a href="{% url 'blog:news' article.id %}"><h2>{{article.title}}</h2></a>
+									<p>{{article.blurb}}</p>
+								</li>
+							{% endfor %}
 						</ul>
 					</div>
 					<div class = col-md-6 id = "announcements">

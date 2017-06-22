@@ -35,7 +35,7 @@ class Link(models.Model):
 class Article(models.Model):
 	title = models.CharField(max_length = 100)
 	author = models.CharField(max_length = 50)
-	pub_date = models.DateField('date published')
+	date = models.CharField(max_length = 100)
 	body = models.TextField()
 	blurb = models.CharField(max_length = 300)
 	def __str__(self):

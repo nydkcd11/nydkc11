@@ -1,6 +1,10 @@
+{% extends 'index.html' %}
+{% block title%}<title>Paperwork | NYDKC Division 11</title>{% endblock %}
+{% block content %}
 <h1>Paperwork</h1>
 <ul>
 {% for paper in papers_list %}
 	<li><a href = "{{paper.url}}">{{paper.name}}</a></li>
 {% endfor %}
 </ul>
+{% endblock %}

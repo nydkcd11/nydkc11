@@ -1,0 +1,8 @@
+{% extends 'index.html' %}
+{% block title %}<title>Article | NYDKC Division 11</title>{% endblock %}
+{% block content %}
+	<h1>Article: {{article.title}}</h1>
+	<h2>{{article.author}}</h2>
+	<h3>Appeared in the {{article.date}} Newsletter</h3>
+	<p>{{article.body}}</p>
+{% endblock %}

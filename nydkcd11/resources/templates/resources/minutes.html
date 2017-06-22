@@ -1,6 +1,10 @@
+{% extends 'index.html' %}
+{%block title%}<title>Divisional Minutes</title>{% endblock %}
+{% block content %}
 <h1>Minutes</h1>
 <ul>
 	{% for minute in minutes_list %}
 		<li><a href = "{{minute.url}}">{{minute}}</a></li>
 	{% endfor %}
 </ul>
+{% endblock %}

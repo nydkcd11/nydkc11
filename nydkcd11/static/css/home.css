@@ -16,3 +16,6 @@
 .carousel-img{
 	margin:auto;	
 }
+.carousel-caption{
+	background:radial-gradient(black,rgba(255,0,0,0));
+}
