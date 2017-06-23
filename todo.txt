@@ -14,9 +14,13 @@ nstagram @nydkcdivision11		Snapchat @nydkc11		Facebook Page :New York District K
 continue progress on the blog (MAINLY YOUTUBE)
 6.9.17: freeze progress to focus on net database setup
 begin artistic drafting of what the pages will look like
-
+6.17.17: views written for resources, and updated blog views to implement links better
+6.18.17: finished writing views, research continuing on upload issue, experimented with template extensions
+Hit a bit of a problem with inheritance efforts: i was trying to make this code overlap a 'parent class,' but in the main section class, this parent class appears in the section that's supposed to get bundled into a block, which is IN TURN supposed to be re-plugged back into the parent class. Inception. Submitted to Stack Overflow.
+6.19.17: bug still not addressed on SO. Surged progress on specific features (e.g. database building). rebuilt "about" app, and dropped "ProjectS" implementation for future. 
+6.20.17: original problem for bug was rendered irrevalent. completed contact, forms, and resources page (minus the three critical problems). completed databases for about, but submitted image upload problem to S.O. Began integration of HOME PAGE
 start doing research on the following:
-	-cross google drive implemetnation (for divisonal photos)
+	-cross google drive implemetnation (for divisonal photos) (LOW PRIORITY GOAL FOR NOW!)
 	-linking templates together
 	-creating home pages
 	-django and apache implementation
@@ -27,6 +31,4 @@ begin initial work on:
 
 	-designing pages (with bootstrap and everything)
 
-design view for resources
-essentially import models from Blog
-and do Question.objects.all() and some variant of it
+
