@@ -19,6 +19,10 @@ begin artistic drafting of what the pages will look like
 Hit a bit of a problem with inheritance efforts: i was trying to make this code overlap a 'parent class,' but in the main section class, this parent class appears in the section that's supposed to get bundled into a block, which is IN TURN supposed to be re-plugged back into the parent class. Inception. Submitted to Stack Overflow.
 6.19.17: bug still not addressed on SO. Surged progress on specific features (e.g. database building). rebuilt "about" app, and dropped "ProjectS" implementation for future. 
 6.20.17: original problem for bug was rendered irrevalent. completed contact, forms, and resources page (minus the three critical problems). completed databases for about, but submitted image upload problem to S.O. Began integration of HOME PAGE
+
+
+6.23.17: kickstarting transition to server
+
 start doing research on the following:
 	-cross google drive implemetnation (for divisonal photos) (LOW PRIORITY GOAL FOR NOW!)
 	-linking templates together
