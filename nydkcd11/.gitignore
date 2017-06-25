@@ -1,2 +1,3 @@
 *.sqlite
 nydkcd11/settings.py
+*.pyc

@@ -25,7 +25,7 @@ SECRET_KEY = '0nv5*3azvk1r=vep=tzg_%4ugb!u4edl-5&$wmq*^22kku4%^d'
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = []
+ALLOWED_HOSTS = ['nydkc11.org','138.197.39.225']
 PROJECT_DIR_PATH = path.dirname(path.normpath(path.abspath(__file__)))
 
 
@@ -37,12 +37,12 @@ INSTALLED_APPS = [
 	'resources.apps.ResourcesConfig',
 	'contact.apps.ContactConfig',
 	'blog.apps.BlogConfig',
-    'django.contrib.admin',
-    'django.contrib.auth',
-    'django.contrib.contenttypes',
-    'django.contrib.sessions',
-    'django.contrib.messages',
-    'django.contrib.staticfiles',
+	'django.contrib.admin',
+	'django.contrib.auth',
+	'django.contrib.contenttypes',
+	'django.contrib.sessions',
+	'django.contrib.messages',
+	'django.contrib.staticfiles',
 	'embed_video',
 	'bootstrap3',
 ]
@@ -82,14 +82,25 @@ WSGI_APPLICATION = 'nydkcd11.wsgi.application'
 
 # Database
 # https://docs.djangoproject.com/en/1.10/ref/settings/#databases
-
+DATABASES = {
+    'default': {
+        'ENGINE': 'django.db.backends.postgresql_psycopg2',
+        'NAME': 'nydkc11',
+        'USER': 'brian',
+        'PASSWORD': 'oh12993791soo',
+        'HOST': 'localhost',
+        'PORT': '',
+    }
+}
+'''
+DEVELOPMENT
 DATABASES = {
     'default': {
         'ENGINE': 'django.db.backends.sqlite3',
         'NAME': os.path.join(BASE_DIR, 'db.sqlite3'),
     }
 }
-
+'''
 
 # Password validation
 # https://docs.djangoproject.com/en/1.10/ref/settings/#auth-password-validators
@@ -131,4 +142,6 @@ MEDIA_URL = '/media/'
 # https://docs.djangoproject.com/en/1.10/howto/static-files/
 
 STATIC_URL = '/static/'
-STATICFILES_DIRS= (os.path.join(BASE_DIR,'static'),)
+STATIC_ROOT = os.path.join(BASE_DIR, 'static/')
+#UNLOCK IN DEVELOPMENT
+#STATICFILES_DIRS= (os.path.join(BASE_DIR,'static'),)
