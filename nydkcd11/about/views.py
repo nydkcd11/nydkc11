@@ -1,8 +1,6 @@
 from django.shortcuts import render
 from django.http import HttpResponse
 from .models import Division, School, FAQ
-def index(request):
-	return HttpResponse("this is the new about page")
 def division(request):
 	member_list = Division.objects.all()
 	return render(request, 'about/division.html',{'member_list':member_list,})

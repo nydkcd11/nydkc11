@@ -10,8 +10,10 @@
 {% if post.link_set.all.exists %}
 	<h3>Links</h3>
 {% endif %}
+<ul>
 {% for link in post.link_set.all %}
-	<a href = "{{link.url}}">{{link.name}}</a>
+	<li><a href = "{{link.url}}">{{link.name}}</a></li>
 {% endfor %}
+</ul>
 {% endblock %}
 
