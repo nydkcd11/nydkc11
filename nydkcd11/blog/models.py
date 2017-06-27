@@ -19,13 +19,9 @@ class Image(models.Model):
 		return self.title
 class Video(models.Model):
 	post = models.ForeignKey(Post, on_delete = models.CASCADE)
-	url = models.CharField(max_length = 1000)
 	video = EmbedVideoField()
 	def __str__(self):
 		return self.post.title
-	def parse(self):
-		return 0
-		#supposed to generate an iframe 
 class Link(models.Model):
 	link = models.ForeignKey(Post, on_delete = models.CASCADE)
 	name = models.CharField(max_length=30)
