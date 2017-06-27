@@ -15,5 +15,13 @@
 	<li><a href = "{{link.url}}">{{link.name}}</a></li>
 {% endfor %}
 </ul>
+{% if post.image_set.all.exists %}<h3>Images</h3>{% endif %}
+<ul class = "first">
+	{% for image in image_list %}
+		<li>
+			<img src = "{{image.image.url}}" alt = "{{post.title}}">
+		</li>
+	{% endfor %}
+</ul>
 {% endblock %}
 

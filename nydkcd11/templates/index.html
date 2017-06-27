@@ -16,6 +16,7 @@
 			<link rel="stylesheet" type="text/css" href="{% static 'css/stylesheet.css' %}">
 			<script src="https://use.fontawesome.com/232a2abfd0.js"></script>
 			{% block csslink %}{% endblock %}
+			{% block jslink %}{% endblock %}
 		</head>
 		<body>
 			<div class = "container-fluid">
@@ -101,5 +102,6 @@
 					<p>(C) 2017 New York District Key Club Division 11</p>
 				</div>
 			</div>
+			{% block javascript %}{% endblock %}
 		</body>
 	</html>
