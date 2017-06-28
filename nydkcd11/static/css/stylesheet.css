@@ -1,4 +1,4 @@
-@import url('https://fonts.googleapis.com/css?family=EB+Garamond|PT+Sans');
+@import url('https://fonts.googleapis.com/css?family=EB+Garamond|Didact+Gothic');
 .navbar-nav > li{
 	float:none;
 }
@@ -26,4 +26,10 @@ body{
 .dropdown-menu{
 	width: 100%;
 	text-align: center;	
+}
+a{
+	color:#003366;	
+}
+h1,h2,h3{
+	font-family: "Century Gothic","Apple Gothic",AppleGothic,"URW Gothic L","Avant Garde",Futura,'Didact Gothic',sans-serif;
 }
