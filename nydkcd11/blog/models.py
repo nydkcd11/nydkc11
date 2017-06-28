@@ -26,6 +26,16 @@ class Link(models.Model):
 	link = models.ForeignKey(Post, on_delete = models.CASCADE)
 	name = models.CharField(max_length=30)
 	url = models.CharField(max_length=1000)
+	host = models.CharField(max_length = 50)
+	DIVISION = 'DIV'
+	FUNDRAISER = 'FUND'
+	CLUB='CLUB'
+	EVENT_CHOICES = (
+		(DIVISION,'Division Events'),
+		(FUNDRAISER,'Fundraisers'),
+		(CLUB, 'Club Events'),
+	)
+	event_choices=models.CharField(max_length=4,choices=EVENT_CHOICES,default=FUNDRAISER)
 	def __str__(self):
 		return self.name
 class Article(models.Model):

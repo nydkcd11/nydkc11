@@ -8,5 +8,4 @@ def papers(request):
 def signup(request):
 	link_list = Link.objects.all()
 	return render(request, 'forms/signup.html',{'link_list':link_list})
-	return HttpResponse("this is the official signup page")
 # Create your views here.
