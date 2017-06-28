@@ -3,7 +3,7 @@ from django.http import HttpResponse
 from blog.models import Video
 from .models import Newsletter, Minutes
 def videos(request):
-	video_list = Video.objects.order_by('-post').reverse()
+	video_list = Video.objects.order_by('-post')
 	context = {
 		'video_list':video_list,	
 	}
