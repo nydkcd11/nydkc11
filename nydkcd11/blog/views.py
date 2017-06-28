@@ -6,7 +6,7 @@ from .models import Post, Article
 def index(request):
 	#latest_post_list = Post.objects.order_by('-pub_date')[:5]
 	latest_post_list = Post.objects.order_by('-pub_date')
-	articles = Article.objects.all()
+	articles = Article.objects.order_by('-pk').reverse()
 	template = loader.get_template('blog/index.html')
 	context = {
 		'latest_post_list': latest_post_list,	
