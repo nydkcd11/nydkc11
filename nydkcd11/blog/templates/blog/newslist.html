@@ -1,0 +1,13 @@
+{% extends 'index.html' %}
+{% load staticfiles %}
+{% block head %}<title>Articles | NYDKC Division 11</title>{% endblock %}
+{% block content %}
+<div class = "page-header"><h1>Article List</h1></div>
+	{% for article in articles %}
+		<a href="{% url 'blog:news' article.id %}"><h1>{{article.title}}</h1></a>
+		<h2>{{article.author}}</h2>
+		<h2>Posted in the {{article.date}} Newsletter</h2>
+		<p>{{article.body}}</p>
+		<img src = "{% static 'img/scribble2.png' %}" class = "img-responsive">
+	{% endfor %}
+{% endblock %}
