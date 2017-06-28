@@ -33,3 +33,34 @@ a{
 h1,h2,h3{
 	font-family: "Century Gothic","Apple Gothic",AppleGothic,"URW Gothic L","Avant Garde",Futura,'Didact Gothic',sans-serif;
 }
+
+
+/* NAVBAR STYLING */
+.navbar-default {
+	background-color:#003366;
+	/*border-top:3px solid #00aeef;*/
+	/*border-bottom:3px solid #00aeef;*/
+
+}
+.navbar-default .navbar-nav > li > a {
+	    color: white;
+}
+.navbar-default .navbar-nav > li > a:hover{
+		color:#f58025;	
+}
+.navbar-default .navbar-nav > li > a:focus {
+	    color: #f58025;
+}
+
+.navbar-default .navbar-nav > .active > a,
+.navbar-default .navbar-nav > .active > a:hover,
+.navbar-default .navbar-nav > .active > a:focus {
+	color: yellow;
+	background-color: green;
+}
+.navbar-default .navbar-nav > .open > a,
+.navbar-default .navbar-nav > .open > a:hover,
+.navbar-default .navbar-nav > .open > a:focus {
+	color: white;
+	background-color: #b49759;
+}
