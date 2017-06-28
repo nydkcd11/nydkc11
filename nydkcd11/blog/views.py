@@ -6,14 +6,16 @@ from .models import Post, Article
 def index(request):
 	#latest_post_list = Post.objects.order_by('-pub_date')[:5]
 	latest_post_list = Post.objects.order_by('-pub_date')
-	articles = Article.objects.order_by('-pk').reverse()
 	template = loader.get_template('blog/index.html')
 	context = {
 		'latest_post_list': latest_post_list,	
-		'articles':articles
 	}
 	#return HttpResponse(template.render(context,request))
 	return render(request, 'blog/index.html',context)
+def article(request):
+	articles = Article.objects.order_by('-pk').reverse()
+	return render(request, 'blog/newslist.html',{'articles':articles})
+	return HttpResponse("full article page")
 def detail(request, post_id):
 	'''
 	try:
