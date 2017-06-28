@@ -2,7 +2,7 @@ from django.shortcuts import render
 from django.http import HttpResponse
 from blog.models import Image, Post, Article
 def index(request):
-	image_list = Image.objects.all()[len(Image.objects.all())-3:] #need way to sort by pub_date from post
+	image_list = Image.objects.order_by('-post')[:6] #need way to sort by pub_date from post
 	length = []
 	for i in range(len(image_list)):
 		length.append(i)
