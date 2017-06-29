@@ -4,7 +4,8 @@ class Post(models.Model):
 	title = models.CharField(max_length = 100)
 	author = models.CharField(max_length = 50)
 	pub_date = models.DateTimeField('date publshed')
-	body = models.CharField(max_length = 10000)
+	body = models.CharField(max_length=10000)
+	body2 = models.TextField('Main Body of Text')
 	blurb = models.CharField(max_length = 300)
 	def __str__(self):
 		return self.title
