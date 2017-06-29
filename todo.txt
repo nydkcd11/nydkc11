@@ -22,8 +22,6 @@ things to fix:
  -onging 403 forbidden bug
  -examine mobile views for divisional and club pages and keyclubbify if necessary
  -generate sitemap (either externally or with Django), integrate into website and submit to google
- -add '_blank' to links
- -add 'see more' links to articles and announcements sections in home page
  -add image gallery section (OPTIONAL, ask Eric)
   
 start doing research on the following:
