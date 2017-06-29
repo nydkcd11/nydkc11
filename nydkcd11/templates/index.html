@@ -22,11 +22,13 @@
 		<body>
 			<div class = "container-fluid">
 				<div style = "margin-left: auto; margin-right: auto; length: 90%; text-align: center;" id = "top">
-					<picture>
-						<source media="(max-width:768px)" srcset="{% static 'img/keyclubsmall.png' %}">
-						<source srcset="{% static 'img/key.png' %}">
-						<a href = "/"><img src = "{% static 'img/key.png' %}" style = "margin-right: auto; margin-left: auto;" class = "img-responsive"></a>
-					</picture>
+					<a href = "/">
+						<picture>
+							<source media="(max-width:768px)" srcset="{% static 'img/keyclubsmall.png' %}">
+							<source srcset="{% static 'img/key.png' %}">
+							<img src = "{% static 'img/key.png' %}" style = "margin-right: auto; margin-left: auto;" class = "img-responsive">
+						</picture>
+					</a>
 					<h1>NYDKC Division 11</h1>
 				</div>
 			</div>	
