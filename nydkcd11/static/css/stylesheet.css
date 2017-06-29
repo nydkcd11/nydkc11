@@ -66,21 +66,23 @@ h1,h2,h3{
 }
 /*mobile*/
 .navbar-default .navbar-toggle {
-    border-color: #DDD;
+    /*border-color: pink;*/
 }
 .navbar-default .navbar-toggle:hover,
 .navbar-default .navbar-toggle:focus {
-    background-color: #DDD;
+    background-color: #ec008c;
 }
 .navbar-default .navbar-toggle .icon-bar {
-    background-color: #CCC;
+    background-color: white;
 }
-@media (max-width: 767px) {
+@media (max-width: 768px) {
     .navbar-default .navbar-nav .open .dropdown-menu > li > a {
-        color: #777;
+        color: white;
+		background-color:#00aeef;
     }
     .navbar-default .navbar-nav .open .dropdown-menu > li > a:hover,
     .navbar-default .navbar-nav .open .dropdown-menu > li > a:focus {
-          color: #333;
+          color: white;
+		  background-color: #8bcfba;
     }
 }
