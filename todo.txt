@@ -1,15 +1,3 @@
-1) start making the first models (emphasis on uplinking first)
-2) start static html-ing the sites. we'll merge the the skeleton html and the art html later
-3) start making the other apps
-4) start research into methods of creatnig server (e.g. A P A C H E)
-
-FIX THE FUCKING IMAGE SHIT
-
-add social media stuff:
-nstagram @nydkcdivision11		Snapchat @nydkc11		Facebook Page :New York District Key Club Division 11		Facebook Group: [NYDKC] Division 11Sent on:10:01 pmFrom:floralei0101 Google Group: NYDKC Division 11
-
-
-6.4.17: i'm gonna stop work on the divisional boardmember page for now to work on the central blog system, which will be the website's true core.
 6.8.17: postpone video and image support to prioritize completion of the tutorial, and started contact us form to practice forms
 continue progress on the blog (MAINLY YOUTUBE)
 6.9.17: freeze progress to focus on net database setup
@@ -23,16 +11,24 @@ Hit a bit of a problem with inheritance efforts: i was trying to make this code 
 
 6.23.17: kickstarting transition to server
 
+6.27.17: divisional and successfull publish of server
+
+things to fix:
+ -ordering of event signup list
+ -better way to show minutes and formal paperwork
+ -imbed issuu for newsletter
+ -make app/model for district project. hold off in division until eric publishes the divisional project
+ -ongoing <picture> bug
+ -onging 403 forbidden bug
+ -examine mobile views for divisional and club pages and keyclubbify if necessary
+ -generate sitemap (either externally or with Django), integrate into website and submit to google
+ -add '_blank' to links
+ -add 'see more' links to articles and announcements sections in home page
+ -add image gallery section (OPTIONAL, ask Eric)
+ -figure out how to add new lines to TextField
+ -move post's charfield to textfield
+  
 start doing research on the following:
 	-cross google drive implemetnation (for divisonal photos) (LOW PRIORITY GOAL FOR NOW!)
-	-linking templates together
-	-creating home pages
-	-django and apache implementation
-	-cross work with server (either hosting externaly using an FTP client or hosting directly at home using computer)
-	-domain name capture
-begin initial work on:
-	-determing additional pages required
-
-	-designing pages (with bootstrap and everything)
 
 
