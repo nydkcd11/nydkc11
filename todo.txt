@@ -25,8 +25,6 @@ things to fix:
  -add '_blank' to links
  -add 'see more' links to articles and announcements sections in home page
  -add image gallery section (OPTIONAL, ask Eric)
- -figure out how to add new lines to TextField
- -move post's charfield to textfield
   
 start doing research on the following:
 	-cross google drive implemetnation (for divisonal photos) (LOW PRIORITY GOAL FOR NOW!)
