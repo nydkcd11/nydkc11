@@ -19,8 +19,7 @@ things to fix (long term):
  -add image gallery section (DELAY)
   
 things to fix:
-  - revamp bottom section
-  - make app/model for Projects section (e.g. DTC, LTC, etc)
+  - make app/model for Events  section (e.g. DTC, LTC, etc)
   - hear suggestions from board!
 start doing research on the following:
 	-cross google drive implemetnation (for divisonal photos) (LOW PRIORITY GOAL FOR NOW!)
