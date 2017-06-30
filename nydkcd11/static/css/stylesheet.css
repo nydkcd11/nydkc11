@@ -14,7 +14,9 @@
 	padding:3em;
 }
 #footer_text{
-	text-align: center;
+	background-color: #f58025; 
+	text-align: center; 
+	color: white;
 }
 body{
 	margin:0;	
@@ -75,6 +77,12 @@ h1,h2,h3{
 .navbar-default .navbar-toggle .icon-bar {
     background-color: white;
 }
+#footer_left{
+	text-align: right;
+}
+.footer-list{
+	list-style-position:inside;
+}
 @media (max-width: 768px) {
     .navbar-default .navbar-nav .open .dropdown-menu > li > a {
         color: white;
@@ -85,4 +93,12 @@ h1,h2,h3{
           color: white;
 		  background-color: #8bcfba;
     }
+	#footer_part > div{
+		text-align: center;
+	}
+	.footer-list{
+		text-align: left;
+		margin: 0 auto;
+		width: 50%;
+	}
 }
