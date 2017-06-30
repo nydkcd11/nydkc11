@@ -117,11 +117,18 @@
 				</div>
 				<div class = "container">
 					<div class = "row" id = "footer_part">
-						<div class = "col-md-6" id = "footer-left">
+						<div class = "col-sm-6" id = "footer-left">
 							<h1>Sign Up for Email Updates</h1>
 							<h2>Interested in following Division 11? Add your email and join the fun!</h2>
+							{% load bootstrap3 %}
+							<form method = "POST" class = "form-inline">{% csrf_token %}
+								{% bootstrap_form form %}
+								{% buttons %}
+									<button type="submit" class = "btn btn-primary">Sign Up</button>
+								{% endbuttons %}
+							</form>
 						</div>
-						<div class = "col-md-6" id = "footer-right">
+						<div class = "col-sm-6" id = "footer-right">
 							<h3>Useful Links</h3>
 							<div class = "footer-list">
 								<ul>

@@ -8,4 +8,8 @@ class Contact(models.Model):
 	message = models.TextField()
 	def __str__(self):
 		return self.title
+class Email(models.Model):
+	email = models.CharField('Email: ',max_length = 50)
+	def __str__(self):
+		return self.email
 # Create your models here.
