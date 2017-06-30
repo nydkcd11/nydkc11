@@ -11,11 +11,17 @@ class Division(models.Model):
 class School(models.Model):
 	school = models.CharField(max_length = 100)
 	pres = models.CharField(max_length = 75, default = "N/A")
+	pres_email = models.CharField('President\'s Email', max_length=75)
 	vicepres = models.CharField(max_length = 75, default = "N/A")
+	vp_email = models.CharField('Vice President\'s Email',max_length=75)
 	secretary = models.CharField(max_length = 75, default = "N/A")
+	secret_email = models.CharField('Secretary\'s Email', max_length = 75)
 	treasurer = models.CharField(max_length = 75, default = "N/A")
+	treas_email = models.CharField('Treasurer\'s Email',max_length = 75)
 	webmaster = models.CharField(max_length = 75, default = "N/A")
+	webm_email = models.CharField('Webmaster\'s Email',max_length=75)
 	editor = models.CharField(max_length = 75, default = "N/A")
+	editor_email = models.CharField('Editor\'s Email', max_length=75)
 	url = models.CharField(max_length = 300, default = "#")
 	image = models.ImageField(upload_to='school_photos/')
 	def __str__(self):
