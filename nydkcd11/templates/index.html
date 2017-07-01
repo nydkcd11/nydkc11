@@ -121,17 +121,15 @@
 						<div class = "col-sm-6" id = "footer-left">
 							<h1>Sign Up for Email Updates</h1>
 							<h2>Interested in following Division 11? Add your email and join the fun!</h2>
-							<h3>Email LTG Eric Zhao your email</h3>
-							<!--
-							<form method = "POST" class = "form">{% csrf_token %}
-							{% comment %}
-								{% bootstrap_form form %}
+							{% comment %}<h3>Email LTG Eric Zhao your email</h3>{% endcomment %}
+							<form method = "POST" class = "form-inline" action = "{% url 'contact:email_process' %}">{% csrf_token %}
+							
+								{% bootstrap_form email_form %}
 								{% buttons %}
 									<button type="submit" class = "btn btn-primary">Sign Up</button>
 								{% endbuttons %}
-							{% endcomment %}
 							</form>
-							-->
+							
 						</div>
 						<div class = "col-sm-6" id = "footer-right">
 							<h3>Useful Links</h3>
