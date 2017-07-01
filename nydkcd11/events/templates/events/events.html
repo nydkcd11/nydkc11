@@ -1,0 +1,60 @@
+{% extends 'index.html' %}
+{% block title %}<title>Divisional Training Conference | NYDKC Division 11</title>{% endblock %}
+{% block csslink %}
+<style type = "text/css">
+	#map-canvas{
+		width: 640px;
+		height: 480px;
+		margin-top: 1em;
+		margin-left:auto;
+		margin-right: auto;
+	}	
+	#description{
+		border: 0.5em solid #00aeef;	
+		padding: 1em;
+		border-radius:1em;
+		margin-top:1em;
+	}
+</style>
+{% endblock %}
+{% block jslink %}
+<script type="text/javascript"
+src="https://maps.googleapis.com/maps/api/js?key=AIzaSyA9k577CoQI-SpQQU8AHAUqE6oPk66xLCo&sensor=false">
+</script>
+<script type="text/javascript">
+function initialize() {
+    var myLatLng = new google.maps.LatLng(40.6911,-73.9808)
+    var mapOptions = {
+        center: myLatLng,
+        zoom: 17,
+        mapTypeId: google.maps.MapTypeId.MAP
+    };
+
+    var map = new google.maps.Map(document.getElementById("map-canvas"),
+    mapOptions);
+
+    var myMarker = new google.maps.Marker({
+        position: myLatLng,
+        map: map,
+        title: "LIU Brooklyn",
+        draggable: false,
+    })
+}
+
+google.maps.event.addDomListener(window, 'load', initialize);
+</script>
+
+{% endblock  %}
+{% block content %}
+	<h1>{{dtc.title}}</h1>
+	<div class = "row">
+		<div class = "col-sm-6">
+			<img src = "{{dtc.image.url}}" class = "img img-responsive">
+		</div>
+		<div class = "col-sm-6">
+			<div id = "description">{{dtc.description}}</div>
+		</div>
+	</div>
+	<div id = "map-canvas"></div>
+	<p style = "text-align:center;">Location of {{dtc.title}}</p>
+{% endblock %}

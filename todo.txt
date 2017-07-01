@@ -20,7 +20,6 @@ things to fix (long term):
   
 things to fix:
   - make app/model for Events  section (e.g. DTC, LTC, etc)
-  - email form submission problemn
   - hear suggestions from board!
 start doing research on the following:
 	-cross google drive implemetnation (for divisonal photos) (LOW PRIORITY GOAL FOR NOW!)
