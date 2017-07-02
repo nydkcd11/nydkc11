@@ -1,5 +1,7 @@
 from django.db import models
+from blog.models import Post
 class Newsletter(models.Model):
+	post = models.ForeignKey(Post, on_delete = models.CASCADE)
 	month = models.CharField(max_length = 30)
 	url = models.CharField(max_length=100)
 	def __str__(self):
