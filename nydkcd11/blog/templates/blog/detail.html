@@ -8,6 +8,7 @@
 {% block jslink %}<script src = "{% static 'js/jquery.bsPhotoGallery.js' %}"></script>{% endblock %}
 {% block content %}
 {% comment %}NOTE: can't use template inheritance here: otherwise 'posts' in the master announcements page will be undefined{% endcomment %}
+<a role = "button" class = "btn btn-info" href = "{% url 'blog:index' %}">&laquo; Back to Announcements</a>
 <h1>{{post}}</h1>
 <h2>{{post.author}}</h2>
 <h2>{{post.pub_date}}</h2>
