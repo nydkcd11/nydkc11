@@ -23,6 +23,6 @@ things to fix:
   - hear suggestions from board!
 start doing research on the following:
 	-cross google drive implemetnation (for divisonal photos) (LOW PRIORITY GOAL FOR NOW!)
-	-facebook automation
+	-facebook automation (VETOED)
 	-mobile app????
 

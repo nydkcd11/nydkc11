@@ -2,6 +2,7 @@ from django.shortcuts import render, get_object_or_404
 from django.http import HttpResponse, Http404
 from django.template import loader
 from .models import Post, Article
+from django.core.paginator import Paginator, EmptyPage, PageNotAnInteger
 # Create your views here.
 def index(request):
 	#latest_post_list = Post.objects.order_by('-pub_date')[:5]
@@ -10,8 +11,15 @@ def index(request):
 	context = {
 		'latest_post_list': latest_post_list,	
 	}
-	#return HttpResponse(template.render(context,request))
-	return render(request, 'blog/index.html',context)
+	paginator = Paginator(latest_post_list,5)
+	page = request.GET.get('page')
+	try:
+		posts = paginator.page(page)
+	except PageNotAnInteger:
+		posts = paginator.page(1)
+	except EmptyPage:
+		posts = paginator.page(paginator,num_pages)
+	return render(request, 'blog/index.html',{'posts':posts})
 def article(request):
 	articles = Article.objects.order_by('-pk').reverse()
 	return render(request, 'blog/newslist.html',{'articles':articles})
