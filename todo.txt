@@ -13,13 +13,13 @@ Hit a bit of a problem with inheritance efforts: i was trying to make this code 
 
 6.27.17: divisional and successfull publish of server
 
+7.1.17: encountered strange Apache test page bug (or close to date). Initially problem expanded to desktop, but now isolated to mobile
 things to fix (long term):
  -make app/model for district project. hold off in division until eric publishes the divisional project (DELAY all projects until Eric publishes divisional project)
  -onging 403 forbidden bug (POSSIBLE fix, wait until need to upload new sets of images)
- -add image gallery section (DELAY)
+ -add image gallery section (VETOED)
   
 things to fix:
-  - make app/model for Events  section (e.g. DTC, LTC, etc)
   - hear suggestions from board!
 start doing research on the following:
 	-cross google drive implemetnation (for divisonal photos) (LOW PRIORITY GOAL FOR NOW!)
