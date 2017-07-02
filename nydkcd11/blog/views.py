@@ -34,7 +34,7 @@ def detail(request, post_id):
 	'''
 	post = get_object_or_404(Post, pk = post_id)
 	image_list = post.image_set.all()
-	return render(request, 'blog/display.html',{'post':post,'image_list':image_list}) #note: set to extending service
+	return render(request, 'blog/detail.html',{'post':post,'image_list':image_list}) #note: set to extending service
 def news(request, article_id):
 	article = get_object_or_404(Article, pk = article_id)
 	return render(request, 'blog/article.html',{'article':article})

@@ -1,17 +1,39 @@
 {% extends 'index.html' %}
 {% load staticfiles %}
+{% load embed_video_tags %}
 {% block title %}<title>Announcement | NYDKC Division 11</title>{% endblock %}
 {% block csslink %}
 <link rel = "stylesheet"  type = "text/css" href = "{% static 'css/jquery.bsPhotoGallery.css' %}">
 {% endblock %}
 {% block jslink %}<script src = "{% static 'js/jquery.bsPhotoGallery.js' %}"></script>{% endblock %}
 {% block content %}
+{% comment %}NOTE: can't use template inheritance here: otherwise 'posts' in the master announcements page will be undefined{% endcomment %}
 <h1>{{post}}</h1>
 <h2>{{post.author}}</h2>
 <h2>{{post.pub_date}}</h2>
 <p>{{post.body2|linebreaks}}</p>
-{% block utube %}
-{% endblock %}
+{% if post.video_set.all.exists %}
+			<h3>Videos</h3>
+{% endif %}
+{% for video in post.video_set.all %}
+	{% video video.video '100%x480' %}
+{% endfor %}
+{% if post.link_set.all.exists %}
+	<h3>Links</h3>
+{% endif %}
+<ul>
+{% for link in post.link_set.all %}
+	<li><a href = "{{link.url}}">{{link.name}}</a></li>
+{% endfor %}
+</ul>
+{% if post.image_set.all.exists %}<h3>Images</h3>{% endif %}
+<ul class = "first">
+	{% for image in image_list %}
+		<li style = "margin-top:0.5em; margin-bottom:0.5em;">
+			<img src = "{{image.image.url}}" alt = "{{post.title}}">
+		</li>
+	{% endfor %}
+</ul>
 {% endblock %}
 {% block javascript %}
 <script>

@@ -14,7 +14,7 @@
 			<h3>Videos</h3>
 		{% endif %}
 		{% for video in post.video_set.all %}
-			{%video video.video '800x600' %}
+			{%video video.video '100% x 480' %}
 		{% endfor %}
 		{% if post.link_set.all.exists %}
 			<h3>Links</h3>
