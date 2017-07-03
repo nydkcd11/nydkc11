@@ -15,9 +15,30 @@ Including another URLconf
 """
 from django.conf.urls import url, include
 from django.contrib import admin
+from django.contrib.sitemaps.views import sitemap
+from django.contrib.sitemaps import GenericSitemap
 from django.conf import settings
 from django.conf.urls.static import static
 from . import views
+from sitemaps import *
+from blog.models import Post, Article
+post_dict={
+	'queryset':Post.objects.all()	
+}
+
+article_dict={
+	'queryset':Article.objects.all()	
+}
+sitemaps = {
+	'post':GenericSitemap(post_dict),
+	'article':GenericSitemap(article_dict),
+	'about':AboutSitemap(),
+	'contact':ContactSitemap(),
+	'resources':ResourcesSitemap(),
+	'forms':FormsSitemap(),
+	'events':EventsSitemap(),
+	'blog':BlogSitemap()
+}
 urlpatterns = [
 	url(r'^$', views.index, name = 'index'),
 	url(r'^about/', include('about.urls')),
@@ -27,6 +48,7 @@ urlpatterns = [
 	url(r'^resources/', include('resources.urls')),
 	url(r'^forms/', include('forms.urls')),
 	url(r'^events/', include('events.urls')),
+	url(r'^sitemap\.xml$', sitemap, {'sitemaps': sitemaps},name='django.contrib.sitemaps.views.sitemap')
 ]
 
 urlpatterns += static(settings.MEDIA_URL,document_root=settings.MEDIA_ROOT)

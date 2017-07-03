@@ -1,5 +1,6 @@
 from django.db import models
 from embed_video.fields import EmbedVideoField
+from django.core.urlresolvers import reverse
 class Post(models.Model):
 	title = models.CharField(max_length = 100)
 	author = models.CharField(max_length = 50)
@@ -10,6 +11,8 @@ class Post(models.Model):
 		return self.title
 	def was_published_recently(self):
 		return self.pub_date >= timezone.now() - datetime.timedelta(days=1)
+	def get_absolute_url(self):
+		return reverse('blog:detail',kwargs = {'post_id':self.id})
 class Image(models.Model):
 	post = models.ForeignKey(Post, on_delete = models.CASCADE)
 	title = models.CharField(max_length = 1000)
@@ -46,4 +49,6 @@ class Article(models.Model):
 	blurb = models.CharField(max_length = 300)
 	def __str__(self):
 		return self.title
+	def get_absolute_url(self):
+		return reverse('blog:news', kwargs = {'article_id':self.id})
 # Create your models here.
