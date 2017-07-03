@@ -20,10 +20,8 @@ things to fix (long term):
  -add image gallery section (VETOED)
   
 things to fix:
-  - link newsletter links with posts
-  - SITEMAP
-  - start research into directions.nydkc11.org
-  - message jessie about adding articles to the site
+  - add google map of clubs
+  - start drafting new outline for dtc page
   - hear suggestions from board!
 start doing research on the following:
 	-cross google drive implemetnation (for divisonal photos) (LOW PRIORITY GOAL FOR NOW!)
