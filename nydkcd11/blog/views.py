@@ -22,8 +22,15 @@ def index(request):
 	return render(request, 'blog/index.html',{'posts':posts})
 def article(request):
 	articles = Article.objects.order_by('-pk').reverse()
+	paginator = Paginator(articles,5)
+	page = request.GET.get('page')
+	try:
+		articles = paginator.page(page)
+	except PageNotAnInteger:
+		articles = paginator.page(1)
+	except EmptyPagE:
+		articles = paginator.page(paginator, num_pages)
 	return render(request, 'blog/newslist.html',{'articles':articles})
-	return HttpResponse("full article page")
 def detail(request, post_id):
 	'''
 	try:
