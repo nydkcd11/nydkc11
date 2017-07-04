@@ -21,7 +21,7 @@ def index(request):
 		posts = paginator.page(paginator,num_pages)
 	return render(request, 'blog/index.html',{'posts':posts})
 def article(request):
-	articles = Article.objects.order_by('-pk').reverse()
+	articles = Article.objects.order_by('-pk')
 	paginator = Paginator(articles,5)
 	page = request.GET.get('page')
 	try:
