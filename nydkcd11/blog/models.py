@@ -13,6 +13,8 @@ class Post(models.Model):
 		return self.pub_date >= timezone.now() - datetime.timedelta(days=1)
 	def get_absolute_url(self):
 		return reverse('blog:detail',kwargs = {'post_id':self.id})
+	class Meta:
+		ordering = ['pub_date']
 class Image(models.Model):
 	post = models.ForeignKey(Post, on_delete = models.CASCADE)
 	title = models.CharField(max_length = 1000)
