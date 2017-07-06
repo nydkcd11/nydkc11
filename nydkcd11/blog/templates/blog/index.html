@@ -16,7 +16,7 @@
 		{% for video in post.video_set.all %}
 			{%video video.video '100% x 480' %}
 		{% endfor %}
-		{% if post.link_set.all.exists  or post.newsletter_set.all.exists %}
+		{% if post.link_set.all.exists  or post.newsletter_set.all.exists or post.minutes_set.all.exists %}
 			<h3>Links</h3>
 		{% endif %}
 		<ul>
@@ -26,6 +26,11 @@
 			{% if post.newsletter_set.all.exists %}
 				{% for newsletter in post.newsletter_set.all %}
 					<li><a href = "{{newsletter.url}}" target = "_blank">{{newsletter.month}} Newsletter</a></li>
+				{% endfor %}
+			{% endif %}
+			{% if post.minutes_set.all.exists %}
+				{% for minute in post.minutes_set.all %}
+					<li><a href = "i{{minute.url}}" target = "_blank">{{minute}}</a></li>
 				{% endfor %}
 			{% endif %}
 		</ul>

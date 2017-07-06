@@ -19,7 +19,7 @@
 {% for video in post.video_set.all %}
 	{% video video.video '100%x480' %}
 {% endfor %}
-{% if post.link_set.all.exists  or post.newsletter_set.all.exists %}
+{% if post.link_set.all.exists  or post.newsletter_set.all.exists  or post.minutes_set.all.exists %}
 	<h3>Links</h3>
 {% endif %}
 <ul>
@@ -31,7 +31,11 @@
 			<li><a href = "{{newsletter.url}}" target = "_blank">{{newsletter.month}} Newsletter</a></li>
 		{% endfor %}
 	{% endif %}
-
+	{% if post.minutes_set.all.exists %}
+		{% for minute in post.minutes_set.all %}
+			<li><a href = "{{minute.url}}">{{minute}}</a></li>
+		{% endfor %}
+	{% endif %}
 </ul>
 {% if post.image_set.all.exists %}<h3>Images</h3>{% endif %}
 <ul class = "first">

@@ -7,6 +7,7 @@ class Newsletter(models.Model):
 	def __str__(self):
 		return str(self.month)
 class Minutes(models.Model):
+	post = models.ForeignKey(Post, on_delete = models.CASCADE)
 	month = models.DateField()
 	url = models.CharField(max_length=100)
 	'''
