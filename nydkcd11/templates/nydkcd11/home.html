@@ -24,15 +24,15 @@
 							<div class = "item active">
 								<img src = {{image.image.url}} class = "carousel-img">
 								<div class = "carousel-caption">
-									<h3>{{image.title}}</h3>
+									<a href = "{% url 'blog:detail' image.post.id %}"><h3 style = "color: white;">{{image.title}}</h3></a>
 									<p>{{image.desc}}</p>
 								</div>
 							</div>
 						{% else %}
 							<div class = "item">
-								<img src = "{{image.image.url}}" class = "carousel-img">
+								<img src = {{image.image.url}} class = "carousel-img">
 								<div class = "carousel-caption">
-									<h3>{{image.title}}</h3>
+									<a href = "{% url 'blog:detail' image.post.id %}"><h3 style = "color: white;">{{image.title}}</h3></a>
 									<p>{{image.desc}}</p>
 								</div>
 							</div>
