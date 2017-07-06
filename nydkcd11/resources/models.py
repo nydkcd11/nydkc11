@@ -9,6 +9,7 @@ class Newsletter(models.Model):
 class Minutes(models.Model):
 	post = models.ForeignKey(Post, on_delete = models.CASCADE)
 	month = models.DateField()
+	notes = models.FileField(upload_to = 'minutes/')
 	url = models.CharField(max_length=100)
 	'''
 	def january():
