@@ -40,7 +40,7 @@ class Link(models.Model):
 		(FUNDRAISER,'Fundraisers'),
 		(CLUB, 'Club Events'),
 	)
-	event_choices=models.CharField(max_length=4,choices=EVENT_CHOICES,default=FUNDRAISER)
+	event_choices=models.CharField('Type of Event',max_length=4,choices=EVENT_CHOICES,default=FUNDRAISER)
 	def __str__(self):
 		return self.name
 class Article(models.Model):
