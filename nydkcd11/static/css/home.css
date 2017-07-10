@@ -24,4 +24,8 @@
 	#announcements ul{
 		text-align:center;	
 	}
+	.carousel-caption{
+		background:radial-gradient(black,rgba(255,0,0,0));
+	}
+
 }
