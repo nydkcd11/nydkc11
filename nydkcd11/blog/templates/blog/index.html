@@ -9,6 +9,8 @@
 		<a href = "{% url 'blog:detail' post.id %}"><h1>{{post.title}}</h1></a>  <!-- blog:detail tags  funcion specifically to this app  -->
 		<h2>{{post.author}}</h2>
 		<h2>{{post.pub_date}}</h2>
+		<p>{{post.blurb}}</p>
+		{% comment %}
 		<p>{{post.body2|linebreaks}}</p>
 		{% if post.video_set.all.exists %}
 			<h3>Videos</h3>
@@ -34,6 +36,7 @@
 				{% endfor %}
 			{% endif %}
 		</ul>
+		{% endcomment %}
 		<br/>
 		<img src = "{% static 'img/scribble.png'%}" class = "img-responsive">
 	{% endfor %}
