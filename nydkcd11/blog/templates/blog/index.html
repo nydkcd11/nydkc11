@@ -10,7 +10,7 @@
 		<a href = "{% url 'blog:detail' post.id %}"><h1>{{post.title}}</h1></a>  <!-- blog:detail tags  funcion specifically to this app  -->
 		<h2>{{post.author}}</h2>
 		{% timezone "America/New_York"%}
-		<h2>{{post.pub_date}}</h2>
+		<h2>{{post.pub_date_2}}</h2>
 		{% endtimezone %}
 		<p>{{post.blurb}}</p>
 		{% comment %}
