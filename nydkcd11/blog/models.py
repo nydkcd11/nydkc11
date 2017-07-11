@@ -5,6 +5,7 @@ class Post(models.Model):
 	title = models.CharField(max_length = 100)
 	author = models.CharField(max_length = 50)
 	pub_date = models.DateTimeField('date publshed')
+	pub_date_2 = models.DateField('publish date')
 	body2 = models.TextField('Main Body of Text')
 	blurb = models.CharField(max_length = 300)
 	def __str__(self):
