@@ -11,7 +11,7 @@ class ArticleAdmin(admin.ModelAdmin):
 class LinkAdmin(admin.ModelAdmin):
 	list_display=('name','host','event_choices')
 class PostAdmin(admin.ModelAdmin):
-	list_display = ('title','author','pub_date')
+	list_display = ('title','author','pub_date_2')
 class VideoAdmin(AdminVideoMixin,admin.ModelAdmin):
 	list_display = ('post_title', 'post_date')
 	def post_title(self, obj):
