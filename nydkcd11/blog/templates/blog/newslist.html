@@ -7,7 +7,10 @@
 		<a href="{% url 'blog:news' article.id %}"><h1>{{article.title}}</h1></a>
 		<h2>{{article.author}}</h2>
 		<h2>Posted in the {{article.date}} Newsletter</h2>
+		<p>{{article.blurb}}</p>
+		{% comment %}
 		<p>{{article.body}}</p>
+		{% endcomment %}
 		<img src = "{% static 'img/scribble2.png' %}" class = "img-responsive">
 	{% endfor %}
 {% if articles.has_other_pages %}
