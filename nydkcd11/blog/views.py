@@ -6,7 +6,7 @@ from django.core.paginator import Paginator, EmptyPage, PageNotAnInteger
 # Create your views here.
 def index(request):
 	#latest_post_list = Post.objects.order_by('-pub_date')[:5]
-	latest_post_list = Post.objects.order_by('-pub_date')
+	latest_post_list = Post.objects.order_by('-pub_date_2')
 	template = loader.get_template('blog/index.html')
 	context = {
 		'latest_post_list': latest_post_list,	

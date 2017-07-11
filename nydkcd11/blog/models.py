@@ -4,7 +4,6 @@ from django.core.urlresolvers import reverse
 class Post(models.Model):
 	title = models.CharField(max_length = 100)
 	author = models.CharField(max_length = 50)
-	pub_date = models.DateTimeField('date publshed')
 	pub_date_2 = models.DateField('publish date')
 	body2 = models.TextField('Main Body of Text')
 	blurb = models.CharField(max_length = 300)
@@ -15,7 +14,7 @@ class Post(models.Model):
 	def get_absolute_url(self):
 		return reverse('blog:detail',kwargs = {'post_id':self.id})
 	class Meta:
-		ordering = ['pub_date']
+		ordering = ['pub_date_2']
 class Image(models.Model):
 	post = models.ForeignKey(Post, on_delete = models.CASCADE)
 	title = models.CharField(max_length = 1000)

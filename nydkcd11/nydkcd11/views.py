@@ -7,6 +7,6 @@ def index(request):
 	length = []
 	for i in range(len(image_list)):
 		length.append(i)
-	blog_list = Post.objects.order_by('pub_date').reverse()[:4]
+	blog_list = Post.objects.order_by('pub_date_2').reverse()[:4]
 	article_list = Article.objects.order_by('-pk')[:4]
 	return render(request, 'nydkcd11/home.html',{'image_list':image_list,'length':length, 'blog_list':blog_list,'article_list':article_list,})
