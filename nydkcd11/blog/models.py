@@ -41,6 +41,7 @@ class Link(models.Model):
 		(CLUB, 'Club Events'),
 	)
 	event_choices=models.CharField('Type of Event',max_length=4,choices=EVENT_CHOICES,default=FUNDRAISER)
+	show_screen = models.BooleanField('Show on Events List?', blank=True, default=False)
 	def __str__(self):
 		return self.name
 class Article(models.Model):

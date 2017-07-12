@@ -9,7 +9,7 @@ class ImageAdmin(admin.ModelAdmin):
 class ArticleAdmin(admin.ModelAdmin):
 	list_display = ('title','author','date')
 class LinkAdmin(admin.ModelAdmin):
-	list_display=('name','host','event_choices')
+	list_display=('name','host','event_choices','show_screen')
 class PostAdmin(admin.ModelAdmin):
 	list_display = ('title','author','pub_date_2')
 class VideoAdmin(AdminVideoMixin,admin.ModelAdmin):
