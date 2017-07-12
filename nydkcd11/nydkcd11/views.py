@@ -3,7 +3,11 @@ from django.http import HttpResponse
 from blog.models import Image, Post, Article
 from contact.forms import EmailForm
 def index(request):
-	image_list = Image.objects.order_by('-post')[:6] #need way to sort by pub_date from post
+	image_master = Image.objects.order_by('-post')[0:7] #need way to sort by pub_date from post
+	image_list = []
+	for image in image_master:
+		if image.show_home==True:
+			image_list.append(image)
 	length = []
 	for i in range(len(image_list)):
 		length.append(i)

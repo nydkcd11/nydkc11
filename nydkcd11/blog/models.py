@@ -20,6 +20,7 @@ class Image(models.Model):
 	title = models.CharField(max_length = 1000)
 	desc = models.CharField(max_length = 1000)
 	image =  models.ImageField(upload_to='image_main/')
+	show_home = models.BooleanField('Show in Home Page?', blank = True, default = False)
 	def __str__(self):
 		return self.title
 class Video(models.Model):
