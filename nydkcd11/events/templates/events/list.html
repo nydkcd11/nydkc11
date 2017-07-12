@@ -1,0 +1,16 @@
+{% extends 'index.html' %}
+{% block title%}<title>Events Roster | NYDKC Division 11</title>{% endblock %}
+{% block content %}
+	<div class = "page-header"><h1>Divisional Events Roster</h1></div>
+	{% for event in roster %}
+		<h1>{{event.name}}</h1>
+		<p>Its FB event is available <a href = "{{event.url}}">here</a></p>
+		{% if event.posts.all.exists %}
+			<h2>The following posts were made about this event:</h2>
+			{% for post in event.posts.all %}
+				<h3><a href = {% url 'blog:detail' post.id %}>{{post.title}}</a></h3>
+			{% endfor %}
+		{% endif %}
+	{% endfor %}
+{% endblock %}
+

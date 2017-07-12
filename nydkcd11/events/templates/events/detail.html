@@ -1,0 +1,22 @@
+{% extends 'index.html' %}
+{% block title %}<title>{{event.name}} | NYDKC Division 11</title>{% endblock %}
+{% block content %}
+<h1><a href = "{{event.url}}" target = "_blank">{{event.name}}</a></h1>
+{% if event.posts.exists %}
+	<h2>The following posts were made for this event</h2>
+	{% for post in event.posts.all %}
+		<h3><a href = "{% url 'blog:detail' post.id %}">{{post.title}}</a></h3>
+	{% endfor %}
+	{% if links|length > 0 %}
+		<h2>Resources</h2>
+		{% if links|length > 0 %}
+			<h3>Signup Sheets</h3>
+			<ul>
+			{% for link in links %}
+				<li><a href = "{{link.url}}" target = "_blank">{{link.name}}</a></li>	
+			{% endfor %}
+			</ul>
+		{% endif %}
+	{% endif %}
+{% endif %}
+{% endblock %}
