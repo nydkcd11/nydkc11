@@ -22,7 +22,7 @@
 {% for video in post.video_set.all %}
 	{% video video.video '100%x480' %}
 {% endfor %}
-{% if post.link_set.all.exists  or post.newsletter_set.all.exists  or post.minutes_set.all.exists %}
+{% if post.link_set.all.exists  or post.newsletter_set.all.exists  or post.minutes_set.all.exists or post.other_link_set.all.exists %}
 	<h3>Links</h3>
 {% endif %}
 <ul>
@@ -36,7 +36,12 @@
 	{% endif %}
 	{% if post.minutes_set.all.exists %}
 		{% for minute in post.minutes_set.all %}
-			<li><a href = "{{minute.notes.url}}">{{minute}}</a></li>
+			<li><a href = "{{minute.notes.url}}" target = "_blank">{{minute}}</a></li>
+		{% endfor %}
+	{% endif %}
+	{% if post.links.all.exists %}
+		{% for link in post.links.all %}
+			<li><a href = "{{link.url}}" target = "_blank">{{link.name}}</a></li>
 		{% endfor %}
 	{% endif %}
 </ul>

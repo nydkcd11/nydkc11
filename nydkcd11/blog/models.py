@@ -29,7 +29,8 @@ class Video(models.Model):
 	def __str__(self):
 		return self.post.title
 class Link(models.Model):
-	link = models.ForeignKey(Post, on_delete = models.CASCADE)
+	link = models.ForeignKey(Post, on_delete = models.CASCADE, verbose_name = "Primary Post")
+	other_link = models.ManyToManyField(Post, blank=True, related_name = "links", verbose_name = "Other Related Posts")
 	name = models.CharField(max_length=30)
 	url = models.CharField(max_length=1000)
 	host = models.CharField(max_length = 50)
