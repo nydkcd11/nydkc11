@@ -5,7 +5,7 @@ class ImageAdmin(admin.ModelAdmin):
 	list_display = ('title','pub_date','post')
 	ordering = ('-post',)
 	def pub_date(self, obj):
-		return obj.post.pub_date
+		return obj.post.pub_date_2
 class ArticleAdmin(admin.ModelAdmin):
 	list_display = ('title','author','date')
 class LinkAdmin(admin.ModelAdmin):
@@ -17,7 +17,7 @@ class VideoAdmin(AdminVideoMixin,admin.ModelAdmin):
 	def post_title(self, obj):
 		return obj.post.title
 	def post_date(self, obj):
-		return obj.post.pub_date
+		return obj.post.pub_date_2
 admin.site.register(Post, PostAdmin)
 admin.site.register(Video, VideoAdmin)
 admin.site.register(Link, LinkAdmin)
