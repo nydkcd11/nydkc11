@@ -7,7 +7,7 @@
 	{% for post in event.posts.all %}
 		<h3><a href = "{% url 'blog:detail' post.id %}">{{post.title}}</a></h3>
 	{% endfor %}
-	{% if links|length > 0 %}
+	{% if links|length > 0 or images|length > 0 %}
 		<h2>Resources</h2>
 		{% if links|length > 0 %}
 			<h3>Signup Sheets</h3>
@@ -17,6 +17,11 @@
 			{% endfor %}
 			</ul>
 		{% endif %}
+		{% comment %}
+		{% if images|length > 0 %}
+			<h3>Images</h3>
+		{% endif %}
+		{% endcomment %}
 	{% endif %}
 {% endif %}
 {% endblock %}

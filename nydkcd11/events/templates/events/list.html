@@ -7,7 +7,7 @@
 		<p>Its FB event is available <a href = "{{event.url}}">here</a></p>
 		{% if event.posts.all.exists %}
 			<h2>The following posts were made about this event:</h2>
-			{% for post in posts %}
+			{% for post in event.posts.all %}
 				<h3><a href = {% url 'blog:detail' post.id %}>{{post.title}}</a></h3>
 			{% endfor %}
 		{% endif %}
