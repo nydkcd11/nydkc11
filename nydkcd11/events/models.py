@@ -9,4 +9,6 @@ class List(models.Model):
 	name = models.CharField(max_length = 100)
 	url = models.CharField(max_length=1000) #based on experience, FB event links tend to be long, so use tinyurl to shorten the length
 	posts = models.ManyToManyField(Post, blank=True, related_name = "posts")
+	def __str__(self):
+		return self.name
 #Create your models here.
