@@ -16,5 +16,6 @@ def event_detail(request, list_id):
 	for post in event.posts.all():
 		for link in post.link_set.all():
 			links.append(link)
-	return render(request, 'events/detail.html',{'event':event,'links':links})
+	posts = event.posts.all()
+	return render(request, 'events/detail.html',{'event':event,'links':links,'posts':posts})
 # Create your views here.
