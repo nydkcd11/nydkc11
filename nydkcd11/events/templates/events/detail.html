@@ -24,7 +24,17 @@
 			{% endfor %}
 			</ul>
 		{% endif %}
+		{% if videos|length > 0 %}
+			<div>
+			<h3>Videos</h3>
+			{% for video in videos %}
+				{%video video.video '100%x480' %}	
+			{% endfor %}
+			</div>
+		{% endif %}
+
 		{% if images|length > 0 %}
+			<div>
 			<h3>Images</h3>
 			<ul class = "first">
 				{% for image in images %}
@@ -33,13 +43,6 @@
 					</li>
 				{% endfor %}
 			</ul>
-		{% endif %}
-		{% if videos|length > 0 %}
-			<div>
-			<h3 style = "margin-top:5em;">Videos</h3>
-			{% for video in videos %}
-				{%video video.video '100%x480' %}	
-			{% endfor %}
 			</div>
 		{% endif %}
 	{% endif %}
