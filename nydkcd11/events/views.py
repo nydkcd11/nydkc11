@@ -16,11 +16,14 @@ def event_detail(request, list_id):
 	for post in event.posts.all():
 		for link in post.link_set.all():
 			links.append(link)
-	posts = event.posts.all()
 	#needs fixing atm
 	images = []
 	for post in event.posts.all():
 		for image in post.image_set.all():
 			images.append(image)
-	return render(request, 'events/detail.html',{'event':event,'links':links,'posts':posts,'images':images})
+	videos = []
+	for post in event.posts.all():
+		for video in post.video_set.all():
+			videos.append(video)
+	return render(request, 'events/detail.html',{'event':event,'links':links,'images':images,'videos':videos})
 # Create your views here.

@@ -1,4 +1,11 @@
 {% extends 'index.html' %}
+{% load staticfiles %}
+{% load embed_video_tags %}
+{% block csslink %}
+<link rel = "stylesheet"  type = "text/css" href = "{% static 'css/jquery.bsPhotoGallery.css' %}">
+{% endblock %}
+{% block jslink %}<script src = "{% static 'js/jquery.bsPhotoGallery.js' %}"></script>{% endblock %}
+
 {% block title %}<title>{{event.name}} | NYDKC Division 11</title>{% endblock %}
 {% block content %}
 <h1><a href = "{{event.url}}" target = "_blank">{{event.name}}</a></h1>
@@ -17,11 +24,32 @@
 			{% endfor %}
 			</ul>
 		{% endif %}
-		{% comment %}
 		{% if images|length > 0 %}
 			<h3>Images</h3>
+			<ul class = "first">
+				{% for image in images %}
+					<li style = "margin-top:0.5em; margin-bottom:0.5em;">
+						<img src = "{{image.image.url}}" alt = "{{image.post.title}}">
+					</li>
+				{% endfor %}
+			</ul>
 		{% endif %}
-		{% endcomment %}
+		{% if videos|length > 0 %}
+			<div>
+			<h3 style = "margin-top:5em;">Videos</h3>
+			{% for video in videos %}
+				{%video video.video '100%x480' %}	
+			{% endfor %}
+			</div>
+		{% endif %}
 	{% endif %}
 {% endif %}
+{% endblock %}
+{% block javascript %}
+<script>
+$('ul.first').bsPhotoGallery({
+    "classes" : "col-lg-2 col-md-4 col-sm-3 col-xs-4 col-xxs-12",
+    "hasModal" : true
+  });
+</script>
 {% endblock %}
