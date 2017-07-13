@@ -8,6 +8,7 @@
 
 {% block title %}<title>{{event.name}} | NYDKC Division 11</title>{% endblock %}
 {% block content %}
+<a href = "{% url 'events:event_list' %}" class = "btn btn-primary" role = "button">&laquo; Back to Events Roster</a>
 <h1><a href = "{{event.url}}" target = "_blank">{{event.name}}</a></h1>
 {% if event.posts.exists %}
 	<h2>The following posts were made for this event</h2>
