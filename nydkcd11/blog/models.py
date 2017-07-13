@@ -37,10 +37,12 @@ class Link(models.Model):
 	DIVISION = 'DIV'
 	FUNDRAISER = 'FUND'
 	CLUB='CLUB'
+	KIWANNIS = 'KWNS'
 	EVENT_CHOICES = (
 		(DIVISION,'Division Events'),
 		(FUNDRAISER,'Fundraisers'),
 		(CLUB, 'Club Events'),
+		(KIWANNIS, 'Kiwannis Events'),
 	)
 	event_choices=models.CharField('Type of Event',max_length=4,choices=EVENT_CHOICES,default=FUNDRAISER)
 	show_screen = models.BooleanField('Show on Events List?', blank=True, default=False)

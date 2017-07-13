@@ -17,6 +17,7 @@ def event_detail(request, list_id):
 		for link in post.link_set.all():
 			links.append(link)
 	posts = event.posts.all()
+	#needs fixing atm
 	images = []
 	for post in event.posts.all():
 		for image in post.image_set.all():
