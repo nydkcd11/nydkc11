@@ -22,7 +22,7 @@
 {% for video in post.video_set.all %}
 	{% video video.video '100%x480' %}
 {% endfor %}
-{% if post.link_set.all.exists  or post.newsletter_set.all.exists  or post.minutes_set.all.exists or post.other_link_set.all.exists %}
+{% if post.link_set.all.exists  or post.newsletter_set.all.exists  or post.minutes_set.all.exists or post.links.all.exists %}
 	<h3>Links</h3>
 {% endif %}
 <ul>
