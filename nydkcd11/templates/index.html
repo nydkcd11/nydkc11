@@ -21,6 +21,13 @@
 			<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>		
 			<link rel="stylesheet" type="text/css" href="{% static 'css/stylesheet.css' %}">
 			<script src="https://use.fontawesome.com/232a2abfd0.js"></script>
+			<style>
+					@font-face{
+						font-family: 'Anime Ace';
+						src:url('{% static "css/animeace2_reg.ttf" %}')	;
+					}
+			</style>
+
 			{% block csslink %}{% endblock %}
 			{% block jslink %}{% endblock %}
 		</head>
@@ -34,7 +41,7 @@
 							<img src = "{% static 'img/key.png' %}" style = "margin-right: auto; margin-left: auto;" class = "img-responsive">
 						</picture>
 					</a>
-					<h1 style="font-variant:small-caps;">New York District Key Club<span style = "font-weight:900;">Division 11</span></h1>
+					<h1 style="font-variant:small-caps;">New York District Key Club <span style = "font-family:'Anime Ace';">Division 11</span></h1>
 				</div>
 			</div>	
 			<nav class="navbar navbar-default">
