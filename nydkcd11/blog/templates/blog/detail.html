@@ -5,6 +5,13 @@
 {% block title %}<title>{{post}} | NYDKC Division 11</title>{% endblock %}
 {% block csslink %}
 <link rel = "stylesheet"  type = "text/css" href = "{% static 'css/jquery.bsPhotoGallery.css' %}">
+	<style>
+		@font-face{
+			font-family: 'Anime Ace';
+			src:url('{% static "css/animeace2_reg.ttf" %}')	;
+		}
+	</style>
+
 {% endblock %}
 {% block jslink %}<script src = "{% static 'js/jquery.bsPhotoGallery.js' %}"></script>{% endblock %}
 {% block content %}
@@ -15,7 +22,7 @@
 {% timezone "America/New_York" %}
 <h2>{{post.pub_date_2}}</h2>
 {% endtimezone %}
-<p>{{post.body2|linebreaks}}</p>
+<div style = "font-family:'Anime Ace';">{{post.body2|linebreaks}}</div>
 {% if post.video_set.all.exists %}
 			<h3>Videos</h3>
 {% endif %}
