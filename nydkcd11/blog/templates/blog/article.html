@@ -1,5 +1,5 @@
 {% extends 'index.html' %}
-{% block title %}<title>Article | NYDKC Division 11</title>{% endblock %}
+{% block title %}<title>{{article.title}} | NYDKC Division 11</title>{% endblock %}
 {% block content %}
 	<a role = "button" class = "btn btn-info" href = "{% url 'blog:article' %}">&laquo; Back to Articles</a>
 	<h1>Article: {{article.title}}</h1>

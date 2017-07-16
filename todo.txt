@@ -22,11 +22,7 @@ things to fix (long term):
 things to fix:
   - add google map of clubs
   - start drafting new outline for dtc page
-  - add boolean option to image that determines which images get posted on front cover
-  - add master events database that posts optionally link to
   - implement rich text fields to supersede TextFields
-  - implement model changes as described
-  - create views/tables for Events
   - figure out how to increase contributions from board (consult eric?)
   - hear suggestions from board!
   - retrofit guide to make it super specific and everything
