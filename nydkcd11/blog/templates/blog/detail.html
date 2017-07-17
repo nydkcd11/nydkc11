@@ -1,7 +1,6 @@
 {% extends 'index.html' %}
 {% load staticfiles %}
 {% load embed_video_tags %}
-{% load tz %}
 {% block title %}<title>{{post}} | NYDKC Division 11</title>{% endblock %}
 {% block csslink %}
 <link rel = "stylesheet"  type = "text/css" href = "{% static 'css/jquery.bsPhotoGallery.css' %}">
@@ -13,9 +12,7 @@
 <a role = "button" class = "btn btn-info" href = "{% url 'blog:index' %}">&laquo; Back to Announcements</a>
 <h1>{{post}}</h1>
 <h2>{{post.author}}</h2>
-{% timezone "America/New_York" %}
 <h2>{{post.pub_date_2}}</h2>
-{% endtimezone %}
 <div style = "font-family:'Anime Ace';">{{post.body2|linebreaks}}</div>
 {% if post.video_set.all.exists %}
 			<h3>Videos</h3>

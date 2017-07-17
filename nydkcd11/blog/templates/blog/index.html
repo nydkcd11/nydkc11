@@ -1,7 +1,6 @@
 {% extends 'index.html' %}
 {% load staticfiles %}
 {% load embed_video_tags  %}
-{% load tz %}
 {% block title %}<title>Announcements</title>{% endblock %}
 {% block content %}
 <div class = "page-header"><h1>Announcement List</h1></div>
@@ -9,9 +8,7 @@
 	{% for post in posts %}
 		<a href = "{% url 'blog:detail' post.id %}"><h1>{{post.title}}</h1></a>  <!-- blog:detail tags  funcion specifically to this app  -->
 		<h2>{{post.author}}</h2>
-		{% timezone "America/New_York"%}
 		<h2>{{post.pub_date_2}}</h2>
-		{% endtimezone %}
 		<p>{{post.blurb}}</p>
 		{% comment %}
 		<p>{{post.body2|linebreaks}}</p>
