@@ -1,11 +1,18 @@
 {% extends 'index.html' %}
 {% block title %}<title> Key Club FAQ's | NYDKC Division 11</title>{% endblock %}
+{% block csslink %}
+	<style>
+		p{
+			font-size:1em;	
+		}
+	</style>
+{% endblock %}
 {% block content%}
 <h1>FAQ's</h1>
 <ol>
 	{% for faq in faq_list %}
 		<b><li>{{faq.question}}</li></b>
-		<p>{{faq.answer}}</p>
+		{{faq.answer2|safe}}
 	{% endfor %}
 </ol>
 {% endblock %}
