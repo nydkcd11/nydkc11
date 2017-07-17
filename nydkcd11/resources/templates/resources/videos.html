@@ -1,11 +1,22 @@
 {% extends 'index.html' %}
-{% block title%}<title>Videos | NYDKC Division 11</title>{% endblock %}
-{% block content %}
 {% load embed_video_tags %}
+{% block title%}<title>Videos | NYDKC Division 11</title>{% endblock %}
+{% block csslink %}
+	<style>
+		.video{
+			margin-top:0.5em;
+			margin-bottom:0.5em;	
+		}
+	</style>
+{% endblock %}
+{% block content %}
 <h1>Videos</h1>
 <div style = "margin:auto; width: 90%;">
 {% for video in video_list %}
-	{% video video.video '100% x 480' %}
+	<div class = "embed-responsive embed-responsive-16by9">
+		{% video video.video '100% x 480' %}
+	</div>
+	<br>
 {% endfor %}
 </div>
 {% endblock %}

@@ -18,7 +18,10 @@
 			<h3>Videos</h3>
 {% endif %}
 {% for video in post.video_set.all %}
+	<div class = "embed-responsive embed-responsive-16by9">
 	{% video video.video '100%x480' %}
+	</div>
+	<br>
 {% endfor %}
 {% if post.link_set.all.exists  or post.newsletter_set.all.exists  or post.minutes_set.all.exists or post.links.all.exists %}
 	<h3>Links</h3>
