@@ -1,5 +1,6 @@
 from django.db import models
 from blog.models import Post
+from django.core.urlresolvers import reverse
 #Note: only one object should be registered for the DTC class. The Events class is fine.
 class DTC(models.Model):
 	title = models.CharField(max_length = 50)
@@ -11,4 +12,6 @@ class List(models.Model):
 	posts = models.ManyToManyField(Post, blank=True, related_name = "posts")
 	def __str__(self):
 		return self.name
+	def get_absolute_url(self):
+		return reverse('events:event_detail', kwargs = {'list_id':self.id})	
 #Create your models here.

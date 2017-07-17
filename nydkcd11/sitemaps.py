@@ -42,7 +42,8 @@ class EventsSitemap(Sitemap):
 	def items(self):
 		url_list = []
 		for url in eventsURLs:
-			url_list.append('events:'+url.name)
+			if url.name != 'event_detail':
+				url_list.append('events:'+url.name)
 		return url_list
 	def location(self,item):
 		return reverse(item)

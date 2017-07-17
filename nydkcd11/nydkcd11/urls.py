@@ -22,6 +22,7 @@ from django.conf.urls.static import static
 from . import views
 from sitemaps import *
 from blog.models import Post, Article
+from events.models import List
 post_dict={
 	'queryset':Post.objects.all()	
 }
@@ -29,9 +30,13 @@ post_dict={
 article_dict={
 	'queryset':Article.objects.all()	
 }
+event_dict={
+	'queryset':List.objects.all()	
+}
 sitemaps = {
-	'post':GenericSitemap(post_dict),
+	'list':GenericSitemap(post_dict),
 	'article':GenericSitemap(article_dict),
+	'event':GenericSitemap(event_dict),
 	'about':AboutSitemap(),
 	'contact':ContactSitemap(),
 	'resources':ResourcesSitemap(),
