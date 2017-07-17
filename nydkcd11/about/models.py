@@ -1,4 +1,5 @@
 from django.db import models
+from ckeditor.fields import RichTextField
 class Division(models.Model):
 	name = models.CharField(max_length = 100)
 	school = models.CharField(max_length = 75)
@@ -29,6 +30,7 @@ class School(models.Model):
 class FAQ(models.Model):
 	question = models.CharField(max_length = 300)
 	answer = models.TextField()
+	answer2 = RichTextField()
 	def __str__(self):
 		return self.question
 # Create your models here.
