@@ -8,7 +8,7 @@ def dtc(request):
 	dtc = DTC.objects.get(pk=1)
 	return render(request, 'events/events.html',{'dtc':dtc})
 def event_list(request):
-	roster = List.objects.all()
+	roster = List.objects.order_by('-pk')
 	return render(request, 'events/list.html', {'roster':roster})
 def event_detail(request, list_id):
 	event = get_object_or_404(List, pk=list_id)
