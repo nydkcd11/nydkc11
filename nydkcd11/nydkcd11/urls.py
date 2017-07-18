@@ -53,6 +53,7 @@ urlpatterns = [
 	url(r'^resources/', include('resources.urls')),
 	url(r'^forms/', include('forms.urls')),
 	url(r'^events/', include('events.urls')),
+	url(r'^projects/', include('projects.urls')),
 	url(r'^sitemap\.xml$', sitemap, {'sitemaps': sitemaps},name='django.contrib.sitemaps.views.sitemap')
 ]
 
