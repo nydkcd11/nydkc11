@@ -29,7 +29,6 @@ class School(models.Model):
 		return self.school	
 class FAQ(models.Model):
 	question = models.CharField(max_length = 300)
-	answer = models.TextField()
 	answer2 = RichTextField()
 	def __str__(self):
 		return self.question
