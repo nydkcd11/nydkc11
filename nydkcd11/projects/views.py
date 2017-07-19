@@ -5,5 +5,6 @@ def index(request):
 	return HttpResponse("response")
 def detail(request, level_id):
 	project = get_object_or_404(Level, pk=level_id)
+	return render(request, 'projects/projects.html',{'project':project})
 	return HttpResponse("test")
 # Create your views here.

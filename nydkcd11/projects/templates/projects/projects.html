@@ -1,0 +1,68 @@
+{% extends 'index.html' %}
+{% load embed_video_tags %}
+{% load staticfiles %}
+{% block title%}<title>{{project.name}}: {{project.key_level}}</title>{% endblock %}
+{% block csslink %}
+<link rel="stylesheet" type="text/css" href="{% static 'css/projects.css' %}">
+<style>
+	@media screen and (min-width:768px){
+		#top{
+			background-image:url("{{project.bkgnd_photo.url}}");	
+		}	
+	} 	
+</style>
+{% endblock %}
+{% block header %}
+<nav class="navbar navbar-inverse navbar-fixed-top">
+  <div class="container-fluid">
+    <div class="navbar-header">
+      <a class="navbar-brand" href="/">&laquo; back to NYDKC Division 11</a>
+    </div>
+    <ul class="nav navbar-nav">
+  	</ul>
+  </div>
+</nav>
+{% endblock %}
+{% block empty_content %}
+<div class = "container-fluid" id = "top">
+	<div class = "jumbotron">
+		<h1>Introducing the new {{project.key_level}}<h1>
+		<img src = "{{project.logo.url}}">
+	</div>
+</div>
+{% endblock %}
+{% block content %}
+	<br>
+	<div class = "row">
+		<div class = "col-sm-6" id = "def_short">
+			<h1>What is {{project.name}}?</h1>
+			<p>{{project.def_short|safe}}</p>
+		</div>
+		<div class = "col-sm-6">
+			<div class = "embed-responsive embed-responsive-16by9">
+				{% video project.video '480x100%' %}
+			</div>
+		</div>
+	</div>
+	<div id = "extend_desc">
+		{{project.extend_desc|safe}}
+	</div>
+	<div id = "goals">
+		<h2>These are our goals:</h2>
+		<div class = "row">
+			<div class = "col-sm-6">
+				<div class = "jumbotron" id = "goal_detail1">
+					<h2>Raise</h2>
+					<h1><b>${{project.fundrs_goal}}</b></h1>
+				</div>
+			</div>
+			<div class = "col-sm-6">
+				<div class = "jumbotron" id = "goal_detail2">
+					<h2>Serve</h2>
+					<h1><b>{{project.hours_goal}} Hours</b></h1>
+				</div>
+			</div>
+		</div>
+	</div>
+{% endblock %}
+
