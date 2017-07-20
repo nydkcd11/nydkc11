@@ -9,8 +9,7 @@ class Level(models.Model):
 	def_short = RichTextField()
 	video = EmbedVideoField()
 	extend_desc = RichTextField()
-	fundrs_goal = models.IntegerField()
-	hours_goal = models.IntegerField()
+	fundrs_goal = models.IntegerField('Fundraising Goal')
 	def __str__(self):
 		return self.key_level
 # Create your models here.
