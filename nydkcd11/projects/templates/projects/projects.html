@@ -9,14 +9,27 @@
 		#top{
 			background-image:url("{{project.bkgnd_photo.url}}");	
 		}	
+		#top > .jumbotron{
+			background:{{cover_color}};	
+		}
 	} 	
+	.goal_detail1{
+		background-color:{{box_1}};	
+	}
+	.goal_detail2{
+		color: {{box_2}};
+		border: 1px solid {{box_2}}; 
+	}
+	.goal_detail3{
+		background-color:{{box_3}};	
+	}
 </style>
 {% endblock %}
 {% block header %}
 <nav class="navbar navbar-inverse navbar-fixed-top">
   <div class="container-fluid">
     <div class="navbar-header">
-      <a class="navbar-brand" href="/">&laquo; back to NYDKC Division 11</a>
+      <a class="navbar-brand" href="/">&laquo; Back to NYDKC Division 11</a>
     </div>
     <ul class="nav navbar-nav">
   	</ul>
@@ -51,7 +64,7 @@
 		<h2>NYDKC's Goal For this Project</h2>
 		<div class = "row">
 			<div class = "col-sm-5 col-centered">
-				<div class = "jumbotron goal_detail1">
+				<div class = "jumbotron goal_detail3">
 					<h2>Raise</h2>
 					<h1><b>${{project.fundrs_goal}}</b></h1>
 				</div>
