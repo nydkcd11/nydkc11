@@ -32,6 +32,26 @@ body{
 a{
 	color:#003366;	
 }
+@font-face{
+	font-family: 'Century Gothic';
+	src: url('gothic.TTF') format('truetype');
+}
+@font-face{
+	font-family: 'Century Gothic';
+	src: url('GOTHICI.TTF');
+	font-style:italic;
+}
+@font-face{
+	font-family: 'Century Gothic';
+	src: url('GOTHICB.TTF');	
+	font-weight: bold;
+}
+@font-face{
+	font-family: 'Century Gothic';
+	src: url('GOTHICIB.TTF');
+	font-style: italic;
+	font-weight: bold;	
+}
 h1,h2,h3,h4{
 	font-family: "Century Gothic","Apple Gothic",AppleGothic,"URW Gothic L","Avant Garde",Futura,'Didact Gothic',sans-serif;
 }
