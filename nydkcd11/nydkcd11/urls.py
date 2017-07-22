@@ -23,6 +23,10 @@ from . import views
 from sitemaps import *
 from blog.models import Post, Article
 from events.models import List
+from projects.models import Level
+level_dict = {
+	'queryset':Level.objects.all()	
+}
 post_dict={
 	'queryset':Post.objects.all()	
 }
@@ -34,6 +38,7 @@ event_dict={
 	'queryset':List.objects.all()	
 }
 sitemaps = {
+	'level':GenericSitemap(level_dict),
 	'list':GenericSitemap(post_dict),
 	'article':GenericSitemap(article_dict),
 	'event':GenericSitemap(event_dict),

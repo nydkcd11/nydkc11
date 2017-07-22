@@ -1,6 +1,7 @@
 from django.db import models
 from ckeditor.fields import RichTextField
 from embed_video.fields import EmbedVideoField
+from django.core.urlresolvers import reverse
 class Level(models.Model):
 	key_level = models.CharField('Level of Key Club?', max_length = 100)
 	name = models.CharField('Name of Project', max_length=100)
@@ -12,4 +13,6 @@ class Level(models.Model):
 	fundrs_goal = models.IntegerField('Fundraising Goal')
 	def __str__(self):
 		return self.key_level
+	def get_absolute_url(self):
+		return reverse('projects:detail',kwargs={'level_id':self.id})
 # Create your models here.
