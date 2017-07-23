@@ -12,7 +12,7 @@ class Level(models.Model):
 	video = EmbedVideoField()
 	extend_desc = RichTextField()
 	fundrs_goal = models.IntegerField('Fundraising Goal')
-	slug = models.SlugField(unique=True)
+	slug = models.SlugField()
 	def __str__(self):
 		return self.key_level
 	def get_absolute_url(self):
