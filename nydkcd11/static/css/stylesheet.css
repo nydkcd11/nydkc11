@@ -14,9 +14,10 @@
 	padding:3em;
 }
 #footer_text{
-	background-color: #f58025; 
+	background-color:#eee;
 	text-align: center; 
-	color: white;
+	color: black;
+	padding:1em;
 }
 body{
 	margin:0;	
