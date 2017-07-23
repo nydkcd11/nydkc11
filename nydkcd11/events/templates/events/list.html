@@ -7,7 +7,7 @@
 	<div class = "page-header"><h1>Divisional Events Roster</h1></div>
 
 	{% for event in roster %}
-		<h1><a href = "{% url 'events:event_detail' event.id %}">{{event.name}}</a></h1>
+		<h1><a href = "{% url 'events:event_detail' event.id event.slug %}">{{event.name}}</a></h1>
 		<p>Its FB event is available <a href = "{{event.url}}">here</a></p>
 		{% if event.posts.all.exists %}
 			<h2>The following posts were made about this event:</h2>
