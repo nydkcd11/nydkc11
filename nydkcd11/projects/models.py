@@ -1,3 +1,4 @@
+from django.template.defaultfilters import slugify
 from django.db import models
 from ckeditor.fields import RichTextField
 from embed_video.fields import EmbedVideoField
@@ -11,8 +12,12 @@ class Level(models.Model):
 	video = EmbedVideoField()
 	extend_desc = RichTextField()
 	fundrs_goal = models.IntegerField('Fundraising Goal')
+	slug = models.SlugField(unique=True)
 	def __str__(self):
 		return self.key_level
 	def get_absolute_url(self):
-		return reverse('projects:detail',kwargs={'level_id':self.id})
+		return reverse('projects:detail',kwargs={'level_id':self.id,'slug':self.slug,})
+	def save(self):
+		self.slug = slugify(self.name)
+		super(Level, self).save()
 # Create your models here.

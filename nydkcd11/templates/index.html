@@ -96,7 +96,7 @@
 							<span class = "caret"</span></a>
 							<ul class = "dropdown-menu">
 								{% for project in projects %}
-									<li><a href = "{% url 'projects:detail' project.id %}">{{project.name}}</a></li>
+									<li><a href = "{% url 'projects:detail' project.id project.slug %}">{{project.name}}</a></li>
 								{% endfor %}
 							</ul>
 						</li>
