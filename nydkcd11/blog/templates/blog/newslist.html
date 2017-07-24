@@ -4,7 +4,7 @@
 {% block content %}
 <div class = "page-header"><h1>Article List</h1></div>
 	{% for article in articles %}
-		<a href="{% url 'blog:news' article.id %}"><h1>{{article.title}}</h1></a>
+		<a href="{% url 'blog:news' article.id article.slug %}"><h1>{{article.title}}</h1></a>
 		<h2>{{article.author}}</h2>
 		<h2>Posted in the {{article.date}} Newsletter</h2>
 		<p>{{article.blurb}}</p>

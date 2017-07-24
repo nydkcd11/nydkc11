@@ -57,7 +57,7 @@
 						<ul class = "list-group">
 							{% for article in article_list %}
 								<li class = "list-group-item">
-									<a href="{% url 'blog:news' article.id %}"><h2>{{article.title}}</h2></a>
+									<a href="{% url 'blog:news' article.id article.slug %}"><h2>{{article.title}}</h2></a>
 									<p>{{article.blurb}}</p>
 								</li>
 							{% endfor %}

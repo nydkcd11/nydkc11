@@ -1,3 +1,4 @@
+from django.template.defaultfilters import slugify
 from django.db import models
 from embed_video.fields import EmbedVideoField
 from django.core.urlresolvers import reverse
@@ -54,8 +55,12 @@ class Article(models.Model):
 	date = models.CharField(max_length = 100)
 	body = models.TextField()
 	blurb = models.CharField(max_length = 300)
+	slug = models.SlugField()
 	def __str__(self):
 		return self.title
 	def get_absolute_url(self):
 		return reverse('blog:news', kwargs = {'article_id':self.id})
+	def save(self):
+		self.slug = slugify(self.title)
+		super(Article, self).save()
 # Create your models here.

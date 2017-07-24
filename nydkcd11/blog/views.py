@@ -1,4 +1,4 @@
-from django.shortcuts import render, get_object_or_404
+from django.shortcuts import render, get_object_or_404, redirect
 from django.http import HttpResponse, Http404
 from django.template import loader
 from .models import Post, Article
@@ -42,6 +42,11 @@ def detail(request, post_id):
 	post = get_object_or_404(Post, pk = post_id)
 	image_list = post.image_set.all()
 	return render(request, 'blog/detail.html',{'post':post,'image_list':image_list}) #note: set to extending service
-def news(request, article_id):
+def news(request, article_id, slug):
 	article = get_object_or_404(Article, pk = article_id)
+	if article.slug != slug:
+		return redirect('blog:news', slug = article.slug, article_id = article.id)
 	return render(request, 'blog/article.html',{'article':article})
+def news_redirect(request, article_id):
+	article = get_object_or_404(Article, pk = article_id)
+	return redirect('blog:news', slug = article.slug, article_id = article.id)
