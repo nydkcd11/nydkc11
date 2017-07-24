@@ -5,7 +5,9 @@
 <link rel = "stylesheet"  type = "text/css" href = "{% static 'css/jquery.bsPhotoGallery.css' %}">
 {% endblock %}
 {% block jslink %}<script src = "{% static 'js/jquery.bsPhotoGallery.js' %}"></script>{% endblock %}
-
+{% block description %}
+	<meta name = "description" content = "Event Page for {{event.name}}. Sign up and get information on the event! | New York District Key Club Division 11">
+{% endblock %}
 {% block title %}<title>{{event.name}} | NYDKC Division 11</title>{% endblock %}
 {% block content %}
 <a href = "{% url 'events:event_list' %}" class = "btn btn-primary" role = "button">&laquo; Back to Events Roster</a>
@@ -13,7 +15,7 @@
 {% if event.posts.exists %}
 	<h2>The following posts were made for this event</h2>
 	{% for post in event.posts.all %}
-		<h3><a href = "{% url 'blog:detail' post.id %}">{{post.title}}</a></h3>
+		<h3><a href = "{% url 'blog:detail' post.id post.slug %}">{{post.title}}</a></h3>
 	{% endfor %}
 	{% if links|length > 0 or images|length > 0 %}
 		<h2>Resources</h2>

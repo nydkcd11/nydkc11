@@ -2,6 +2,9 @@
 {% load embed_video_tags %}
 {% load staticfiles %}
 {% block title%}<title>{{project.name}}: {{project.key_level}}</title>{% endblock %}
+{% block description %}
+	<meta name = "description" content = "Introducing the District {{project.key_level}}: {{project.name}}! | New York District Key Club Division 11">
+{% endblock %}
 {% block csslink %}
 <link rel="stylesheet" type="text/css" href="{% static 'css/projects.css' %}">
 <style>
