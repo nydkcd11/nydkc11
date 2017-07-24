@@ -14,7 +14,7 @@ class Post(models.Model):
 	def was_published_recently(self):
 		return self.pub_date >= timezone.now() - datetime.timedelta(days=1)
 	def get_absolute_url(self):
-		return reverse('blog:detail',kwargs = {'post_id':self.id})
+		return reverse('blog:detail',kwargs = {'post_id':self.id, 'slug':self.slug})
 	def save(self):
 		self.slug = slugify(self.title)
 		super(Post, self).save()

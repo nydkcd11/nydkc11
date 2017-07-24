@@ -51,7 +51,7 @@ class BlogSitemap(Sitemap):
 	def items(self):
 		url_list = []
 		for url in blogURLs:
-			if url.name != 'detail' and url.name != 'news' and url.name != 'news_redirect':
+			if url.name != 'detail' and url.name != 'news' and url.name != 'news_redirect' and url.name != 'detail_redirect':
 				url_list.append('blog:'+url.name)
 		return url_list
 	def location(self, item):
