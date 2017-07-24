@@ -6,7 +6,7 @@
 <div class = "page-header"><h1>Announcement List</h1></div>
 {% if posts %}
 	{% for post in posts %}
-		<a href = "{% url 'blog:detail' post.id %}"><h1>{{post.title}}</h1></a>  <!-- blog:detail tags  funcion specifically to this app  -->
+		<a href = "{% url 'blog:detail' post.id post.slug %}"><h1>{{post.title}}</h1></a>  <!-- blog:detail tags  funcion specifically to this app  -->
 		<h2>{{post.author}}</h2>
 		<h2>{{post.pub_date_2}}</h2>
 		<p>{{post.blurb}}</p>

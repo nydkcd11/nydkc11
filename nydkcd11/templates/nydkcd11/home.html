@@ -24,7 +24,7 @@
 							<div class = "item active">
 								<img src = {{image.image.url}} class = "carousel-img">
 								<div class = "carousel-caption">
-									<a href = "{% url 'blog:detail' image.post.id %}"><h3 style = "color: white;">{{image.title}}</h3></a>
+									<a href = "{% url 'blog:detail' image.post.id image.post.slug %}"><h3 style = "color: white;">{{image.title}}</h3></a>
 									<p>{{image.desc}}</p>
 								</div>
 							</div>
@@ -32,7 +32,7 @@
 							<div class = "item">
 								<img src = {{image.image.url}} class = "carousel-img">
 								<div class = "carousel-caption">
-									<a href = "{% url 'blog:detail' image.post.id %}"><h3 style = "color: white;">{{image.title}}</h3></a>
+									<a href = "{% url 'blog:detail' image.post.id image.post.slug %}"><h3 style = "color: white;">{{image.title}}</h3></a>
 									<p>{{image.desc}}</p>
 								</div>
 							</div>
@@ -69,7 +69,7 @@
 						<ul class = "list-group">
 							{% for post in blog_list %}
 								<li class = "list-group-item">
-									<a href="{% url 'blog:detail' post.id %}"><h2>{{post.title}}</h2></a>
+									<a href="{% url 'blog:detail' post.id post.slug %}"><h2>{{post.title}}</h2></a>
 									<p>{{post.blurb}}</p>
 								</li>
 							{% endfor %}

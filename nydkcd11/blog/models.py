@@ -8,14 +8,19 @@ class Post(models.Model):
 	pub_date_2 = models.DateField('publish date')
 	body2 = models.TextField('Main Body of Text')
 	blurb = models.CharField(max_length = 300)
+	slug = models.SlugField()
 	def __str__(self):
 		return self.title
 	def was_published_recently(self):
 		return self.pub_date >= timezone.now() - datetime.timedelta(days=1)
 	def get_absolute_url(self):
 		return reverse('blog:detail',kwargs = {'post_id':self.id})
+	def save(self):
+		self.slug = slugify(self.title)
+		super(Post, self).save()
 	class Meta:
 		ordering = ['pub_date_2']
+	
 class Image(models.Model):
 	post = models.ForeignKey(Post, on_delete = models.CASCADE)
 	title = models.CharField(max_length = 1000)

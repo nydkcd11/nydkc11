@@ -31,7 +31,7 @@ def article(request):
 	except EmptyPagE:
 		articles = paginator.page(paginator, num_pages)
 	return render(request, 'blog/newslist.html',{'articles':articles})
-def detail(request, post_id):
+def detail(request, post_id, slug):
 	'''
 	try:
 		post = Post.objects.get(pk=post_id)
@@ -41,7 +41,12 @@ def detail(request, post_id):
 	'''
 	post = get_object_or_404(Post, pk = post_id)
 	image_list = post.image_set.all()
+	if post.slug != slug:
+		return redirect('blog:detail', slug = post.slug, post_id = post.id)
 	return render(request, 'blog/detail.html',{'post':post,'image_list':image_list}) #note: set to extending service
+def detail_redirect(request, post_id):
+	post = get_object_or_404(Post, pk = post_id)
+	return redirect('post:detail', slug = post.slug, post_id = post.id)
 def news(request, article_id, slug):
 	article = get_object_or_404(Article, pk = article_id)
 	if article.slug != slug:
