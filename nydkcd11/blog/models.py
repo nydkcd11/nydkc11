@@ -59,7 +59,7 @@ class Article(models.Model):
 	def __str__(self):
 		return self.title
 	def get_absolute_url(self):
-		return reverse('blog:news', kwargs = {'article_id':self.id})
+		return reverse('blog:news', kwargs = {'article_id':self.id, 'slug':self.slug})
 	def save(self):
 		self.slug = slugify(self.title)
 		super(Article, self).save()
