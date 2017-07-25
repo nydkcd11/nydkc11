@@ -1,7 +1,7 @@
 from django.template.defaultfilters import slugify
 from django.db import models
 from blog.models import Post
-from django.core.urlresolvers import reverse
+from django.urls import reverse
 #Note: only one object should be registered for the DTC class. The Events class is fine.
 class DTC(models.Model):
 	title = models.CharField(max_length = 50)
