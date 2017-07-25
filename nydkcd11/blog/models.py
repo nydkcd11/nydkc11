@@ -1,7 +1,7 @@
 from django.template.defaultfilters import slugify
 from django.db import models
 from embed_video.fields import EmbedVideoField
-from django.core.urlresolvers import reverse
+from django.urls import reverse
 class Post(models.Model):
 	title = models.CharField(max_length = 100)
 	author = models.CharField(max_length = 50)
