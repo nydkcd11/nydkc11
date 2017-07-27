@@ -1,8 +1,24 @@
+from embed_video.fields import EmbedVideoField
+from ckeditor.fields import RichTextField
 from django.template.defaultfilters import slugify
 from django.db import models
 from blog.models import Post
 from django.urls import reverse
 #Note: only one object should be registered for the DTC class. The Events class is fine.
+class Convention(models.Model):
+	title = models.CharField(max_length = 75)
+	background_image = models.ImageField(upload_to = "conventions")
+	def_short = RichTextField()
+	video = EmbedVideoField()
+	def __str__(self):
+		return self.title
+class Part(models.Model):
+	header = models.CharField(max_length = 75)
+	body = RichTextField()
+	image = models.ImageField(upload_to="conventions")
+	convention = models.ForeignKey(Convention, on_delete = models.CASCADE)
+	def __str__(self):
+		return self.header
 class DTC(models.Model):
 	title = models.CharField(max_length = 50)
 	description = models.TextField() 

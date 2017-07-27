@@ -1,9 +1,7 @@
 from django.shortcuts import render, get_object_or_404, redirect
 from django.http import HttpResponse
-from .models import DTC, List
+from .models import DTC, List, Convention, Part
 from blog.models import Post
-def index(request):
-	return HttpResponse("This is the events root page")
 def dtc(request):
 	dtc = DTC.objects.get(pk=1)
 	return render(request, 'events/events.html',{'dtc':dtc})
@@ -31,4 +29,7 @@ def event_detail(request, list_id, slug):
 def event_redirect(request, list_id):
 	event = get_object_or_404(List, pk = list_id)
 	return redirect('events:event_detail',slug = event.slug, list_id = event.id)
+def long_event(request, convention_id):
+	convention = get_object_or_404(Convention, pk = convention_id)
+	return HttpResponse("test")
 # Create your views here.
