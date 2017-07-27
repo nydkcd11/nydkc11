@@ -31,5 +31,5 @@ def event_redirect(request, list_id):
 	return redirect('events:event_detail',slug = event.slug, list_id = event.id)
 def long_event(request, convention_id):
 	convention = get_object_or_404(Convention, pk = convention_id)
-	return HttpResponse("test")
+	return render(request, 'events/long_event.html', {'convention':convention})
 # Create your views here.

@@ -1,0 +1,49 @@
+{% extends 'index.html' %}
+{% load staticfiles %}
+{% block title %}<title>{{convention}}</title>{% endblock %}
+{% block csslink %}
+	<link rel="stylesheet" type="text/css" href="{% static 'css/long_event.css' %}">
+	<style>
+		#header{
+			background-image: url('{{convention.background_image.url}}');
+		}
+	</style>
+{% endblock %}
+{% block header%}
+<nav class="navbar navbar-inverse navbar-fixed-top">
+  <div class="container-fluid">
+    <div class="navbar-header">
+      <a class="navbar-brand" href="/">&laquo; Back to NYDKC Division 11</a>
+    </div>
+    <ul class="nav navbar-nav">
+  	</ul>
+  </div>
+</nav>
+
+{% endblock %}
+{% block empty_content %}
+<div class = "jumbotron" id = "header">
+	<div class = "container">
+		<h2>Welcome to the </h2>
+		<h1>{{convention}}</h1>
+	</div>
+</div>
+{% for section in convention.part_set.all %}
+<div class = "jumbotron section">
+	<div class = "container">
+		<div class = "row">
+			<div class = "col-md-6">
+				<h2>{{section.header}}</h2>
+				{{section.body|safe}}	
+			</div>
+			<div class = "col-md-6">
+				<img src = "{{section.image.url}}" class = "img img-responsive">
+			</div>
+		</div>
+	</div>
+</div>
+{% endfor %}
+{% endblock %}
+{% block content %}
+<p>test</p>
+{% endblock %}
