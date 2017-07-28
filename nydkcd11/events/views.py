@@ -38,5 +38,6 @@ def long_event(request, convention_id):
 		color.append(hexgen())
 	colors = zip(sections, color)
 	mobile_color = hexgen()
-	return render(request, 'events/long_event.html', {'convention':convention,'colors':colors, 'mobile_color':mobile_color})
+	color_2 = hexgen()
+	return render(request, 'events/long_event.html', {'convention':convention,'colors':colors, 'mobile_color':mobile_color, 'color_2':color_2})
 # Create your views here.
