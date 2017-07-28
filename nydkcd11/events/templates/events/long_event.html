@@ -1,5 +1,6 @@
 {% extends 'index.html' %}
 {% load staticfiles %}
+{% load embed_video_tags %}
 {% block title %}<title>{{convention}}</title>{% endblock %}
 {% block csslink %}
 	<link rel="stylesheet" type="text/css" href="{% static 'css/long_event.css' %}">
@@ -36,6 +37,21 @@
 		<h1>{{convention}}</h1>
 	</div>
 </div>
+<div class = "jumbotron section" style = "background-color:{{mobile_color}}">
+	<div class = "container">
+		<div class = "row">
+			<div class = "col-xs-6">
+				<h1>What is the {{convention}}?</h1>
+			</div>
+			<div class = "col-xs-6">
+				<div class = "embed-responsive embed-responsive-16by9">
+					{%video convention.video '680x480' %}
+				</div>
+			</div>
+		</div>
+		{{convention.def_short|safe}}
+	</div>
+</div> 
 {% for section, color in colors %}
 <div class = "jumbotron section" style = "background-color: {{ color }}">
 	<div class = "container">
