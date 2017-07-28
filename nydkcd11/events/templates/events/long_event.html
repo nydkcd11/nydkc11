@@ -4,9 +4,17 @@
 {% block csslink %}
 	<link rel="stylesheet" type="text/css" href="{% static 'css/long_event.css' %}">
 	<style>
-		#header{
-			background-image: url('{{convention.background_image.url}}');
+		@media screen and (min-width:768px){
+			#header{
+				background-image: url('{{convention.background_image.url}}');
+			}
 		}
+		@media screen and (max-width:768px){
+			#header{
+				background-color:{{mobile_color}};	
+			}		
+		}
+		
 	</style>
 {% endblock %}
 {% block header%}
@@ -28,15 +36,15 @@
 		<h1>{{convention}}</h1>
 	</div>
 </div>
-{% for section in convention.part_set.all %}
-<div class = "jumbotron section">
+{% for section, color in colors %}
+<div class = "jumbotron section" style = "background-color: {{ color }}">
 	<div class = "container">
 		<div class = "row">
-			<div class = "col-md-6">
-				<h2>{{section.header}}</h2>
+			<div class = "col-sm-6">
+				<h2>{{section}}</h2>
 				{{section.body|safe}}	
 			</div>
-			<div class = "col-md-6">
+			<div class = "col-sm-6">
 				<img src = "{{section.image.url}}" class = "img img-responsive">
 			</div>
 		</div>
@@ -45,5 +53,9 @@
 {% endfor %}
 {% endblock %}
 {% block content %}
-<p>test</p>
+<div class = "end">
+	<h1>Interested in Signing Up?</h1>
+	<h2>Visit next year for more information, or consult your school</h2>
+	<i class="fa fa-key fa-5x" aria-hidden="true"></i>
+</div>
 {% endblock %}

@@ -1,3 +1,4 @@
+from projects.colorgen import hexgen
 from django.shortcuts import render, get_object_or_404, redirect
 from django.http import HttpResponse
 from .models import DTC, List, Convention, Part
@@ -31,5 +32,11 @@ def event_redirect(request, list_id):
 	return redirect('events:event_detail',slug = event.slug, list_id = event.id)
 def long_event(request, convention_id):
 	convention = get_object_or_404(Convention, pk = convention_id)
-	return render(request, 'events/long_event.html', {'convention':convention})
+	color = []
+	sections = convention.part_set.all()
+	for section in convention.part_set.all():
+		color.append(hexgen())
+	colors = zip(sections, color)
+	mobile_color = hexgen()
+	return render(request, 'events/long_event.html', {'convention':convention,'colors':colors, 'mobile_color':mobile_color})
 # Create your views here.

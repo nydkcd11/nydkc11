@@ -12,14 +12,34 @@
 		padding: 10% 0;
 		color: white;
 	}
-	.section{
-		background-color: green;
-	}
-	.jumbotron{
-		margin:0;	
-	}
 	.center-align{
 		vertical-align: middle;	
 	}
+	.end{
+		height:50vh;
+		vertical-align:middle;
+		padding: 10% 0;
+	}
 }
-
+.section{
+	color:white;
+}
+.jumbotron{
+	margin:0;	
+}
+#header > .container{
+	text-align: center;	
+	padding: 10% 0;
+}
+.end{
+	text-align:center;	
+}
+@media screen and (max-width:768px){
+	#header > .container{
+		margin-top:5em;	
+		color:white;
+	}
+	.section{
+		text-align: center;	
+	}	
+}

@@ -4,6 +4,7 @@ from django.template.defaultfilters import slugify
 from django.db import models
 from blog.models import Post
 from django.urls import reverse
+from projects.colorgen import hexgen
 #Note: only one object should be registered for the DTC class. The Events class is fine.
 class Convention(models.Model):
 	title = models.CharField(max_length = 75)
