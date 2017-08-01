@@ -24,7 +24,7 @@ class DTC(models.Model):
 	title = models.CharField(max_length = 50)
 	description = models.TextField() 
 	image = models.ImageField(upload_to='dtc_event')
-class List(models.Model):
+class List(models.Model): #fundraisers and stuff
 	name = models.CharField(max_length = 100)
 	url = models.CharField(max_length=1000) #based on experience, FB event links tend to be long, so use tinyurl to shorten the length
 	posts = models.ManyToManyField(Post, blank=True, related_name = "posts")
@@ -36,5 +36,16 @@ class List(models.Model):
 	def save(self):
 		self.slug = slugify(self.name)
 		super(List, self).save()
-
+class Service(models.Model):
+	event_id = models.CharField(max_length=100)
+	title = models.CharField(max_length=100)
+	school = models.CharField(max_length=100)
+	location = models.CharField(max_length=100)
+	start_time = models.DateTimeField()
+	end_time = models.DateTimeField()
+	all_day = models.BooleanField()
+	description = models.TextField()
+	delete_time = models.DateTimeField(blank=True, null=True)
+	def __str__(self):
+		return self.title
 #Create your models here.
