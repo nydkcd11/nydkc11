@@ -24,7 +24,6 @@ def object_create(event_list):
 		)
 		if event['delete_dt'] is not None: #need clarification on what's delete_dt default
 			temp.delete_time = parse(event['delete_dt'])
-		print(type(temp.delete_time))
 		service_objects.append(temp)
 	return service_objects
 def dates(start,end):
@@ -33,6 +32,5 @@ def dates(start,end):
 	return service_objects
 def daily_query():
 	event_list = event_update()['events']
-	print(event_list)
 	service_objects = object_create(event_list)
 	return service_objects

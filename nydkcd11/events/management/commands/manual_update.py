@@ -11,7 +11,6 @@ class Command(BaseCommand):
 		existing_ids = []
 		for event in Service.objects.all():
 			 existing_ids.append(event.event_id)
-		print(existing_ids)
 		for service in test:
 			if service.event_id not in existing_ids: 
 				service.save()
