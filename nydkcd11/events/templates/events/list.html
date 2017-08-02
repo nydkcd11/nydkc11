@@ -1,10 +1,7 @@
 {% extends 'index.html' %}
 {% block title%}<title>Events Roster | NYDKC Division 11</title>{% endblock %}
 {% block content %}
-	<div class = "embed-responsive embed-responsive-16by9">
-		<iframe  class = "embed-responsive-item" src="https://teamup.com/ksgewfa61tnr5cckek?view=l&sidepanel=c" frameborder="0" width="100%" height="700"></iframe>	
-	</div>
-	<div class = "page-header"><h1>Divisional Events Roster</h1></div>
+		<div class = "page-header"><h1>Divisional Events Roster</h1></div>
 
 	{% for event in roster %}
 		<h1><a href = "{% url 'events:event_detail' event.id event.slug %}">{{event.name}}</a></h1>

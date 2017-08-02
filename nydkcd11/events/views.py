@@ -1,7 +1,7 @@
 from projects.colorgen import hexgen
 from django.shortcuts import render, get_object_or_404, redirect
 from django.http import HttpResponse
-from .models import DTC, List, Convention, Part
+from .models import DTC, List, Convention, Part, Service
 from blog.models import Post
 def dtc(request):
 	dtc = DTC.objects.get(pk=1)
@@ -40,4 +40,10 @@ def long_event(request, convention_id):
 	mobile_color = hexgen()
 	color_2 = hexgen()
 	return render(request, 'events/long_event.html', {'convention':convention,'colors':colors, 'mobile_color':mobile_color, 'color_2':color_2})
+def service_events(request):
+	services = Service.objects.all()
+	return render(request, 'events/service_events.html', {'services':services})	
+def service_detail(request, service_id):
+	event = get_object_or_404(Service, pk= service_id)
+	return render(request, 'events/service_detail.html', {'event':event})
 # Create your views here.

@@ -1,0 +1,23 @@
+{% extends 'index.html' %}
+{% load tz %}
+{% load static %}
+{% block title %}<title>{{event.title}} | New York District Key Club Division 11</title>{% endblock %}
+{% block description %}
+	<meta name = "description" content = "Service Event: {{event.title}} | New York District Key Club Division 11">
+{% endblock %}
+{% block content %}
+	<img src = "{% static 'img/scribble2.png' %}" class = "img img-responsive" style = "margin-bottom:1em;">
+	<a href="{% url 'events:service_events' %}" class="btn btn-info" role="button">&laquo; Back to Service Events</a>
+	<h1>{{event.title}}</h1>
+	<h2>School: {{event.school}}</h2>
+	<h2>Location: {{event.location}}</h2>
+	{% timezone "US/East-Indiana" %}
+	{% if event.all_day %}
+		<h2>{{event.start_time|date}}</h2>
+	{% else %}
+		<h2>{{event.start_time}} - {{event.end_time}}</h2>
+	{% endif %}
+	{{event.description|safe}}
+	{% endtimezone %}
+	<img src = "{% static 'img/scribble2.png' %}" class = "img img-responsive">
+{% endblock %}

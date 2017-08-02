@@ -1,0 +1,26 @@
+{% extends 'index.html' %}
+{% load tz %}
+{% block title %}<title>Service Events | New York District Key Club Division 11</title>{% endblock %}
+{% block content %}
+<div class = "embed-responsive embed-responsive-16by9">
+		<iframe  class = "embed-responsive-item" src="https://teamup.com/ksgewfa61tnr5cckek?view=l&sidepanel=c" frameborder="0" width="100%" height="700"></iframe>	
+	</div>
+<div class = "page-header">
+	<h1>Divisional Service Events</h1>
+</div>
+<h2 class = "lead">Please click here for Divisional Fundraisers</h2>
+{% for event in services %}
+	<a href = "{% url 'events:service_detail' event.id %}"><h1>{{event.title}}</h1></a>
+	<h2>School: {{event.school}}</h2>
+	<h2>Location: {{event.location}}</h2>
+	{% timezone "US/East-Indiana" %}
+	{% if event.all_day %}
+		<h2>{{event.start_time|date}}</h2>
+	{% else %}
+		<h2>{{event.start_time}} - {{event.end_time}}</h2>
+	{% endif %}
+	{{event.description|safe}}
+	{% endtimezone %}
+	<hr />
+{% endfor %}
+{% endblock %}
