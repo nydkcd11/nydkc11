@@ -46,6 +46,10 @@ class Service(models.Model):
 	all_day = models.BooleanField()
 	description = models.TextField()
 	delete_time = models.DateTimeField(blank=True, null=True)
+	slug = models.SlugField()
 	def __str__(self):
 		return self.title
+	def save(self):
+		self.slug = slugify(self.title)
+		super(Service, self).save()
 #Create your models here.

@@ -48,7 +48,12 @@ def service_events(request):
 	services = Service.objects.filter(start_time__range=(start_date,end_date))
 	#services = Service.objects.all()
 	return render(request, 'events/service_events.html', {'services':services})	
-def service_detail(request, service_id):
+def service_detail(request, service_id, slug):
 	event = get_object_or_404(Service, pk= service_id)
+	if event.slug != slug:
+		return redirect('events:service_detail', slug = event.slug, service_id = event.id)
 	return render(request, 'events/service_detail.html', {'event':event})
+def service_redirect(request, service_id):
+	event = get_object_or_404(Service, pk = service_id)
+	return redirect('events:service_detail', slug = event.slug, service_id = event.id)
 # Create your views here.

@@ -10,7 +10,7 @@
 </div>
 <h2 class = "lead">Please click here for Divisional Fundraisers</h2>
 {% for event in services %}
-	<a href = "{% url 'events:service_detail' event.id %}"><h1>{{event.title}}</h1></a>
+	<a href = "{% url 'events:service_detail' event.id event.slug %}"><h1>{{event.title}}</h1></a>
 	<h2>School: {{event.school}}</h2>
 	<h2>Location: {{event.location}}</h2>
 	{% timezone "US/East-Indiana" %}
