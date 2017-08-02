@@ -38,9 +38,9 @@ class List(models.Model): #fundraisers and stuff
 		super(List, self).save()
 class Service(models.Model):
 	event_id = models.CharField(max_length=100)
-	title = models.CharField(max_length=100)
-	school = models.CharField(max_length=100)
-	location = models.CharField(max_length=100)
+	title = models.CharField(max_length=300)
+	school = models.CharField(max_length=300)
+	location = models.CharField(max_length=300)
 	start_time = models.DateTimeField()
 	end_time = models.DateTimeField()
 	all_day = models.BooleanField()
