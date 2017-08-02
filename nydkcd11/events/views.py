@@ -3,6 +3,8 @@ from django.shortcuts import render, get_object_or_404, redirect
 from django.http import HttpResponse
 from .models import DTC, List, Convention, Part, Service
 from blog.models import Post
+from datetime import timedelta
+from django.utils import timezone
 def dtc(request):
 	dtc = DTC.objects.get(pk=1)
 	return render(request, 'events/events.html',{'dtc':dtc})
@@ -41,7 +43,10 @@ def long_event(request, convention_id):
 	color_2 = hexgen()
 	return render(request, 'events/long_event.html', {'convention':convention,'colors':colors, 'mobile_color':mobile_color, 'color_2':color_2})
 def service_events(request):
-	services = Service.objects.all()
+	start_date = timezone.now().date()	
+	end_date = start_date + timedelta(days=365)
+	services = Service.objects.filter(start_time__range=(start_date,end_date))
+	#services = Service.objects.all()
 	return render(request, 'events/service_events.html', {'services':services})	
 def service_detail(request, service_id):
 	event = get_object_or_404(Service, pk= service_id)
