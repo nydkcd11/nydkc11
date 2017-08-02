@@ -5,6 +5,7 @@ from .models import DTC, List, Convention, Part, Service
 from blog.models import Post
 from datetime import timedelta
 from django.utils import timezone
+from django.core.paginator import Paginator, EmptyPage, PageNotAnInteger
 def dtc(request):
 	dtc = DTC.objects.get(pk=1)
 	return render(request, 'events/events.html',{'dtc':dtc})
@@ -45,9 +46,19 @@ def long_event(request, convention_id):
 def service_events(request):
 	start_date = timezone.now().date()	
 	end_date = start_date + timedelta(days=365)
-	services = Service.objects.filter(start_time__range=(start_date,end_date))
-	#services = Service.objects.all()
-	return render(request, 'events/service_events.html', {'services':services})	
+	services = Service.objects.order_by('start_time').filter(start_time__range=(start_date,end_date))
+	context = {
+		'services':services
+	}
+	paginator = Paginator(services,5)
+	page = request.GET.get('page')
+	try:
+		posts = paginator.page(page)
+	except PageNotAnInteger:
+		posts = paginator.page(1)
+	except EmptyPage:
+		posts = paginator.page(paginator,num_pages)
+	return render(request, 'events/service_events.html', {'posts':posts})	
 def service_detail(request, service_id, slug):
 	event = get_object_or_404(Service, pk= service_id)
 	if event.slug != slug:
