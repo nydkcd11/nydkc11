@@ -13,6 +13,8 @@ class Convention(models.Model):
 	video = EmbedVideoField()
 	def __str__(self):
 		return self.title
+	def get_absolute_url(self):
+		return reverse('events:long_event', kwargs = {'convention_id':self.id})
 class Part(models.Model):
 	header = models.CharField(max_length = 75)
 	body = RichTextField()
@@ -52,4 +54,6 @@ class Service(models.Model):
 	def save(self):
 		self.slug = slugify(self.title)
 		super(Service, self).save()
+	def get_absolute_url(self):
+		return reverse('events:service_detail', kwargs = {'service_id':self.id, 'slug': self.slug})
 #Create your models here.

@@ -22,8 +22,14 @@ from django.conf.urls.static import static
 from . import views
 from sitemaps import *
 from blog.models import Post, Article
-from events.models import List
+from events.models import List, Service, Convention
 from projects.models import Level
+convention_dict = {
+	'queryset':Convention.objects.all()	
+}
+service_dict = {
+	'queryset':Service.objects.all()	
+}
 level_dict = {
 	'queryset':Level.objects.all()	
 }
@@ -38,6 +44,8 @@ event_dict={
 	'queryset':List.objects.all()	
 }
 sitemaps = {
+	'convention':GenericSitemap(convention_dict),
+	'service':GenericSitemap(service_dict),
 	'level':GenericSitemap(level_dict),
 	'list':GenericSitemap(post_dict),
 	'article':GenericSitemap(article_dict),
@@ -47,7 +55,7 @@ sitemaps = {
 	'resources':ResourcesSitemap(),
 	'forms':FormsSitemap(),
 	'events':EventsSitemap(),
-	'blog':BlogSitemap()
+	'blog':BlogSitemap(),
 }
 urlpatterns = [
 	url(r'^$', views.index, name = 'index'),
