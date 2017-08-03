@@ -2,6 +2,19 @@
 {% load paginate_template %}
 {% load tz %}
 {% block title %}<title>Service Events | New York District Key Club Division 11</title>{% endblock %}
+{% comment %}
+{% block csslink %}
+	<style>
+		.event_desc p{
+			white-space:pre-wrap;	
+			word-break:break-all;
+		}
+		.event_desc a{
+			white-space:pre-wrap;
+		}
+	</style>
+{% endblock %}
+{% endcomment %}
 {% block content %}
 <div class = "page-header">
 	<h1>Divisional Service Events</h1>
@@ -16,7 +29,9 @@
 	{% else %}
 		<h2>{{event.start_time}} - {{event.end_time}}</h2>
 	{% endif %}
+	<div class = "event_desc">
 	{{event.description|safe}}
+	</div>
 	{% endtimezone %}
 	<hr />
 {% endfor %}
