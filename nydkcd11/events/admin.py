@@ -7,9 +7,11 @@ class ConventionAdmin(AdminVideoMixin, admin.ModelAdmin):
 	pass
 class PartAdmin(admin.ModelAdmin):
 	list_display = ('header', 'convention')	
+class ServiceAdmin(admin.ModelAdmin):
+	list_display = ('title','school','location','start_time','end_time','all_day')
 admin.site.register(DTC)
 admin.site.register(List, ListAdmin)
 admin.site.register(Part, PartAdmin)
 admin.site.register(Convention, ConventionAdmin)
-admin.site.register(Service)
+admin.site.register(Service,ServiceAdmin)
 # Register your models here.
