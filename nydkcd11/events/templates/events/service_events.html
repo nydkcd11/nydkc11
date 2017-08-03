@@ -5,7 +5,6 @@
 <div class = "page-header">
 	<h1>Divisional Service Events</h1>
 </div>
-<h2 class = "lead">Please click here for Divisional Fundraisers</h2>
 {% for event in posts %}
 	<a href = "{% url 'events:service_detail' event.id event.slug %}"><h1>{{event.title}}</h1></a>
 	<h2>School: {{event.school}}</h2>
