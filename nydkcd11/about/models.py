@@ -24,6 +24,7 @@ class School(models.Model):
 	editor = models.CharField(max_length = 75, default = "N/A")
 	editor_email = models.CharField('Editor\'s Email', max_length=75)
 	url = models.CharField(max_length = 300, default = "#")
+	newsletter_url = models.URLField(max_length=300, default = "#")
 	image = models.ImageField(upload_to='school_photos/')
 	def __str__(self):
 		return self.school	
