@@ -75,10 +75,15 @@
 							<ul class="dropdown-menu">
 								<li><a href = "{% url 'events:service_events' %}">Service Events</a></li>
 								<li><a href = "{% url 'events:event_list'%}">Divisional Events</a></li>
-								<li><a href="{% url 'events:dtc' %}">Divisional Training Conference</a></li>
+								{% for convention in conventions %}
+									<li><a href = "{% url 'events:long_event' convention.id %}">{{convention.title}}</a></li>
+								{% endfor %}
 								<li><a href="http://nydkc.org/fall-rally/" target = "_blank">Fall Rally</a></li>
+								{% comment %}
+								<li><a href="{% url 'events:dtc' %}">Divisional Training Conference</a></li>
 								<li><a href="http://ltc.nydkc.org/" target = "_blank">Leadership Training Conference</a></li>
 								<li><a href="http://www.keyclub.org/events/convention.aspx" target = "_blank">International Convention</a></li>
+								{% endcomment %}
 							</ul>
 						</li>
 						
@@ -87,7 +92,6 @@
 							<span class="caret"></span></a>
 							<ul class="dropdown-menu">
 								<li><a href="{% url 'resources:videos' %}">Videos</a></li>
-								<!--<li><a href="#">Gallery</a></li>-->
 								<li><a href="https://issuu.com/ericzhao13/docs" target = "_blank">Newsletter</a></li>
 								<li><a href="{% url 'resources:minutes' %}">Minutes</a></li>
 								<li><a href="{% url 'blog:index' %}">Announcements</a></li>
