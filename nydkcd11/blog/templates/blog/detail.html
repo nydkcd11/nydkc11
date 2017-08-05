@@ -53,7 +53,8 @@
 <ul class = "first">
 	{% for image in image_list %}
 		<li style = "margin-top:0.5em; margin-bottom:0.5em;">
-			<img src = "{{image.image.url}}" alt = "{{post.title}}">
+			<img src = "{{image.image.url}}" alt = "{{image.title}}">
+			<p class = "text">{{image.desc}}</p>
 		</li>
 	{% endfor %}
 </ul>
