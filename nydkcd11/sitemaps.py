@@ -42,7 +42,7 @@ class EventsSitemap(Sitemap):
 	def items(self):
 		url_list = []
 		for url in eventsURLs:
-			if url.name != 'event_detail' and url.name != 'event_redirect' and url.name != 'service_detail' and url.name != 'service_redirect' and url.name != 'long_event':
+			if url.name != 'event_detail' and url.name != 'event_redirect' and url.name != 'service_detail' and url.name != 'service_redirect' and url.name != 'long_event' and url.name != 'long_event_redirect':
 				url_list.append('events:'+url.name)
 		return url_list
 	def location(self,item):
