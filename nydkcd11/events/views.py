@@ -34,7 +34,7 @@ def event_detail(request, list_id, slug):
 def event_redirect(request, list_id):
 	event = get_object_or_404(List, pk = list_id)
 	return redirect('events:event_detail',slug = event.slug, list_id = event.id)
-def long_event(request, convention_id):
+def long_event(request, convention_id, slug):
 	convention = get_object_or_404(Convention, pk = convention_id)
 	color = []
 	sections = convention.part_set.all()
@@ -43,7 +43,12 @@ def long_event(request, convention_id):
 	colors = zip(sections, color)
 	mobile_color = hexgen()
 	color_2 = hexgen()
+	if slug != convention.slug:
+		return redirect('events:long_event', slug = convention.slug, convention_id = convention.id)
 	return render(request, 'events/long_event.html', {'convention':convention,'colors':colors, 'mobile_color':mobile_color, 'color_2':color_2})
+def long_event_redirect(request, convention_id):
+	convention = get_object_or_404(Convention, pk = convention_id)
+	return redirect('events:long_event', slug = convention.slug, convention_id = convention.id)
 def service_events(request):
 	start_date = timezone.now().date()	
 	end_date = start_date + timedelta(days=365)

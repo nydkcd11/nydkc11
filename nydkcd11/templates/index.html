@@ -76,7 +76,7 @@
 								<li><a href = "{% url 'events:service_events' %}">Service Events</a></li>
 								<li><a href = "{% url 'events:event_list'%}">Divisional Events</a></li>
 								{% for convention in conventions %}
-									<li><a href = "{% url 'events:long_event' convention.id %}">{{convention.title}}</a></li>
+									<li><a href = "{% url 'events:long_event' convention.id convention.slug %}">{{convention.title}}</a></li>
 								{% endfor %}
 								<li><a href="http://nydkc.org/fall-rally/" target = "_blank">Fall Rally</a></li>
 								{% comment %}

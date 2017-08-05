@@ -11,10 +11,14 @@ class Convention(models.Model):
 	background_image = models.ImageField(upload_to = "conventions")
 	def_short = RichTextField()
 	video = EmbedVideoField()
+	slug = models.SlugField()
 	def __str__(self):
 		return self.title
 	def get_absolute_url(self):
 		return reverse('events:long_event', kwargs = {'convention_id':self.id})
+	def save(self):
+		self.slug = slugify(self.title)
+		super(Convention, self).save()
 class Part(models.Model):
 	header = models.CharField(max_length = 75)
 	body = RichTextField()
