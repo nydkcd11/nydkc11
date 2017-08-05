@@ -56,7 +56,9 @@ a{
 h1,h2,h3,h4{
 	font-family: "Century Gothic","Apple Gothic",AppleGothic,"URW Gothic L","Avant Garde",Futura,'Didact Gothic',sans-serif;
 }
-
+.navbar .nav li .dropdown-menu li a {
+	white-space:normal;
+}
 
 /* NAVBAR STYLING */
 .navbar-default {
