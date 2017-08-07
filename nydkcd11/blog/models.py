@@ -23,6 +23,7 @@ class Post(models.Model):
 	
 class Image(models.Model):
 	post = models.ForeignKey(Post, on_delete = models.CASCADE)
+	other_post = models.ManyToManyField(Post, blank=True, related_name = "image_posts", verbose_name = "Other Linked Posts")
 	title = models.CharField(max_length = 1000)
 	desc = models.CharField(max_length = 1000)
 	image =  models.ImageField(upload_to='image_main/')
@@ -30,6 +31,7 @@ class Image(models.Model):
 	def __str__(self):
 		return self.title
 class Video(models.Model):
+	post_related = models.ManyToManyField(Post, blank = True, related_name = "video_posts", verbose_name = "Other Related Posts")
 	post = models.ForeignKey(Post, on_delete = models.CASCADE)
 	video = EmbedVideoField()
 	def __str__(self):
