@@ -1,15 +1,12 @@
 from projects.colorgen import hexgen
 from django.shortcuts import render, get_object_or_404, redirect
 from django.http import HttpResponse
-from .models import DTC, List, Convention, Part, Service
+from .models import List, Convention, Part, Service
 from blog.models import Post
 from datetime import timedelta
 from django.utils import timezone
 from django.core.paginator import Paginator, EmptyPage, PageNotAnInteger
 from blog.page import page
-def dtc(request):
-	dtc = DTC.objects.get(pk=1)
-	return render(request, 'events/events.html',{'dtc':dtc})
 def event_list(request):
 	roster = List.objects.order_by('-pk')
 	return render(request, 'events/list.html', {'roster':roster})

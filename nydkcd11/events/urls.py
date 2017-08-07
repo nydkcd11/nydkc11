@@ -2,7 +2,6 @@ from django.conf.urls import url
 from . import views
 app_name = 'events'
 urlpatterns= [
-	url(r'^dtc/$', views.dtc, name = 'dtc'),
 	url(r'^event_list/$', views.event_list, name = 'event_list'),
 	url(r'^event_list/(?P<list_id>[0-9]+)/(?P<slug>[\w-]+)/$', views.event_detail, name = 'event_detail'),
 	url(r'^event_list/(?P<list_id>[0-9]+)', views.event_redirect, name = 'event_redirect'),
