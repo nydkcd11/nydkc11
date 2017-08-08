@@ -3,7 +3,7 @@
 {% block description %}
 <meta name = "description" content = "{{article.blurb}} | New York District Key Club Division 11">
 {% endblock %}
-{% block title %}<title>{{article.title}} | NYDKC Division 11</title>{% endblock %}
+{% block title_tag %}{{article.title}}{% endblock %}
 {% block content %}
 	<a role = "button" class = "btn btn-info" href = "{% url 'blog:article' %}">&laquo; Back to Articles</a>
 	<h1>{{article.title}}</h1>

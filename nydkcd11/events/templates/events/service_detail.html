@@ -1,7 +1,7 @@
 {% extends 'index.html' %}
 {% load tz %}
 {% load static %}
-{% block title %}<title>{{event.title}} | New York District Key Club Division 11</title>{% endblock %}
+{% block title_tag %}{{event.title}}{% endblock %}
 {% block description %}
 	<meta name = "description" content = "{{event.title}} is a service event hosted by {{event.school}} at {{event.location}} on {{event.start_time|date}}. Come out and support {{event.school}}!| New York District Key Club Division 11">
 {% endblock %}

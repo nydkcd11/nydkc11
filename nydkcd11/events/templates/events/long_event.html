@@ -1,7 +1,7 @@
 {% extends 'index.html' %}
 {% load staticfiles %}
 {% load embed_video_tags %}
-{% block title %}<title>{{convention}}</title>{% endblock %}
+{% block title_tag %}{{convention}}{% endblock %}
 {% block csslink %}
 	<link rel="stylesheet" type="text/css" href="{% static 'css/long_event.css' %}">
 	<style>

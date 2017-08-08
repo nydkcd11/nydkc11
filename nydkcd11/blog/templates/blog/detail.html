@@ -1,7 +1,7 @@
 {% extends 'index.html' %}
 {% load staticfiles %}
 {% load embed_video_tags %}
-{% block title %}<title>{{post}} | NYDKC Division 11</title>{% endblock %}
+{% block title_tag %}{{post}}{% endblock %}
 {% block description %}
 <meta name = "description" content = "{{post.blurb}} | New York District Key Club Division 11">
 {% endblock %}
