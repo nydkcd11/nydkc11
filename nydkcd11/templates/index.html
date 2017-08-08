@@ -3,10 +3,7 @@
 <!DOCTYPE html>
 	<html>
 		<head>
-			<title>{% block title_tag %}Welcome to D11!{% endblock %} | New York District Key Club Division 11</title>
-			{% comment %}
-			{% block title %}<title>New York District Key Club Division 11</title>{% endblock %}
-			{% endcomment %}
+			<title>{% block title_tag %}Welcome Home!{% endblock %} | New York District Key Club Division 11</title>
 			<meta charset = "UTF-8">
 			<meta name="google-site-verification" content="rXWPtJKISdrSQjWoigTDwalycKbQkV7JgluiBj1gwzQ" />
 			<meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -41,6 +38,11 @@
 			{% block header %}
 			<div class = "container-fluid">
 				<div style = "margin-left: auto; margin-right: auto; length: 90%; text-align: center;" id = "top">
+					{% if number == 69 %}
+					<p style = "font-size:1em;padding:1em;">Welcome home, onii-chan! Do you want your dinner? Your bath? Or perhaps ... me?</p>
+					{% else %}
+					<p style = "font-size:1em;padding:1em;">おかえりなさい, お兄ちゃん! Your lucky number is: {{number}}</p>
+					{% endif %}
 					<a href = "/">
 						<picture>
 							<source media="(max-width:768px)" srcset="{% static 'img/keyclubsmall.png' %}">
