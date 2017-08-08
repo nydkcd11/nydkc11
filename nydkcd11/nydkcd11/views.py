@@ -21,5 +21,4 @@ def index(request):
 	start_date = timezone.now().date()
 	end_date = start_date + timedelta(days=365)
 	article_list = Service.objects.order_by('start_time').filter(start_time__range=(start_date,end_date))[0:4]
-	number = random.randint(1,101)
-	return render(request, 'nydkcd11/home.html',{'image_list':image_list,'length':length, 'blog_list':blog_list,'article_list':article_list,'number':number})
+	return render(request, 'nydkcd11/home.html',{'image_list':image_list,'length':length, 'blog_list':blog_list,'article_list':article_list})
