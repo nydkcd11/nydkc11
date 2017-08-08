@@ -56,6 +56,7 @@
 <div class = "jumbotron section" style = "background-color: {{ color }}">
 	<div class = "container">
 		<div class = "row">
+		{% if forloop.counter0|divisibleby:2 %}
 			<div class = "col-sm-6">
 				<h2>{{section}}</h2>
 				{{section.body|safe}}	
@@ -63,6 +64,15 @@
 			<div class = "col-sm-6">
 				<img src = "{{section.image.url}}" class = "img img-responsive">
 			</div>
+		{% else %}
+			<div class = "col-sm-6">
+				<img src = "{{section.image.url}}" class = "img img-responsive">
+			</div>
+			<div class = "col-sm-6">
+				<h2>{{section}}</h2>
+				{{section.body|safe}}	
+			</div>
+		{% endif %}
 		</div>
 	</div>
 </div>
