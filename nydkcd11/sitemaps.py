@@ -1,3 +1,4 @@
+from resources.views import sitemap_dict
 from django.contrib.sitemaps import Sitemap
 from about.urls import urlpatterns as aboutURLs
 from contact.urls import urlpatterns as contactURLs
@@ -26,7 +27,8 @@ class ResourcesSitemap(Sitemap):
 	def items(self):
 		url_list = []
 		for url in resourcesURLs:
-			url_list.append('resources:'+url.name)
+			if url.name != 'gallery_specific':
+				url_list.append('resources:'+url.name)
 		return url_list
 	def location(self,item):
 		return reverse(item)	
@@ -56,3 +58,8 @@ class BlogSitemap(Sitemap):
 		return url_list
 	def location(self, item):
 		return reverse(item) 
+class GallerySitemap(Sitemap):
+	def items(self):
+		return sitemap_dict()
+	def location(self, item):
+		return reverse('resources:gallery_specific',kwargs = {'year':item['year'],'month':item['month']})

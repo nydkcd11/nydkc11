@@ -29,12 +29,12 @@ def month_parse(num):
 	}
 	return month_dict[int(num)]
 def month_gen(year):
-	images = Image.objects.filter(post__pub_date_2__year = year)
 	month_groups = {}
 	for i in range(1,12):
-		month_groups[i] = Image.objects.filter(post__pub_date_2__month = i)
+		if Image.objects.filter(post__pub_date_2__year=year).filter(post__pub_date_2__month = i).exists():
+			month_groups[i]=i
 	return month_groups
-def gallery(request):
+def gallery_dict(): #equivalent of calling .objects.all() ish
 	images = Image.objects.order_by('-post')
 	images_grouped = {}
 	for image in images:
@@ -42,6 +42,16 @@ def gallery(request):
 			images_grouped[image.post.pub_date_2.year]
 		except KeyError:
 			images_grouped[image.post.pub_date_2.year] = month_gen(image.post.pub_date_2.year)	
+	return images_grouped
+def sitemap_dict():
+	thing = gallery_dict()
+	output = []
+	for year,months in thing.items():
+		for month in months:
+			output.append({'year':year,'month':month})
+	return output
+def gallery(request):
+	images_grouped = gallery_dict()
 	return render(request,'resources/gallery.html',{'images_grouped':images_grouped})
 def gallery_specific(request, year, month):
 	images = Image.objects.filter(post__pub_date_2__year = year).filter(post__pub_date_2__month = month)
