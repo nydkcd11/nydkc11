@@ -56,6 +56,7 @@ sitemaps = {
 	'forms':FormsSitemap(),
 	'events':EventsSitemap(),
 	'blog':BlogSitemap(),
+	'gallery':GallerySitemap()
 }
 urlpatterns = [
 	url(r'^$', views.index, name = 'index'),
