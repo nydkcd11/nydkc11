@@ -85,11 +85,6 @@
 									<li><a href = "{% url 'events:long_event' convention.id convention.slug %}">{{convention.title}}</a></li>
 								{% endfor %}
 								<li><a href="http://nydkc.org/fall-rally/" target = "_blank">Fall Rally</a></li>
-								{% comment %}
-								<li><a href="{% url 'events:dtc' %}">Divisional Training Conference</a></li>
-								<li><a href="http://ltc.nydkc.org/" target = "_blank">Leadership Training Conference</a></li>
-								<li><a href="http://www.keyclub.org/events/convention.aspx" target = "_blank">International Convention</a></li>
-								{% endcomment %}
 							</ul>
 						</li>
 						
@@ -102,6 +97,7 @@
 								<li><a href="{% url 'resources:minutes' %}">Minutes</a></li>
 								<li><a href="{% url 'blog:index' %}">Announcements</a></li>
 								<li><a href="{% url 'blog:article' %}">Articles</a></li>
+								<li><a href="{% url 'resources:gallery'%}">Gallery</a></li>
 							</ul>
 						</li>
 						<li class = "dropdown">

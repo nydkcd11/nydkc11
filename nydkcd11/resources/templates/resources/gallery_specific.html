@@ -1,0 +1,28 @@
+{% extends 'index.html' %}
+{% load staticfiles %}
+{% block title_tag %}{{ month }} {{ year }} Gallery{% endblock %}
+{% block csslink %}
+	<link rel = "stylesheet"  type = "text/css" href = "{% static 'css/jquery.bsPhotoGallery.css' %}">
+{% endblock %}
+{% block jslink %}<script src = "{% static 'js/jquery.bsPhotoGallery.js' %}"></script>{% endblock %}
+
+{% block content %}
+	<a href="{% url 'resources:gallery' %}" class="btn btn-info" role="button">Back to Gallery</a>
+	<h1>{{month}} {{year}} Photos</h1>
+	<ul class = "first">
+		{% for image in images %}
+			<li style = "margin-top:0.5em; margin-bottom:0.5em;">
+				<img src = "{{image.image.url}}" alt = "{{image.title}}">
+				<p class = "text">{{image.desc}}</p>
+			</li>
+		{% endfor %}
+	</ul>
+{% endblock %}
+{% block javascript %}
+<script>
+$('ul.first').bsPhotoGallery({
+    "classes" : "col-lg-2 col-md-4 col-sm-3 col-xs-4 col-xxs-12",
+    "hasModal" : true
+  });
+</script>
+{% endblock %}
