@@ -2,6 +2,7 @@ from django.template.defaultfilters import slugify
 from django.db import models
 from embed_video.fields import EmbedVideoField
 from django.urls import reverse
+from blog.image_compress import compress
 class Post(models.Model):
 	title = models.CharField(max_length = 100)
 	author = models.CharField(max_length = 50)
@@ -30,6 +31,10 @@ class Image(models.Model):
 	show_home = models.BooleanField('Show in Home Page?', blank = True, default = False)
 	def __str__(self):
 		return self.title
+	def save(self, *args, **kwargs):
+		self.image = compress(self.image)
+		super(Image,self).save()		
+		
 class Video(models.Model):
 	post_related = models.ManyToManyField(Post, blank = True, related_name = "video_posts", verbose_name = "Other Related Posts")
 	post = models.ForeignKey(Post, on_delete = models.CASCADE)
