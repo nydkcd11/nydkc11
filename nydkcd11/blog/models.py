@@ -32,7 +32,7 @@ class Image(models.Model):
 	def __str__(self):
 		return self.title
 	def save(self, *args, **kwargs):
-		#self.image = compress(self.image)
+		self.image = compress(self.image)
 		super(Image,self).save()		
 		
 class Video(models.Model):

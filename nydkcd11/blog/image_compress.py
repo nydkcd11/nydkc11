@@ -41,6 +41,9 @@ def compress(image):
 		output=BytesIO()
 		img.save(output, format='JPEG', quality=70)
 		output.seek(0)
-		image= InMemoryUploadedFile(output,'ImageField', "%s.jpg" %image.name.split('.')[0], 'image/jpeg', output.getbuffer().nbytes, None)
+		try:
+			image= InMemoryUploadedFile(output,'ImageField', "%s.jpg" %image.name.split('.')[0], 'image/jpeg', output.getbuffer().nbytes, None)
+		except AttributeError:
+			image= InMemoryUploadedFile(output,'ImageField', "%s.jpg" %image.name.split('.')[0], 'image/jpeg', len(output.getvalue()), None)
 	return image
 
