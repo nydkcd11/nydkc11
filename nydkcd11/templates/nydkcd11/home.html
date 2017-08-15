@@ -58,7 +58,7 @@
 							{% for service in article_list %}
 								<li class = "list-group-item">
 									<a href="{% url 'events:service_detail' service.id service.slug %}"><h2>{{service.title}}</h2></a>
-									<p>Day: {{service.start_time.date}}</p>
+									<p>Day: {{service.start_time.date}}, Hosted by {{service.school}}</p>
 								</li>
 							{% endfor %}
 						</ul>
