@@ -1,3 +1,4 @@
+from blog.image_compress import compress
 from django.template.defaultfilters import slugify
 from django.db import models
 from ckeditor.fields import RichTextField
@@ -18,6 +19,8 @@ class Level(models.Model):
 	def get_absolute_url(self):
 		return reverse('projects:detail',kwargs={'level_id':self.id,'slug':self.slug,})
 	def save(self):
+		self.logo = compress(self.logo)
+		self.bkgnd_photo = compress(self.bkgnd_photo)
 		self.slug = slugify(self.name)
 		super(Level, self).save()
 # Create your models here.

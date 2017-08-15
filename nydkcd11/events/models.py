@@ -1,3 +1,4 @@
+from blog.image_compress import compress
 from embed_video.fields import EmbedVideoField
 from ckeditor.fields import RichTextField
 from django.template.defaultfilters import slugify
@@ -18,12 +19,16 @@ class Convention(models.Model):
 		return reverse('events:long_event', kwargs = {'convention_id':self.id, 'slug':self.slug})
 	def save(self):
 		self.slug = slugify(self.title)
+		self.background_image = compress(self.background_image)
 		super(Convention, self).save()
 class Part(models.Model):
 	header = models.CharField(max_length = 75)
 	body = RichTextField()
 	image = models.ImageField(upload_to="conventions")
 	convention = models.ForeignKey(Convention, on_delete = models.CASCADE)
+	def save(self):
+		self.image = compress(self.image)
+		super(Part, self).save()
 	def __str__(self):
 		return self.header
 class List(models.Model): #fundraisers and stuff

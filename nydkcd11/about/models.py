@@ -1,3 +1,4 @@
+from blog.image_compress import compress
 from django.db import models
 from ckeditor.fields import RichTextField
 class Division(models.Model):
@@ -9,6 +10,9 @@ class Division(models.Model):
 	image = models.ImageField(upload_to='division_photos/')
 	def __str__(self):
 		return self.name
+	def save(self, *args, **kwargs):
+		self.image = compress(self.image) 
+		super(Division,self).save()
 class School(models.Model):
 	school = models.CharField(max_length = 100)
 	pres = models.CharField(max_length = 75, default = "N/A")
@@ -28,6 +32,9 @@ class School(models.Model):
 	image = models.ImageField(upload_to='school_photos/')
 	def __str__(self):
 		return self.school	
+	def save(self, *args, **kwargs):
+		self.image = compress(self.image)
+		super(School, self).save()
 class FAQ(models.Model):
 	question = models.CharField(max_length = 300)
 	answer2 = RichTextField()
