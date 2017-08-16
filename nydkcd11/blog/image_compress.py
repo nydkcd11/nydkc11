@@ -35,14 +35,14 @@ def save(self, *args, **kwargs):
 def compress(image):
 	if image:
 		img= Img.open(BytesIO(image.read()))
-		canvas = Img.new('RGBA',img.size,(255,255,255,255))
-		canvas.paste(img,mask=img)
 		#make changes here
-		if canvas.mode != 'RGB':
-			canvas = canvas.convert('RGB')
+		if img.mode != 'RGB':
+			canvas = Img.new('RGBA',img.size,(255,255,255,255))
+			canvas.paste(img,mask=img)
+			img = canvas.convert('RGB')
 		#img.thumbnail((image.width/1.5,image.height/1.5), Img.ANTIALIAS)
 		output=BytesIO()
-		canvas.save(output, format='JPEG', quality=70)
+		img.save(output, format='JPEG', quality=70)
 		output.seek(0)
 		try:
 			image= InMemoryUploadedFile(output,'ImageField', "%s.jpg" %image.name.split('.')[0], 'image/jpeg', output.getbuffer().nbytes, None)
