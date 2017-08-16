@@ -128,6 +128,13 @@ h1,h2,h3,h4{
 	p{
 		font-size:1.3em;	
 	}	
+	.page_header{
+		text-align:center;
+		color:white;
+		padding:5em;	
+		background-color:#003366;
+		background: linear-gradient(to bottom right, #003366, #00aeef);
+	}
 }
 .text{
 	padding:0.5em;	

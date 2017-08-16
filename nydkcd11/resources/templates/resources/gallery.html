@@ -5,7 +5,7 @@
 <link rel="stylesheet" type="text/css" href="{% static 'css/gallery.css'%}">
 {% endblock %}
 {% block content %}
-	<h1>Gallery</h1>
+	<h1 class = "page_header">Gallery</h1>
 	{% for year,months in images_grouped.items %}
 		<div class = "row text-center row_scroll">
 		{% for month in months %}

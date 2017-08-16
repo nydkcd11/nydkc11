@@ -1,7 +1,7 @@
 {% extends 'index.html' %}
 {% block title_tag %}Divisonal Events{% endblock %}
 {% block content %}
-		<div class = "page-header"><h1>Divisional Events Roster</h1></div>
+<h1 class = "page_header">Divisional Events/Fundraisers</h1>
 
 	{% for event in roster %}
 		<h1><a href = "{% url 'events:event_detail' event.id event.slug %}">{{event.name}}</a></h1>

@@ -4,7 +4,7 @@
 {% load paginate_template %}
 {% block title_tag %}Announcements{% endblock %}
 {% block content %}
-<div class = "page-header"><h1>Announcement List</h1></div>
+<h1 class = "page_header">Announcements</h1>
 {% if posts %}
 	{% for post in posts %}
 		<a href = "{% url 'blog:detail' post.id post.slug %}"><h1>{{post.title}}</h1></a>  <!-- blog:detail tags  funcion specifically to this app  -->

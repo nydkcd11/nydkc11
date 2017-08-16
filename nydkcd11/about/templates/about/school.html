@@ -1,7 +1,7 @@
 {% extends 'index.html' %}
 {% block title_tag %}School Clubs{% endblock %}
 {% block content %}
-	<h1>Division 11 School List</h1>
+	<h1 class = "page_header">Division 11 School List</h1>
 	<h2><small>Club Newsletters are available by clicking on school signs</small></h2>
 	{% for school in school_list %}
 		{% if forloop.counter0|divisibleby:3 %}

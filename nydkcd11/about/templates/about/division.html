@@ -1,7 +1,7 @@
 {% extends 'index.html' %}
 {% block title_tag %}Divisional Board Members{% endblock %}
 {% block content %}
-	<h1>Divisional Board Members</h1>
+	<h1 class = "page_header">Divisional Board Members</h1>
 	{% for member in member_list %}
 		{% if forloop.counter0|divisibleby:2 %}
 			<div class = "row">
