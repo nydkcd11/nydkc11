@@ -10,7 +10,7 @@ def videos(request):
 	}
 	return render(request,'resources/videos.html',context)
 def minutes(request):
-	minutes_list = Minutes.objects.order_by('-pk').reverse()
+	minutes_list = Minutes.objects.order_by('-month')
 	return render(request,'resources/minutes.html',{'minutes_list':minutes_list})
 def month_parse(num):
 	month_dict = {
