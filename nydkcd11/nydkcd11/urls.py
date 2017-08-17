@@ -25,23 +25,23 @@ from blog.models import Post, Article
 from events.models import List, Service, Convention
 from projects.models import Level
 convention_dict = {
-	'queryset':Convention.objects.all()	
+	'queryset':Convention.objects.order_by('pk')	
 }
 service_dict = {
-	'queryset':Service.objects.all()	
+	'queryset':Service.objects.order_by('pk')	
 }
 level_dict = {
-	'queryset':Level.objects.all()	
+	'queryset':Level.objects.order_by('pk')	
 }
 post_dict={
-	'queryset':Post.objects.all()	
+	'queryset':Post.objects.order_by('pk')	
 }
 
 article_dict={
-	'queryset':Article.objects.all()	
+	'queryset':Article.objects.order_by('pk')	
 }
 event_dict={
-	'queryset':List.objects.all()	
+	'queryset':List.objects.order_by('pk')	
 }
 sitemaps = {
 	'convention':GenericSitemap(convention_dict),
