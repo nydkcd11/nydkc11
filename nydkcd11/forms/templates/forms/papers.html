@@ -2,9 +2,9 @@
 {% block title_tag %}Paperwork{% endblock %}
 {% block content %}
 <h1 class = "page_header">Paperwork</h1>
-<ul class = "list-group">
+<div class = "list-group">
 {% for paper in papers_list %}
-	<li class = "list-group-item"><a href = "{{paper.url}}" target = "_blank">{{paper.name}}</a></li>
+	<a class = "list-group-item" href = "{{paper.url}}" target = "_blank">{{paper.name}}</a>
 {% endfor %}
-</ul>
+</div>
 {% endblock %}
