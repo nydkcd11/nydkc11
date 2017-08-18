@@ -38,7 +38,6 @@ class School(models.Model):
 		super(School, self).save()
 class FAQ(models.Model):
 	question = models.CharField(max_length = 300)
-	answer2 = RichTextField()
 	answer3 = RichTextUploadingField()
 	def __str__(self):
 		return self.question
