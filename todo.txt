@@ -1,33 +1,24 @@
-6.8.17: postpone video and image support to prioritize completion of the tutorial, and started contact us form to practice forms
-continue progress on the blog (MAINLY YOUTUBE)
-6.9.17: freeze progress to focus on net database setup
-begin artistic drafting of what the pages will look like
-6.17.17: views written for resources, and updated blog views to implement links better
-6.18.17: finished writing views, research continuing on upload issue, experimented with template extensions
-Hit a bit of a problem with inheritance efforts: i was trying to make this code overlap a 'parent class,' but in the main section class, this parent class appears in the section that's supposed to get bundled into a block, which is IN TURN supposed to be re-plugged back into the parent class. Inception. Submitted to Stack Overflow.
-6.19.17: bug still not addressed on SO. Surged progress on specific features (e.g. database building). rebuilt "about" app, and dropped "ProjectS" implementation for future. 
-6.20.17: original problem for bug was rendered irrevalent. completed contact, forms, and resources page (minus the three critical problems). completed databases for about, but submitted image upload problem to S.O. Began integration of HOME PAGE
+Long Term Proejcts:
+CSS Delivery Project
+Video  Thumbnail Optimization
+FB EVENTS API
+FB Posts API
+Migration of Support .py files into independent utilities folder (low level)
+admin guide
 
+To-Do List:
+Fix Events API events sorting service events only
+template refit: divisional service events/fundraisers
+DDOS security check
+run static img through optimizer (look for API if possible)
+inspection of loadtimes for projects and conventions pages
+is it OK for files to be accessible via direct URL entry?
+lower priviliges for committee accounts
 
-6.23.17: kickstarting transition to server
-
-6.27.17: divisional and successfull publish of server
-
-7.1.17: encountered strange Apache test page bug (or close to date). Initially problem expanded to desktop, but now isolated to mobile
-things to fix (long term):
- -make app/model for district project. hold off in division until eric publishes the divisional project (DELAY all projects until Eric publishes divisional project)
- -onging 403 forbidden bug (POSSIBLE fix, wait until need to upload new sets of images)
- -add image gallery section (VETOED)
-  
-things to fix:
-  - add google map of clubs
-  - start drafting new outline for dtc page
-  - implement rich text fields to supersede TextFields
-  - figure out how to increase contributions from board (consult eric?)
-  - hear suggestions from board!
-  - retrofit guide to make it super specific and everything
-start doing research on the following:
-	-cross google drive implemetnation (for divisonal photos) (LOW PRIORITY GOAL FOR NOW!)
-	-facebook automation (VETOED)
-	-mobile app????
+New Features Implementation List
+Python 3 upgrade
+super aesthetic "what is key club page?" (many websites don't have that apparently) (to replace current link to "About Key Club page")
+extended CDN support?
+Training Manuals (why not)
+search bar (probably google custom search)
 
