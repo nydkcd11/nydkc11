@@ -2,6 +2,7 @@ from blog.image_compress import compress
 from django.template.defaultfilters import slugify
 from django.db import models
 from ckeditor.fields import RichTextField
+from ckeditor_uploader.fields import RichTextUploadingField
 from embed_video.fields import EmbedVideoField
 from django.core.urlresolvers import reverse
 class Level(models.Model):
@@ -10,8 +11,10 @@ class Level(models.Model):
 	logo = models.ImageField(upload_to='projects/')
 	bkgnd_photo = models.ImageField(upload_to='projects/')
 	def_short = RichTextField()
+	def_short2 = RichTextUploadingField()
 	video = EmbedVideoField()
 	extend_desc = RichTextField()
+	extend_desc2 = RichTextUploadingField()
 	fundrs_goal = models.IntegerField('Fundraising Goal')
 	slug = models.SlugField()
 	def __str__(self):
