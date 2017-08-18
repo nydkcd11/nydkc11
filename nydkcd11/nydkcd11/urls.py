@@ -68,7 +68,8 @@ urlpatterns = [
 	url(r'^forms/', include('forms.urls')),
 	url(r'^events/', include('events.urls')),
 	url(r'^projects/', include('projects.urls')),
-	url(r'^sitemap\.xml$', sitemap, {'sitemaps': sitemaps},name='django.contrib.sitemaps.views.sitemap')
+	url(r'^sitemap\.xml$', sitemap, {'sitemaps': sitemaps},name='django.contrib.sitemaps.views.sitemap'),
+	url(r'^ckeditor/', include('ckeditor_uploader.urls')),
 ]
 
 urlpatterns += static(settings.MEDIA_URL,document_root=settings.MEDIA_ROOT)
