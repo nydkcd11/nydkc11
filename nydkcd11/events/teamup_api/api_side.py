@@ -5,6 +5,7 @@ import time
 import datetime
 import requests
 import json
+import pprint
 HEADERS = {
 	'Teamup-Token':'d1f0594a4a113ac17777700b8f429f5c17f89d06b9e25087357b391b39a7979b',	
 }	
@@ -61,4 +62,11 @@ def event_update(): #queries recent changes
 		return request_lib
 	else:
 		request.raise_for_status()
-	
+def subcalendar_list():
+	request = requests.get('https://api.teamup.com/%s/subcalendars' % (CALENDAR_KEY), headers = HEADERS)
+	if(request.ok):
+		request_lib = json.loads(request.content)
+		pprint.pprint(request_lib)
+		return request_lib
+	else:
+		request.raise_for_status()	
