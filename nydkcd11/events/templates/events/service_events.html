@@ -2,35 +2,20 @@
 {% load paginate_template %}
 {% load tz %}
 {% block title_tag %}Service Events{% endblock %}
-{% comment %}
-{% block csslink %}
-	<style>
-		.event_desc p{
-			white-space:pre-wrap;	
-			word-break:break-all;
-		}
-		.event_desc a{
-			white-space:pre-wrap;
-		}
-	</style>
-{% endblock %}
-{% endcomment %}
 {% block content %}
 <h1 class = "page_header">Divisional Service Events</h1>
 {% for event in posts %}
 	<a href = "{% url 'events:service_detail' event.id event.slug %}"><h1>{{event.title}}</h1></a>
 	<h2>School: {{event.school}}</h2>
 	<h2>Location: {{event.location}}</h2>
-	{% timezone "US/East-Indiana" %}
-	{% if event.all_day %}
-		<h2>{{event.start_time|date}}</h2>
+	{% if event.all_day is not True %}
+		{% timezone "US/East-Indiana" %}
+			<h2>{{event.start_time}} - {{event.end_time}}</h2>
+		{% endtimezone %}
 	{% else %}
-		<h2>{{event.start_time}} - {{event.end_time}}</h2>
+		<h2>{{event.start_time|date}}</h2>
 	{% endif %}
-	<div class = "event_desc">
 	{{event.description|safe}}
-	</div>
-	{% endtimezone %}
 	<hr />
 {% endfor %}
 {% show_pages posts %}
