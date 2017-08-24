@@ -53,6 +53,7 @@ class Service(models.Model):
 	all_day = models.BooleanField()
 	description = models.TextField()
 	delete_time = models.DateTimeField(blank=True, null=True)
+	update_time = models.DateTimeField(blank=True,null=True)
 	slug = models.SlugField(max_length=300)
 	def __str__(self):
 		return self.title

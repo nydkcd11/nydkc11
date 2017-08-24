@@ -24,6 +24,8 @@ def object_create(event_list):
 		)
 		if event['delete_dt'] is not None: #need clarification on what's delete_dt default
 			temp.delete_time = parse(event['delete_dt'])
+		if event['update_dt'] is not None:
+			temp.update_time = parse(event['update_dt'])
 		service_objects.append(temp)
 	return service_objects
 def dates(start,end):
