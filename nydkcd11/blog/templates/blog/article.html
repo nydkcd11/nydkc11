@@ -5,9 +5,11 @@
 {% endblock %}
 {% block title_tag %}{{article.title}}{% endblock %}
 {% block content %}
+	<img src = "{% static 'img/scribble2.png' %}" class = "img img-responsive" style = "margin-bottom:1em;">
 	<a role = "button" class = "btn btn-info" href = "{% url 'blog:article' %}">&laquo; Back to Articles</a>
 	<h1>{{article.title}}</h1>
 	<h2>{{article.author}}</h2>
 	<h3>Appeared in the {{article.date}} Newsletter</h3>
 	<div style = "width:90%; margin-left:3em;">{{article.body|linebreaks}}</div>
+	<img src = "{% static 'img/scribble2.png' %}" class = "img img-responsive">
 {% endblock %}
