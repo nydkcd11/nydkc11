@@ -1,0 +1,41 @@
+@media screen and (min-width:768px){
+	#cover{
+		background: linear-gradient(to bottom right, #003366, #f58025);
+		color:white;
+		height:100vh;
+		text-align:center;
+		padding: 5% 0;
+		margin-bottom:0;
+	}		
+	#cover > .container{
+		padding: 10% 0;	
+	}
+	small{
+		color:white !important;		
+	}
+	.parallax{
+		background-attachment: fixed !important;
+		background-position: center !important;
+		background-repeat: no-repeat !important;
+		background-size: cover !important;		
+	}	
+	.padding{
+		color:white;
+		background-color:#00aeef;
+		padding:1em;	
+	}
+	.kc_blue{
+		background-color:#003366;
+		color:white !important;
+	}
+	.jumbotron{
+		margin-bottom:0;	
+	}
+	#header_1{
+		background: url("../img/header_1.JPG");	
+		background-repeat: no-repeat;
+		background-position: right top;
+		background-attachment: fixed;
+		color:white;
+	}
+} 

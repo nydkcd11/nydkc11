@@ -1,0 +1,60 @@
+{% extends 'index.html' %}
+{% load staticfiles %}
+{% block csslink %}
+	<link rel="stylesheet" type="text/css" href="{% static 'css/about.css' %}">
+{% endblock %}
+{% block header %}
+<nav class="navbar navbar-inverse navbar-fixed-top">
+  <div class="container-fluid">
+    <div class="navbar-header">
+      <a class="navbar-brand" href="/">&laquo; Back to NYDKC Division 11</a>
+    </div>
+    <ul class="nav navbar-nav">
+  	</ul>
+  </div>
+</nav>
+{% endblock %}
+{% block empty_content %}
+<div class = "jumbotron parallax" id = "cover">
+	<div class = "container">
+		<h1>Caring: Our Way of Life</h1>
+		<div class = "row">
+			<div class = "col-sm-6 text-right">
+				<h1><small>What is Key Club?</small></h1>
+				<h2>Key Club is an international student-led organization where members develop <b>service, build character</b>, and <b>leadership</b>.</h2>
+			</div>
+			<div class = "col-sm-6 text-left">
+				<img src = "{% static 'img/keyclubsmall.png' %}" class = "img img-responsive center-block">
+			</div>
+		</div>
+	</div>
+</div>
+<div class = "jumbotron kc_blue">
+	<div class = "container text-center">
+		<h1><small>Our Core Values</small></h1>
+		<div class = "row">
+			<div class = "col-sm-4">
+				<h2 class = "padding">Leadership</h2>
+				<h2><small>Key club prepares the next generation of leaders right from high school. Our heiarchy gives members a unique experience, both on the local and international level</small></h2>	
+			</div>
+			<div class = "col-sm-4">
+				<h2 class = "padding">Character Building</h2>
+				<h2><small>Key Club also teaches members about the virtue of responsibility, both in context of a member, and in the context of holding office. All members are expected to go above and beyond in Key Club</small></h2>	
+			</div>
+			<div class = "col-sm-4">
+				<h2 class = "padding">Caring/Inclusiveness</h2>
+				<h2><small>At Key Club, members of all origins are considered equal. We want everyone to feel that they are actively contributing back to their community.</small></h2>	
+			</div>
+		</div>
+		<h1><small>Our Pledge</small></h1>
+		<blockquote>
+		<h1 style = "font-family:serif;">I pledge, on my honor, to uphold the Objects of Key Club International; to build my home, school and community; to serve my nation and God; and combat all forces which tend to undermine these institutions.</h1>
+		</blockquote>
+	</div>
+</div>
+<div class = "jumbotron" id = "header_1">
+	<div class = "container text-center">
+		<h1>What do We Do?</h1>
+	</div>
+</div>
+{% endblock %}

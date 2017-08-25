@@ -10,4 +10,6 @@ def clubs(request):
 def faq(request):
 	faq_list = FAQ.objects.order_by('-pk').reverse()
 	return render(request, 'about/faq.html',{'faq_list':faq_list})
+def index(request):
+	return render(request, 'about/about.html')
 # Create your views here.
