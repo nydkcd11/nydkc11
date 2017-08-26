@@ -1,5 +1,6 @@
 {% extends 'index.html' %}
 {% load staticfiles %}
+{% block title_tag %}What is Key Club?{% endblock %}
 {% block csslink %}
 	<link rel="stylesheet" type="text/css" href="{% static 'css/about.css' %}">
 {% endblock %}
@@ -15,15 +16,15 @@
 </nav>
 {% endblock %}
 {% block empty_content %}
-<div class = "jumbotron parallax white" id = "cover">
-	<div class = "container">
+<div class = "jumbotron parallax white center" id = "cover">
+	<div class = "container" style = "padding-top:3em;">
 		<h1>Caring: Our Way of Life</h1>
 		<div class = "row">
-			<div class = "col-sm-6 text-right">
+			<div class = "col-sm-6 text-right center">
 				<h1><small>What is Key Club?</small></h1>
 				<h2>Key Club is an international student-led organization where members develop <b>service, build character</b>, and <b>leadership</b>.</h2>
 			</div>
-			<div class = "col-sm-6 text-left">
+			<div class = "col-sm-6 text-left center">
 				<img src = "{% static 'img/keyclubsmall.png' %}" class = "img img-responsive center-block">
 			</div>
 		</div>
@@ -35,11 +36,11 @@
 		<div class = "row">
 			<div class = "col-sm-4">
 				<h2 class = "padding">Leadership</h2>
-				<h2><small>Key club prepares the next generation of leaders right from high school. Our heiarchy gives members a unique experience, both on the local and international level</small></h2>	
+				<h2><small>Key club prepares the next generation of leaders right from high school. Our heiarchy gives members a unique experience, both on the local and international level.</small></h2>	
 			</div>
 			<div class = "col-sm-4">
 				<h2 class = "padding">Character</h2>
-				<h2><small>Key Club also teaches members about the virtue of responsibility, both in context of a member, and in the context of holding office. All members are expected to go above and beyond in Key Club</small></h2>	
+				<h2><small>Key Club also teaches members about the virtue of responsibility, both in context of a member, and in the context of holding office. All members are expected to go above and beyond in Key Club.</small></h2>	
 			</div>
 			<div class = "col-sm-4">
 				<h2 class = "padding">Caring</h2>
@@ -64,7 +65,7 @@
 				<img src = "{% static 'img/volunteer.jpg'%}" class = "img img-responsive">
 			</div>
 			<div class = "col-sm-6">
-				<div class = "child">
+				<div class = "child center">
 					<h1>Volunteer</h1>
 					<h2>Serve your home,school, and community</h2>
 				</div>
@@ -76,7 +77,7 @@
 	<div class = "container">
 		<div class = "row">
 			<div class = "col-sm-6">
-				<div class = "child">
+				<div class = "child center">
 					<h1>Fundraise</h1>
 					<h2>Raise money for your favorite causes and make a difference in the world</h2>
 				</div>
@@ -94,7 +95,7 @@
 				<img src = "{% static 'img/learn.jpg' %}" class = "img img-responsive">
 			</div>
 			<div class = "col-sm-6">
-				<div class = "child">
+				<div class = "child center">
 					<h1>Learn</h1>
 					<h2>Learn how to be a better Key Clubber and good citizen through one of our conferences</h2>
 				</div>
@@ -106,7 +107,7 @@
 	<div class = "container">
 		<div class = "row">
 			<div class = "col-sm-6">
-				<div class = "child">
+				<div class = "child center">
 					<h1>Have Fun!</h1>
 					<h2>Enjoy high school life with Key Club</h2>
 				</div>
@@ -120,7 +121,7 @@
 <div class = "jumbotron" style = "background-color:white; color:black;">
 	<div class = "container text-center">
 		<h1>Interested in Joining?</h1>
-		<h2>See if your school has Key Club, or sign on at one of our events!</h2>
+		<h2>See if your school has Key Club, or sign on at one of our <a href = "https://nydkc11.org/events/service_events/">service events!</a></h2>
 	</div>
 </div>
 {% endblock %}
