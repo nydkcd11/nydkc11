@@ -1,7 +1,9 @@
 @media screen and (min-width:768px){
+	.white{
+		color:white !important;	
+	}
 	#cover{
 		background: linear-gradient(to bottom right, #003366, #f58025);
-		color:white;
 		height:100vh;
 		text-align:center;
 		padding: 5% 0;
@@ -20,13 +22,11 @@
 		background-size: cover !important;		
 	}	
 	.padding{
-		color:white;
 		background-color:#00aeef;
 		padding:1em;	
 	}
 	.kc_blue{
 		background-color:#003366;
-		color:white !important;
 	}
 	.jumbotron{
 		margin-bottom:0;	
@@ -36,6 +36,20 @@
 		background-repeat: no-repeat;
 		background-position: right top;
 		background-attachment: fixed;
-		color:white;
+	}
+	.kc_green{
+		background-color:#729849;
+	}
+	.kc_gold{
+		background-color:#b49759;	
+	}
+	.kc_red{
+		background-color:#c41230;	
+	}
+	.kc_orange{
+		background-color: #f58025;	
+	}
+	.child{
+		padding: 10% 0;	
 	}
 } 
