@@ -52,19 +52,19 @@
 		<h1><small>Some Key Facts</small></h1>
 		<div class = "row padding">
 			<div class = "col-md-3 text-center">
-				<h1>260,000</h1>
+				<h1 id = "count_1">260,000</h1>
 				<h3>Members</h3>
 			</div>
 			<div class = "col-md-3 text-center">
-				<h1>5,000</h1>
+				<h1 id = "count_2">5,000</h1>
 				<h3>Clubs</h3>
 			</div>
 			<div class = "col-md-3 text-center">
-				<h1>37</h1>
+				<h1 id = "count_3">37</h1>
 				<h3>Countries</h3>
 			</div>
 			<div class = "col-md-3 text-center">
-				<h1>92</h1>
+				<h1 id = "count_4">92</h1>
 				<h3>Years</h3>
 			</div>
 		</div>
@@ -147,6 +147,7 @@
 </div>
 {% endblock %}
 {% block javascript %}
+<script src = "https://cdn.jsdelivr.net/countupjs/1.8.5/countUp.min.js"></script>
 <script>
 	$(document).ready(function(){
 		/*
@@ -174,7 +175,6 @@
 			}
 			function verify(obj, classes){
 				$(window).scroll(function(event){
-					console.log("test");
 					if(obj.scroll_boolean){}
 					else if($(window).scrollTop() + $(window).height() >= obj.cutoff){
 						console.log("aaa");
@@ -184,14 +184,41 @@
 					}	
 				});	
 			}
+			//check from here
+			function createCount(obj, num){
+				obj.count = new CountUp(obj.original.attr("id"), 0, num);
+				obj.hasCount = false;
+				return obj;	
+			}
+			function startCount(obj){
+				$(window).scroll(function(event){
+					if(obj.hasCount){}
+					else if($(window).scrollTop() + $(window).height() >= obj.cutoff){
+						obj.original.css("visibility", "visible");
+						if(!obj.count.error){
+							obj.count.start();
+							obj.hasCount = true;	
+						}
+						else{console.error(obj.count.error);}	
+					}	
+				});
+			}
 			var values = $(".test").initiate();
 			var value_head = $("#core_values").initiate();
+			var num_1 = createCount($("#count_1").initiate(),260000);
+			var num_2 = createCount($("#count_2").initiate(),5000);
+			var num_3 = createCount($("#count_3").initiate(),37);
+			var num_4 = createCount($("#count_4").initiate(),92);
 			var row_1 = $("#row_1").initiate();
 			var row_2 = $("#row_2").initiate();
 			var row_3 = $("#row_3").initiate();
 			var row_4 = $("#row_4").initiate();
 			verify(value_head, "animated fadeIn");
 			verify(values, "animated slideInUp");
+			startCount(num_1);
+			startCount(num_2);
+			startCount(num_3);
+			startCount(num_4);
 			verify(row_1,"animated fadeIn");
 			verify(row_2,"animated fadeIn");
 			verify(row_3,"animated fadeIn");
