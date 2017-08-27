@@ -65,4 +65,9 @@ small{
 	#cover{
 		background-color:#B933AD;	
 	}
+	.animated{
+		transition-property:none !important;
+		transform:none !important;
+		animation: none !important;	
+	}
 }
