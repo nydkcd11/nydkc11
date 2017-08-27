@@ -6,19 +6,15 @@ FB Posts API
 Migration of Support .py files into independent utilities folder (low level)
 admin guide
 search bar using postgresql search
+What is Key Club?
 
 To-Do List:
-fix settings dev/production isssue
-draft what is key club new page
-draft implementation of "training manuals" (IRL probably useless)
+implement design of what is key club page
 continue working on admin guide (fk)
-replace announcement/article dividers with regular lines, and move the scribbles into the individuial views
-why is only 39 pages indexed right now?
+database backup!!!!!
 
-New Features Implementation List
+Uncertain Projects
 Python 3 upgrade
-super aesthetic "what is key club page?" (many websites don't have that apparently) (to replace current link to "About Key Club page")
-Training Manuals (why not)
 caching
 
 ON HOLD PROJECTS
