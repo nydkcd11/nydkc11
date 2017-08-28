@@ -32,9 +32,13 @@ class Part(models.Model):
 	def __str__(self):
 		return self.header
 class List(models.Model): #fundraisers and stuff
-	name = models.CharField(max_length = 100)
+	name = models.CharField(max_length = 100, blank=True)
 	url = models.CharField(max_length=1000) #based on experience, FB event links tend to be long, so use tinyurl to shorten the length
 	posts = models.ManyToManyField(Post, blank=True, related_name = "posts")
+	desc = models.TextField(blank=True)
+	start_time = models.DateTimeField(blank=True)
+	end_time = models.DateTimeField(blank=True)
+	location = models.CharField(max_length=100, blank=True)
 	slug = models.SlugField()
 	def __str__(self):
 		return self.name
