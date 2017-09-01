@@ -11,32 +11,6 @@ class Minutes(models.Model):
 	location = models.CharField(max_length=50, default = "Division 11")
 	month = models.DateField()
 	notes = models.FileField(upload_to = 'minutes/')
-	'''
-	def january():
-		return "January"
-	def february():
-		return "February"
-	def march():
-		return "March"
-	def april():
-		return "April"
-	def may():
-		return "May"
-	def june():
-		return "June"
-	def july():
-		return "July"
-	def august():
-		return "August"
-	def september():
-		return "September"
-	def october():
-		return "October"
-	def november():
-		return "November"
-	def december():
-		return "December"
-	'''
 	def __str__(self):
 		options = {
 			1:"January",

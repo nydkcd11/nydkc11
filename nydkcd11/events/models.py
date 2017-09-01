@@ -12,7 +12,7 @@ class Convention(models.Model):
 	background_image = models.ImageField(upload_to = "conventions")
 	def_short = RichTextField()
 	video = EmbedVideoField()
-	slug = models.SlugField()
+	slug = models.SlugField(blank=True)
 	def __str__(self):
 		return self.title
 	def get_absolute_url(self):
@@ -39,7 +39,7 @@ class List(models.Model): #fundraisers and stuff
 	start_time = models.DateTimeField(blank=True)
 	end_time = models.DateTimeField(blank=True)
 	location = models.CharField(max_length=100, blank=True)
-	slug = models.SlugField()
+	slug = models.SlugField(blank=True)
 	def __str__(self):
 		return self.name
 	def get_absolute_url(self):
@@ -58,7 +58,7 @@ class Service(models.Model):
 	description = models.TextField()
 	delete_time = models.DateTimeField(blank=True, null=True)
 	update_time = models.DateTimeField(blank=True,null=True)
-	slug = models.SlugField(max_length=300)
+	slug = models.SlugField(max_length=300,blank=True)
 	def __str__(self):
 		return self.title
 	def save(self):

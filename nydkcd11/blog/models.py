@@ -9,7 +9,7 @@ class Post(models.Model):
 	pub_date_2 = models.DateField('publish date')
 	body2 = models.TextField('Main Body of Text')
 	blurb = models.CharField(max_length = 300)
-	slug = models.SlugField()
+	slug = models.SlugField(blank=True)
 	def __str__(self):
 		return self.title
 	def was_published_recently(self):
@@ -67,7 +67,7 @@ class Article(models.Model):
 	date = models.CharField(max_length = 100)
 	body = models.TextField()
 	blurb = models.CharField(max_length = 300)
-	slug = models.SlugField()
+	slug = models.SlugField(blank=True)
 	def __str__(self):
 		return self.title
 	def get_absolute_url(self):
