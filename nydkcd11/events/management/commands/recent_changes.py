@@ -17,7 +17,9 @@ class Command(BaseCommand):
 			for event in Service.objects.all():
 				 existing_ids.append(event.event_id)
 			for service in test:
-				if service.event_id not in existing_ids and service.delete_time is None and service.update_time is not None: 
+				print(service)
+			for service in test:
+				if service.event_id not in existing_ids and service.delete_time is None and service.update_time is None: 
 					service.save()
 					self.stdout.write(self.style.SUCCESS("The event %s (%s) was succesfully pushed to the database" %(service.title, service.start_time.date())))
 				elif service.delete_time is not None:

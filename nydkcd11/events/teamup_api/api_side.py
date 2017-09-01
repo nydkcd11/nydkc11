@@ -19,7 +19,6 @@ def day_query(year_start, month_start, day_start, year_end, month_end, day_end):
 	payload = {
 		'startDate': date_start,
 		'endDate': date_end,	
-		'subcalendarId[]': '3060119',
 	}
 	#print(str(date_start) + "\n" + str(date_end))
 	request = requests.get('https://api.teamup.com/%s/events' % (CALENDAR_KEY), params = payload, headers = HEADERS)
@@ -52,7 +51,6 @@ def event_update(): #queries recent changes
 	present = datetime.datetime.now()
 	payload = {
 		'modifiedSince': str(time.mktime(datetime.datetime(present.year, present.month, present.day, 0,0,0).timetuple()))[:-2],	
-		'subcalendarId[]':'3060119',
 	}
 	#print(int(time.time()))
 	request = requests.get('https://api.teamup.com/%s/events' % (CALENDAR_KEY,), params = payload, headers = HEADERS)
