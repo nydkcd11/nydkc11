@@ -39,7 +39,7 @@ class List(models.Model): #fundraisers and stuff
 	posts = models.ManyToManyField(Post, blank=True, related_name = "posts")
 	desc = models.TextField(blank=True)
 	start_time = models.DateTimeField(blank=True)
-	end_time = models.DateTimeField(blank=True)
+	end_time = models.DateTimeField(blank=True, null = True)
 	location = models.CharField(max_length=100, blank=True)
 	slug = models.SlugField(blank=True)
 	def __str__(self):
