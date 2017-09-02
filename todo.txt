@@ -6,12 +6,13 @@ FB Posts API
 Migration of Support .py files into independent utilities folder (low level)
 admin guide
 search bar using postgresql search
-What is Key Club?
 
 To-Do List:
-implement design of what is key club page
 continue working on admin guide (fk)
 database backup!!!!!
+finish working out kinks for events api
+eliminate endtime model
+implement template changes
 
 Uncertain Projects
 Python 3 upgrade

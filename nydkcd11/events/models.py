@@ -1,3 +1,4 @@
+from dateutil.parser import parse
 from blog.image_compress import compress
 from embed_video.fields import EmbedVideoField
 from ckeditor.fields import RichTextField
@@ -6,6 +7,7 @@ from django.db import models
 from blog.models import Post
 from django.urls import reverse
 from projects.colorgen import hexgen
+from events.facebook_event_api.api_side import *
 #Note: only one object should be registered for the DTC class. The Events class is fine.
 class Convention(models.Model):
 	title = models.CharField(max_length = 75)
@@ -44,7 +46,20 @@ class List(models.Model): #fundraisers and stuff
 		return self.name
 	def get_absolute_url(self):
 		return reverse('events:event_detail', kwargs = {'list_id':self.id, 'slug':self.slug})	
+	#mop up this area and eliminate the end time model
 	def save(self):
+		try:
+			event_json = event_query(get_event_id(self.url)) 
+			self.name = event_json['name']
+			self.desc = event_json['description']
+			self.start_time = parse(event_json['start_time'])
+			try:
+				self.end_time = parse(event_json['end_time'])
+			except KeyError:
+				pass
+			self.location = event_json['place']['name']
+		except requests.exceptions.HTTPError:
+			pass
 		self.slug = slugify(self.name)
 		super(List, self).save()
 class Service(models.Model):

@@ -3,12 +3,14 @@ import json
 import pprint
 PERM_TOKEN = 'EAAHyGRmpkT8BACTeK1cKXS8142tkBWExYGavMb8BUff775CgvplF3OPZA9SSDpTHb3jXFEw3wmwFvxjklZAnOG8TQMVVotgCYqzqCpiSx5cRUvx0oz00P4UZAglZADScfuXYlInZBfMaTCAPDd3LTgK1VAELXI5NzN1b2yZCsm7QZDZD'
 HEADERS = {'access_token':PERM_TOKEN}
-def event_query():
-	event_id=111978872808697
+def get_event_id(url):
+	return url.split("/")[4]
+def event_query(event_id):
 	request = requests.get('https://graph.facebook.com/v2.10/%s' %(event_id), params=HEADERS)	
 	if(request.ok):
 		request_lib = json.loads(request.content)
 		pprint.pprint(request_lib)
+		return request_lib
 	else:
 		request.raise_for_status()
 #used to gain access to permanent token.
