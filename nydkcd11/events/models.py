@@ -38,7 +38,7 @@ class List(models.Model): #fundraisers and stuff
 	url = models.CharField(max_length=1000) #based on experience, FB event links tend to be long, so use tinyurl to shorten the length
 	posts = models.ManyToManyField(Post, blank=True, related_name = "posts")
 	desc = models.TextField(blank=True)
-	start_time = models.DateTimeField(blank=True)
+	start_time = models.DateTimeField(blank=True, null=True)
 	end_time = models.DateTimeField(blank=True, null = True)
 	location = models.CharField(max_length=100, blank=True)
 	slug = models.SlugField(blank=True)
