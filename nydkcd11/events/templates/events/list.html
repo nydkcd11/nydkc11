@@ -1,10 +1,14 @@
 {% extends 'index.html' %}
+{% load tz %}
 {% block title_tag %}Divisonal Events{% endblock %}
 {% block content %}
 <h1 class = "page_header">Divisional Events/Fundraisers</h1>
 
 	{% for event in roster %}
 		<h1><a href = "{% url 'events:event_detail' event.id event.slug %}">{{event.name}}</a></h1>
+		{% timezone "US/East-Indiana" %}
+		<h2>{{event.start_time}}, at {{event.location}}</h2>
+		{% endtimezone %}
 		<p>Its FB event is available <a href = "{{event.url}}">here</a></p>
 		{% if event.posts.all.exists %}
 			<h2>The following posts were made about this event:</h2>
@@ -12,6 +16,7 @@
 				<h3><a href = {% url 'blog:detail' post.id post.slug %}>{{post.title}}</a></h3>
 			{% endfor %}
 		{% endif %}
+		<hr />
 	{% endfor %}
 {% endblock %}
 

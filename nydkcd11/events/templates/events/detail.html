@@ -1,6 +1,7 @@
 {% extends 'index.html' %}
 {% load staticfiles %}
 {% load embed_video_tags %}
+{% load tz %}
 {% block csslink %}
 <link rel = "stylesheet"  type = "text/css" href = "{% static 'css/jquery.bsPhotoGallery.css' %}">
 {% endblock %}
@@ -12,6 +13,23 @@
 {% block content %}
 <a href = "{% url 'events:event_list' %}" class = "btn btn-primary" role = "button">&laquo; Back to Events Roster</a>
 <h1><a href = "{{event.url}}" target = "_blank">{{event.name}}</a></h1>
+{% timezone "US/East-Indiana" %}
+<h2>{{event.location}}, starting at {{event.start_time}}</h2>
+{% endtimezone %}
+<div class = "panel-group">
+	<div class = "panel panel-default">
+		<div class = "panel-heading">
+			<h4 class = "panel-title">
+				<a data-toggle = "collapse" href = "#collapse1">Event Description</a>
+			</h4>
+		</div>
+		<div id = "collapse1" class = "panel-collapse collapse">
+			<div class = "panel-body">
+				<p>{{event.desc|linebreaks}}</p>	
+			</div>
+		</div>
+	</div>
+</div>
 {% if event.posts.exists %}
 	<h2>The following posts were made for this event</h2>
 	{% for post in event.posts.all %}
@@ -31,7 +49,9 @@
 			<div>
 			<h3>Videos</h3>
 			{% for video in videos %}
-				{%video video.video '100%x480' %}	
+				<div class = "embed-responsive embed-responsive-16by9" style = "margin-bottom:1em;">
+					{%video video.video '100%x480' %}	
+				</div>
 			{% endfor %}
 			</div>
 		{% endif %}
