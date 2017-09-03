@@ -1,4 +1,5 @@
 {% extends 'index.html' %}
+{% load paginate_template %}
 {% load tz %}
 {% block title_tag %}Divisonal Events{% endblock %}
 {% block content %}
@@ -18,5 +19,6 @@
 		{% endif %}
 		<hr />
 	{% endfor %}
+	{% show_pages roster %}
 {% endblock %}
 

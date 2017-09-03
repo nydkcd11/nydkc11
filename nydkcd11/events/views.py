@@ -8,7 +8,7 @@ from django.utils import timezone
 from django.core.paginator import Paginator, EmptyPage, PageNotAnInteger
 from blog.page import page
 def event_list(request):
-	roster = List.objects.order_by('-start_time')
+	roster = page(List.objects.order_by('-start_time'),request)
 	return render(request, 'events/list.html', {'roster':roster})
 def event_detail(request, list_id, slug):
 	event = get_object_or_404(List, pk=list_id)
