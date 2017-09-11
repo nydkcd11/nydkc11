@@ -1,7 +1,4 @@
 Long Term Proejcts:
-CSS Delivery Project
-Video  Thumbnail Optimization
-FB EVENTS API
 FB Posts API
 Migration of Support .py files into independent utilities folder (low level)
 admin guide
@@ -10,9 +7,9 @@ search bar using postgresql search
 To-Do List:
 continue working on admin guide (fk)
 database backup!!!!!
-finish working out kinks for events api
-eliminate endtime model
-implement template changes
+make datefied on post datetimefield
+reverse order of dropdowns for Post objects
+begin implementation of search bar (deadline: next divisional)
 
 Uncertain Projects
 Python 3 upgrade
@@ -23,3 +20,5 @@ DDOS security check
 Events API volunteer events parsing
 static img optimization
 CDN
+Video Thumbnail Optimization
+CSS Delivery Project
