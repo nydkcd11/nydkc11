@@ -1,0 +1,73 @@
+.jumbotron{
+	margin-bottom:0;	
+}
+.kc_green{
+	background-color:#729849;
+}
+.kc_gold{
+	background-color:#b49759;	
+}
+.kc_red{
+	background-color:#c41230;	
+}
+.kc_orange{
+	background-color: #f58025;	
+}
+.white{
+	color:white !important;	
+}
+.kc_blue{
+	background-color:#003366;
+}
+small{
+	color:white !important;		
+}
+.padding{
+	background-color:#00aeef;
+	padding:1em;	
+}
+
+@media screen and (min-width:768px){
+	#cover{
+		background: linear-gradient(to bottom right, #003366, #f58025);
+		height:100vh;
+		text-align:center;
+		padding: 5% 0;
+		margin-bottom:0;
+	}		
+	#cover > .container{
+		padding: 10% 0;	
+	}
+	.parallax{
+		background-attachment: fixed !important;
+		background-position: center !important;
+		background-repeat: no-repeat !important;
+		background-size: cover !important;		
+	}	
+			
+	#header_1{
+		background: url("../img/header_1.JPG");	
+		background-repeat: no-repeat;
+		background-position: right top;
+		background-attachment: fixed;
+	}
+	.child{
+		padding: 10% 0;	
+	}
+} 
+@media screen and (max-width:767px){
+	#header_1{
+		background-color:#996633;	
+	}	
+	.center{
+		text-align:center;	
+	}
+	#cover{
+		background-color:#B933AD;	
+	}
+	.animated{
+		transition-property:none !important;
+		transform:none !important;
+		animation: none !important;	
+	}
+}

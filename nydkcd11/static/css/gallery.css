@@ -1,0 +1,18 @@
+/*
+.row_scroll{
+	overflow-x:auto;
+	white-space:nowrap;	
+}
+.row_scroll > .col-sm-4{
+	display:inline-block;
+	float:none;	
+}
+*/
+.col-sm-3 h2{
+	background-color:#b49759;
+	padding:1em;	
+	color:white;
+}
+h2 a {
+	color: white;	
+}

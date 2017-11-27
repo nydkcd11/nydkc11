@@ -1,0 +1,45 @@
+@media screen and (min-width:768px){
+	#header{
+		height:100vh;		
+		padding: 5% 0;
+		background-size:cover;
+        background-attachment: fixed;
+        background-repeat: no-repeat;
+        background-position:center;
+	}	
+	#header > .container{
+		text-align: center;	
+		padding: 10% 0;
+		color: white;
+	}
+	.center-align{
+		vertical-align: middle;	
+	}
+	.end{
+		height:50vh;
+		vertical-align:middle;
+		padding: 10% 0;
+	}
+}
+.section{
+	color:white;
+}
+.jumbotron{
+	margin:0;	
+}
+#header > .container{
+	text-align: center;	
+	padding: 10% 0;
+}
+.end{
+	text-align:center;	
+}
+@media screen and (max-width:768px){
+	#header > .container{
+		margin-top:5em;	
+		color:white;
+	}
+	.section{
+		text-align: center;	
+	}	
+}
