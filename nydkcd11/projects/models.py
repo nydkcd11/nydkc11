@@ -8,11 +8,11 @@ from django.core.urlresolvers import reverse
 class Level(models.Model):
 	key_level = models.CharField('Level of Key Club?', max_length = 100)
 	name = models.CharField('Name of Project', max_length=100)
-	logo = models.ImageField(upload_to='projects/')
-	bkgnd_photo = models.ImageField(upload_to='projects/')
-	def_short2 = RichTextUploadingField()
-	video = EmbedVideoField()
-	extend_desc2 = RichTextUploadingField()
+	logo = models.ImageField(upload_to='projects/',verbose_name="Logo of Organization")
+	bkgnd_photo = models.ImageField(upload_to='projects/',verbose_name="Background Photo")
+	def_short2 = RichTextUploadingField(verbose_name="Short Description of Organization")
+	video = EmbedVideoField(verbose_name="Video of Organization")
+	extend_desc2 = RichTextUploadingField(verbose_name="Extensive Description")
 	fundrs_goal = models.IntegerField('Fundraising Goal')
 	slug = models.SlugField(blank=True)
 	def __str__(self):
@@ -24,4 +24,7 @@ class Level(models.Model):
 		self.bkgnd_photo = compress(self.bkgnd_photo)
 		self.slug = slugify(self.name)
 		super(Level, self).save()
+	class Meta:
+		verbose_name = "Key Club Project"
+		verbose_name_plural= "Key Club Projects"
 # Create your models here.
