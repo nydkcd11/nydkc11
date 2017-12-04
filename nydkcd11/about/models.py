@@ -1,4 +1,4 @@
-from blog.image_compress import compress
+from blog.image_compress import compress #self-made website utility that automatically processes images
 from django.db import models
 from ckeditor.fields import RichTextField
 from ckeditor_uploader.fields import RichTextUploadingField
@@ -19,6 +19,7 @@ class Division(models.Model):
 	class Meta:
 		verbose_name = "Divisional Board Member"
 		verbose_name_plural = "Divisional Board Members"
+#Table for School Clubs
 class School(models.Model):
 	school = models.CharField(max_length = 100)
 	pres = models.CharField(max_length = 75, default = "N/A",verbose_name="President")
@@ -44,6 +45,8 @@ class School(models.Model):
 	class Meta:
 		verbose_name = "School Club"
 		verbose_name_plural = "School Clubs"
+#Table for FAQ questions page
+#Fun Fact: This was the first table to implement ckeditor
 class FAQ(models.Model):
 	question = models.CharField(max_length = 300)
 	answer3 = RichTextUploadingField(verbose_name="Answer")
