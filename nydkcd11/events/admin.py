@@ -3,6 +3,7 @@ from django.contrib import admin
 from .models import List, Part, Convention, Service
 class ListAdmin(admin.ModelAdmin):
 	prepopulated_fields = {'slug':('name',),}
+	filter_horizontal=("posts",)
 class ConventionAdmin(AdminVideoMixin, admin.ModelAdmin):
 	pass
 class PartAdmin(admin.ModelAdmin):

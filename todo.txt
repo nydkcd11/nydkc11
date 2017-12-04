@@ -26,8 +26,8 @@ CSS Delivery Project
 
 Release 2.0 (Due Date: December Divisional)
 Back End:
-	-Rename all Models
-	-Change "Django Administration to NYDKC 11"
+	-Rename all Models [Done]
+	-Change "Django Administration to NYDKC 11" [Done]
 	-Reverse Post Dropdowns
 	-File commenting
 Front End:
