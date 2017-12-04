@@ -7,13 +7,16 @@ class Division(models.Model):
 	school = models.CharField(max_length = 75)
 	email = models.CharField(max_length=75)
 	position = models.CharField(max_length = 50)
-	desc = models.TextField()
-	image = models.ImageField(upload_to='division_photos/')
+	desc = models.TextField(verbose_name="About the Board Member")
+	image = models.ImageField(upload_to='division_photos/',verbose_name="Board Member's Image")
 	def __str__(self):
 		return self.name
 	def save(self, *args, **kwargs):
 		self.image = compress(self.image) 
 		super(Division,self).save()
+	class Meta:
+		verbose_name = "Divisional Board Member"
+		verbose_name_plural = "Divisional Board Members"
 class School(models.Model):
 	school = models.CharField(max_length = 100)
 	pres = models.CharField(max_length = 75, default = "N/A")
