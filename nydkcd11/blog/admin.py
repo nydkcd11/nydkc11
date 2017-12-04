@@ -11,10 +11,12 @@ class ArticleAdmin(admin.ModelAdmin):
 	list_display = ('title','author','date')
 class LinkAdmin(admin.ModelAdmin):
 	list_display=('name','host','event_choices','show_screen')
+	filter_horizontal=('other_link',)
 class PostAdmin(admin.ModelAdmin):
 	list_display = ('title','author','pub_date_2')
 class VideoAdmin(AdminVideoMixin,admin.ModelAdmin):
 	list_display = ('post_title', 'post_date')
+	filter_horizontal=('post_related',)
 	def post_title(self, obj):
 		return obj.post.title
 	def post_date(self, obj):
