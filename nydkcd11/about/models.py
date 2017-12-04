@@ -2,6 +2,8 @@ from blog.image_compress import compress
 from django.db import models
 from ckeditor.fields import RichTextField
 from ckeditor_uploader.fields import RichTextUploadingField
+#Database Table for Divisional Members
+#Fun Fact: This was the very first database created for the website.
 class Division(models.Model):
 	name = models.CharField(max_length = 100)
 	school = models.CharField(max_length = 75)
@@ -19,9 +21,9 @@ class Division(models.Model):
 		verbose_name_plural = "Divisional Board Members"
 class School(models.Model):
 	school = models.CharField(max_length = 100)
-	pres = models.CharField(max_length = 75, default = "N/A")
+	pres = models.CharField(max_length = 75, default = "N/A",verbose_name="President")
 	pres_email = models.CharField('President\'s Email', max_length=75)
-	vicepres = models.CharField(max_length = 75, default = "N/A")
+	vicepres = models.CharField(max_length = 75, default = "N/A",verbose_name="Vice President")
 	vp_email = models.CharField('Vice President\'s Email',max_length=75)
 	secretary = models.CharField(max_length = 75, default = "N/A")
 	secret_email = models.CharField('Secretary\'s Email', max_length = 75)
@@ -31,17 +33,20 @@ class School(models.Model):
 	webm_email = models.CharField('Webmaster\'s Email',max_length=75)
 	editor = models.CharField(max_length = 75, default = "N/A")
 	editor_email = models.CharField('Editor\'s Email', max_length=75)
-	url = models.CharField(max_length = 300, default = "#")
-	newsletter_url = models.URLField(max_length=300, default = "#")
-	image = models.ImageField(upload_to='school_photos/')
+	url = models.CharField(max_length = 300, default = "#",verbose_name="Club Website")
+	newsletter_url = models.URLField(max_length=300, default = "#",verbose_name="Newsletter Link")
+	image = models.ImageField(upload_to='school_photos/',verbose_name = "School Logo")
 	def __str__(self):
 		return self.school	
 	def save(self, *args, **kwargs):
 		self.image = compress(self.image)
 		super(School, self).save()
+	class Meta:
+		verbose_name = "School Club"
+		verbose_name_plural = "School Clubs"
 class FAQ(models.Model):
 	question = models.CharField(max_length = 300)
-	answer3 = RichTextUploadingField()
+	answer3 = RichTextUploadingField(verbose_name="Answer")
 	def __str__(self):
 		return self.question
 # Create your models here.
