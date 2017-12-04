@@ -1,16 +1,16 @@
 from django.db import models
 from blog.models import Post
 class Newsletter(models.Model):
-	post = models.ForeignKey(Post, on_delete = models.CASCADE)
-	month = models.CharField(max_length = 30)
-	url = models.CharField(max_length=100)
+	post = models.ForeignKey(Post, on_delete = models.CASCADE,verbose_name = "Linked Post")
+	month = models.CharField(max_length = 30,verbose_name="Month of Newsletter")
+	url = models.CharField(max_length=100,verbose_name="Link to Issuu")
 	def __str__(self):
 		return str(self.month)
 class Minutes(models.Model):
-	post = models.ForeignKey(Post, on_delete = models.CASCADE)
-	location = models.CharField(max_length=50, default = "Division 11")
-	month = models.DateField()
-	notes = models.FileField(upload_to = 'minutes/')
+	post = models.ForeignKey(Post, on_delete = models.CASCADE,verbose_name = "Linked Post")
+	location = models.CharField(max_length=50, default = "Division 11",verbose_name = "Place where Divisional was Held")
+	month = models.DateField(verbose_name = "Month of Divisional")
+	notes = models.FileField(upload_to = 'minutes/',verbose_name = "Minutes File")
 	def __str__(self):
 		options = {
 			1:"January",
@@ -28,7 +28,9 @@ class Minutes(models.Model):
 		}
 		number = self.month.month
 		return options[number] + " Divisional Notes"
-
+	class Meta:
+		verbose_name= "Minute"
+		verbose_name_plural = "Minutes"
 	
 	
 # Create your models here.

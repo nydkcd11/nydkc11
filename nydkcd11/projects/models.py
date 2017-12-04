@@ -5,6 +5,7 @@ from ckeditor.fields import RichTextField
 from ckeditor_uploader.fields import RichTextUploadingField
 from embed_video.fields import EmbedVideoField
 from django.core.urlresolvers import reverse
+#DB for various projects the division/KC does
 class Level(models.Model):
 	key_level = models.CharField('Level of Key Club?', max_length = 100)
 	name = models.CharField('Name of Project', max_length=100)
