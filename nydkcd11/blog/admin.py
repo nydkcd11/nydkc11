@@ -4,6 +4,7 @@ from embed_video.admin import AdminVideoMixin
 class ImageAdmin(admin.ModelAdmin):
 	list_display = ('title','pub_date','show_home','post')
 	ordering = ('-post',)
+	filter_horizontal=('other_post',)
 	def pub_date(self, obj):
 		return obj.post.pub_date_2
 class ArticleAdmin(admin.ModelAdmin):
