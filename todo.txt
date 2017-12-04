@@ -22,3 +22,24 @@ static img optimization
 CDN
 Video Thumbnail Optimization
 CSS Delivery Project
+
+
+Release 2.0 (Due Date: December Divisional)
+Back End:
+	-Rename all Models
+	-Reverse Post Dropdowns
+	-File commenting
+Front End:
+	-Aesthetic Website Overhaul
+	-Remove Sitemap Text
+	-Display Version Number
+
+Release 2.1 (Due Date: New Years)
+Back End:
+	-Python 3 Upgrade
+	-Server Restart (and upgrade)
+	-Django upgrades
+Front End:
+	-Search Bar Full Implementation
+	-Complete nydkc11 admin guide
+
