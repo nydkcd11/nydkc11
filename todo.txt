@@ -28,12 +28,13 @@ Release 2.0 (Due Date: December Divisional)
 Back End:
 	-Rename all Models [Done]
 	-Change "Django Administration to NYDKC 11" [Done]
-	-Reverse Post Dropdowns
+	-Reverse Post Dropdowns [Done]
 	-File commenting
 Front End:
 	-Aesthetic Website Overhaul
-	-Remove Sitemap Text
-	-Display Version Number
+	-Remove Sitemap Text [Done]
+	-Display Version Number [Done]
+	-Upgrade Pager
 
 Release 2.1 (Due Date: New Years)
 Back End:
