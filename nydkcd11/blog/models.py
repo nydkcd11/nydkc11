@@ -8,7 +8,7 @@ class Post(models.Model):
 	author = models.CharField(max_length = 50)
 	pub_date_2 = models.DateField('publish date')
 	body2 = models.TextField('Main Body of Text')
-	blurb = models.CharField(max_length = 300)
+	blurb = models.CharField(max_length = 300,verbose_name="Short Summary of Post")
 	slug = models.SlugField(blank=True)
 	def __str__(self):
 		return self.title
@@ -21,12 +21,14 @@ class Post(models.Model):
 		super(Post, self).save()
 	class Meta:
 		ordering = ['pub_date_2']
-	
+
+#Primary Database for Images
+#Possible Project: Automatically import images from Divisional Photo Drive?	
 class Image(models.Model):
 	post = models.ForeignKey(Post, on_delete = models.CASCADE)
 	other_post = models.ManyToManyField(Post, blank=True, related_name = "image_posts", verbose_name = "Other Linked Posts")
-	title = models.CharField(max_length = 1000)
-	desc = models.CharField(max_length = 1000)
+	title = models.CharField(max_length = 1000,verbose_name="Image Title")
+	desc = models.CharField(max_length = 1000,verbose_name="Short Image Description")
 	image =  models.ImageField(upload_to='image_main/')
 	show_home = models.BooleanField('Show in Home Page?', blank = True, default = False)
 	def __str__(self):
@@ -45,8 +47,9 @@ class Link(models.Model):
 	link = models.ForeignKey(Post, on_delete = models.CASCADE, verbose_name = "Primary Post")
 	other_link = models.ManyToManyField(Post, blank=True, related_name = "links", verbose_name = "Other Related Posts")
 	name = models.CharField(max_length=30)
-	url = models.CharField(max_length=1000)
-	host = models.CharField(max_length = 50)
+	url = models.CharField(max_length=1000,verbose_name="Signup Sheet/Link")
+	host = models.CharField(max_length = 50,verbose_name="Hosting School/Organization")
+	#options for dropdown menu on django admin page. This eventually gets processed in the front-end
 	DIVISION = 'DIV'
 	FUNDRAISER = 'FUND'
 	CLUB='CLUB'
@@ -65,12 +68,12 @@ class Article(models.Model):
 	title = models.CharField(max_length = 100)
 	author = models.CharField(max_length = 50)
 	date = models.CharField(max_length = 100)
-	body = models.TextField()
-	blurb = models.CharField(max_length = 300)
-	slug = models.SlugField(blank=True)
+	body = models.TextField(verbose_name="Body of Article")
+	blurb = models.CharField(max_length = 300,verbose_name="Short Summary of Article")
+	slug = models.SlugField(blank=True) #this enables contextualized link generation in the URL
 	def __str__(self):
 		return self.title
-	def get_absolute_url(self):
+	def get_absolute_url(self): #gets a linkage from the article for sitemap purposes
 		return reverse('blog:news', kwargs = {'article_id':self.id, 'slug':self.slug})
 	def save(self):
 		self.slug = slugify(self.title)
