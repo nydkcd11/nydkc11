@@ -6,7 +6,7 @@
 	{% else %}
 		<li class = "disabled"><span>&laquo;</span></li>
 	{% endif %}
-	{% for i in posts.paginator.page_range %}
+	{% for i in post_range %}
 		{% if posts.number == i %}
 			<li class = "active"><span>{{ i }}<span class = "sr-only">(current)</span></span></li>
 		{% else %}

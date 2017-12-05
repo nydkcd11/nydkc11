@@ -9,3 +9,12 @@ def page(query_set,request):
 	except EmptyPage:
 		page_query = paginator.page(paginator, num_pages)
 	return page_query
+def get_range(paged_set):
+	index = paged_set.number-1
+	max_index = len(paged_set.paginator.page_range)
+	start_index = index-3 if index>=3 else 0
+	end_index = index+3 if index<= max_index -3 else max_index
+	page_range = list(paged_set.paginator.page_range)[start_index:end_index]
+	for i in page_range:
+		print(i)
+	return page_range

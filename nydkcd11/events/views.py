@@ -6,10 +6,11 @@ from blog.models import Post
 from datetime import timedelta
 from django.utils import timezone
 from django.core.paginator import Paginator, EmptyPage, PageNotAnInteger
-from blog.page import page
+from blog.page import *
 def event_list(request):
 	roster = page(List.objects.order_by('-start_time'),request)
-	return render(request, 'events/list.html', {'roster':roster})
+	post_range = get_range(roster)	
+	return render(request, 'events/list.html', {'roster':roster,'post_range':post_range})
 def event_detail(request, list_id, slug):
 	event = get_object_or_404(List, pk=list_id)
 	links = []
@@ -51,7 +52,8 @@ def service_events(request):
 	end_date = start_date + timedelta(days=365)
 	services = Service.objects.order_by('start_time').filter(start_time__range=(start_date,end_date))
 	posts = page(services,request)
-	return render(request, 'events/service_events.html', {'posts':posts})	
+	post_range = get_range(posts)
+	return render(request, 'events/service_events.html', {'posts':posts,'post_range':post_range})	
 def service_detail(request, service_id, slug):
 	event = get_object_or_404(Service, pk= service_id)
 	if event.slug != slug:

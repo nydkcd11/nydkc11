@@ -2,16 +2,18 @@ from django.shortcuts import render, get_object_or_404, redirect
 from django.http import HttpResponse, Http404
 from django.template import loader
 from .models import Post, Article
-from blog.page import page 
+from blog.page import *
 # Create your views here.
 def index(request):
 	latest_post_list = Post.objects.order_by('-pub_date_2')
 	posts = page(latest_post_list,request)
-	return render(request, 'blog/index.html',{'posts':posts})
+	post_range =  get_range(posts)
+	return render(request, 'blog/index.html',{'posts':posts,'post_range':post_range})
 def article(request):
 	articles_query = Article.objects.order_by('-pk')
 	articles = page(articles_query,request)	
-	return render(request, 'blog/newslist.html',{'articles':articles})
+	post_range = get_range(articles)
+	return render(request, 'blog/newslist.html',{'articles':articles,'post_range':post_range})
 def detail(request, post_id, slug):
 	'''
 	try:
