@@ -2,11 +2,13 @@ from django.shortcuts import render, redirect
 from django.http import HttpResponse
 from blog.models import Video, Image
 from .models import Newsletter, Minutes
-from blog.page import page
+from blog.page import *
 def videos(request):
 	video_list = page(Video.objects.order_by('-post'),request)
+	post_range = get_range(video_list)
 	context = {
-		'video_list':video_list,	
+		'video_list':video_list,
+		'post_range':post_range	
 	}
 	return render(request,'resources/videos.html',context)
 def minutes(request):
