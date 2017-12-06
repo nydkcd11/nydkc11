@@ -34,7 +34,7 @@ Front End:
 	-Aesthetic Website Overhaul
 	-Remove Sitemap Text [Done]
 	-Display Version Number [Done]
-	-Upgrade Pager
+	-Upgrade Pager[Done]
 
 Release 2.1 (Due Date: New Years)
 Back End:
