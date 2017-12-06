@@ -1,6 +1,9 @@
 body{
 	font-family:'Anime Ace';
 }
+small{
+	color:black !important;	
+}
 .navbar-nav > li{
 	float:none;
 }
