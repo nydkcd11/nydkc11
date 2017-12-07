@@ -7,7 +7,7 @@
 	{% for article in articles %}
 		<a href="{% url 'blog:news' article.id article.slug %}"><h1>{{article.title}}</h1></a>
 		<h2>{{article.author}}</h2>
-		<h2>Posted in the {{article.date}} Newsletter</h2>
+		<h3>Posted in the {{article.date}} Newsletter</h3>
 		<p>{{article.blurb}}</p>
 		{% comment %}
 		<p>{{article.body}}</p>
