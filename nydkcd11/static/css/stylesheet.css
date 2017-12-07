@@ -4,6 +4,9 @@ body{
 small{
 	color:black !important;	
 }
+.bulletify{
+	list-style-type:disc;	
+}
 .navbar-nav > li{
 	float:none;
 }

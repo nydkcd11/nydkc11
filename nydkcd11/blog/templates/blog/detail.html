@@ -42,7 +42,7 @@
 {% if post.link_set.all.exists  or post.newsletter_set.all.exists  or post.minutes_set.all.exists or post.links.all.exists %}
 	<h3>Links</h3>
 {% endif %}
-<ul>
+<ul class = "bulletify">
 	{% for link in post.link_set.all %}
 		<li><a href = "{{link.url}}" target = "_blank">{{link.name}}</a></li>
 	{% endfor %}
