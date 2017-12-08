@@ -31,7 +31,8 @@ Back End:
 	-Reverse Post Dropdowns [Done]
 	-File commenting
 Front End:
-	-Aesthetic Website Overhaul
+	-Standardization of Front-End [Done]
+	-Mobile Optimization (>.<)
 	-Remove Sitemap Text [Done]
 	-Display Version Number [Done]
 	-Upgrade Pager[Done]
