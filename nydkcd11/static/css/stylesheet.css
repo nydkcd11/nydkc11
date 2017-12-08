@@ -151,3 +151,8 @@ h1,h2,h3,h4{
 	color:white;
 	font-family:'Century Gothic';
 }
+@media only screen and (max-width:400px){
+	.bullet_footer{
+		list-style-type: none !important;		
+	}		
+}
