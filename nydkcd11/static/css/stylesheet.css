@@ -111,9 +111,6 @@ h1,h2,h3,h4{
 #footer-left{
 	text-align: right;
 }
-.footer-list{
-	list-style-position:inside;
-}
 @media (max-width: 768px) {
     .navbar-default .navbar-nav .open .dropdown-menu > li > a {
         color: white;
@@ -158,6 +155,7 @@ h1,h2,h3,h4{
 }
 @media only screen and (max-width:400px){
 	.bullet_footer{
-		list-style-type: none !important;		
+		/*list-style-type: none !important;		*/
+		display: inline;
 	}		
 }
