@@ -145,6 +145,11 @@ h1,h2,h3,h4{
 		background: linear-gradient(to bottom right, #003366, #00aeef);
 	}
 }
+@media (max-width:767px){
+	#calendar{
+		display:none;	
+	}
+}
 .text{
 	padding:0.5em;	
 	background-color: #003366;
