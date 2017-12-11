@@ -24,25 +24,27 @@ Video Thumbnail Optimization
 CSS Delivery Project
 
 
-Release 2.0 (Due Date: December Divisional)
+Release 1.1 (Due Date: December Divisional)
 Back End:
 	-Rename all Models [Done]
 	-Change "Django Administration to NYDKC 11" [Done]
 	-Reverse Post Dropdowns [Done]
-	-File commenting
+	-File commenting [Pushed to 2.0]
 Front End:
 	-Standardization of Front-End [Done]
-	-Mobile Optimization (>.<)
+	-Mobile Optimization [Done]
 	-Remove Sitemap Text [Done]
 	-Display Version Number [Done]
 	-Upgrade Pager[Done]
 
-Release 2.1 (Due Date: New Years)
+Release 2.0 (Due Date: New Years)
 Back End:
 	-Python 3 Upgrade
 	-Server Restart (and upgrade)
 	-Django upgrades
+	-ALL files commented
 Front End:
 	-Search Bar Full Implementation
 	-Complete nydkc11 admin guide
+	-Video Optimization
 
