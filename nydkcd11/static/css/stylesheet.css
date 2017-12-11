@@ -10,6 +10,9 @@ small{
 .navbar-nav > li{
 	float:none;
 }
+.navbar{
+	border-radius:0;
+}
 #icons{
 	text-align: center;
 }
