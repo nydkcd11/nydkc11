@@ -76,3 +76,4 @@ urlpatterns += static(settings.MEDIA_URL,document_root=settings.MEDIA_ROOT)
 urlpatterns += static(settings.STATIC_URL, document_root=settings.STATIC_ROOT)
 
 admin.site.site_header = "NYDKC Division 11 Administration"
+admin.site.site_title= "NYDKC11 Site Admin"
