@@ -1,6 +1,8 @@
+#views seciton for about
+#essetnially controllers for pages -- views put together all the necesary datapoints and pushes it to the templates
 from django.shortcuts import render
 from django.http import HttpResponse
-from .models import Division, School, FAQ
+from .models import Division, School, FAQ #models have to be imported
 def division(request):
 	member_list = Division.objects.order_by('-pk').reverse()
 	return render(request, 'about/division.html',{'member_list':member_list,})
