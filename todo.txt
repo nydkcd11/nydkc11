@@ -37,6 +37,12 @@ Front End:
 	-Display Version Number [Done]
 	-Upgrade Pager[Done]
 
+Release 1.2 (Due Date: December Divisional)
+Front End:
+	-Fix Footer Dead Links (Done)
+	-Resolve scrolling header of projects [!]
+	-Update Version No. in Footer
+
 Release 2.0 (Due Date: New Years)
 Back End:
 	-Python 3 Upgrade
