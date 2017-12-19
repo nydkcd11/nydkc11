@@ -1,3 +1,4 @@
+#Image Compression Module
 from PIL import Image as Img
 try:
 	from io import StringIO #python3
