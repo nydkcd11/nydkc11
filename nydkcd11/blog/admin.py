@@ -1,10 +1,13 @@
+#admin registration page for Blog Application
 from django.contrib import admin
 from .models import Post, Video, Link, Image, Article
-from embed_video.admin import AdminVideoMixin
+from embed_video.admin import AdminVideoMixin #module for Youtube Videos
+
+#classes like these add customization to the admin's look and feel.
 class ImageAdmin(admin.ModelAdmin):
-	list_display = ('title','pub_date','show_home','post')
-	ordering = ('-post',)
-	filter_horizontal=('other_post',)
+	list_display = ('title','pub_date','show_home','post')#what displays on the table
+	ordering = ('-post',)#default ordering for object listings
+	filter_horizontal=('other_post',)#additional options to sort
 	def pub_date(self, obj):
 		return obj.post.pub_date_2
 class ArticleAdmin(admin.ModelAdmin):
@@ -21,6 +24,8 @@ class VideoAdmin(AdminVideoMixin,admin.ModelAdmin):
 		return obj.post.title
 	def post_date(self, obj):
 		return obj.post.pub_date_2
+
+#models registered here. note that class AND model is registered
 admin.site.register(Post, PostAdmin)
 admin.site.register(Video, VideoAdmin)
 admin.site.register(Link, LinkAdmin)
