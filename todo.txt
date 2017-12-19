@@ -40,8 +40,8 @@ Front End:
 Release 1.2 (Due Date: December Divisional)
 Front End:
 	-Fix Footer Dead Links (Done)
-	-Resolve scrolling header of projects [!]
-	-Update Version No. in Footer
+	-Resolve scrolling header of projects [Done]
+	-Update Version No. in Footer [Done]
 
 Release 2.0 (Due Date: New Years)
 Back End:
@@ -53,4 +53,4 @@ Front End:
 	-Search Bar Full Implementation
 	-Complete nydkc11 admin guide
 	-Video Optimization
-
+	-Fix Gallery Bug (change 12 to 13 in view controller)
