@@ -32,7 +32,7 @@ def month_parse(num):
 	return month_dict[int(num)]
 def month_gen(year):
 	month_groups = {}
-	for i in range(1,12):
+	for i in range(1,13):
 		if Image.objects.filter(post__pub_date_2__year=year).filter(post__pub_date_2__month = i).exists():
 			month_groups[i]=i
 	return month_groups

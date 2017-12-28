@@ -53,4 +53,4 @@ Front End:
 	-Search Bar Full Implementation
 	-Complete nydkc11 admin guide
 	-Video Optimization
-	-Fix Gallery Bug (change 12 to 13 in view controller)
+	-Fix Gallery Bug (change 12 to 13 in view controller) [DONE]
