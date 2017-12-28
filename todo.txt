@@ -47,10 +47,11 @@ Release 2.0 (Due Date: New Years)
 Back End:
 	-Python 3 Upgrade
 	-Server Restart (and upgrade)
-	-Django upgrades
+	-Django upgrades [POSTPONED]
 	-ALL files commented
 Front End:
 	-Search Bar Full Implementation
 	-Complete nydkc11 admin guide
-	-Video Optimization
+	-Video Optimization [POSTPONED]
 	-Fix Gallery Bug (change 12 to 13 in view controller) [DONE]
+	-front-end fix [POSTPONED]
