@@ -10,7 +10,10 @@
 		<a href = "{% url 'blog:detail' post.id post.slug %}"><h1>{{post.title}}</h1></a>  <!-- blog:detail tags  funcion specifically to this app  -->
 		<h2>{{post.author}}</h2>
 		<h1><small>{{post.pub_date_2}}</small></h1>
+		{% comment %}
 		<p>{{post.blurb}}</p>
+		{% endcomment %}
+		<!-- test -->
 		{% comment %}
 		<p>{{post.body2|linebreaks}}</p>
 		{% if post.video_set.all.exists %}
