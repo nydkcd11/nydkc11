@@ -1,6 +1,5 @@
 *.sqlite
 *.pyc
 nydkcd11/static/img/
-nydkcd11/static/ckeditor/
 nydkcd11/media/
 *.swp
