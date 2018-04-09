@@ -1,0 +1,75 @@
+\documentclass[hidelinks]{article}
+
+\usepackage[margin=1in]{geometry}
+\usepackage[colorlinks=true, linkcolor=black, urlcolor=blue]{hyperref}
+
+\title{\texttt{https://nydkc11.org} Maintainance Manual}
+\author{Brian Lee}
+\date{April 2018}
+
+\newcommand{\snippet}[1]{{\centering\texttt{#1}\par}}
+\newcommand{\tilda}{{\raise.17ex\hbox{$\scriptstyle\mathtt{\sim}$}}}
+\begin{document}
+
+\maketitle
+
+\section{Setup \& Installation}
+
+\subsection{Pre-Requesites}
+
+The following must be set up before you can begin developing on the website GitHub repository:
+
+\begin{itemize}
+\item \textbf{A working UNIX-type OS.} You might be able to get by with Mac OS, but the website code works most optimally with Linux. 
+This is because some of the website's dependencies require Linux.
+My recommendation is to install the \href{https://www.ubuntu.com/}{Ubuntu} as a dualboot with whatever existing system you're using.\footnote{If you're already using Linux, use that instead.}
+\item \textbf{A working installation of Python 3}. This DOES NOT mean Python 2. Don't worry about specific package installation for now -- \texttt{pip} will handle that for you using \texttt{requirements.txt} on the repository.
+You should also have a intermediate -- advanced knowedge of Python.
+\item \textbf{A separate virtual environment}. You should keep all Python website-related assets (e.g. \texttt{pip} installations) in a virtual environment specific to it.
+\item \textbf{A working text editor you are familiar with}. My recommendation is \texttt{vim}.
+\item \textbf{A working GitHub account}. You should also have been granted contributer access by your predecessor.
+\item \textbf{A working installation of} \texttt{git}, and a \textit{proficient} understanding of using \texttt{git}.
+\end{itemize}
+
+If you don't know what any of these requirements are, please research them in-depth and ensure you do before beginning development.
+I \textbf{strongly} encourage you to go through Django's \href{https://docs.djangoproject.com/en/1.11/intro/tutorial01/}{excellent tutorial} first before touching any website code.
+
+\subsection{Installation}
+
+Please follow this step-by-step guide for setting up your development platform.
+
+\begin{enumerate}
+\item Activate the virtual environment you've setup for this project, and change into a directory you deem appropriate to house the project.
+As a reminder, a working virtual environment is a pre-requesite to this project. 
+Your terminal header should look something like this:
+
+\snippet{(env-name) account@host:\tilda{}/path/to/desired/project/directory}
+
+\item Clone the website's GitHub repository. As of April 2018, the command
+
+\snippet{git clone https://github.com/nydkcd11/nydkc11.git}
+
+should suffice, but you should check for the specific URL on the repository. 
+
+\item \texttt{cd} into the newly generated folder \texttt{nydkc11} and install the necessary packages par \texttt{requirements.txt}. 
+This is accomplishable with
+
+\snippet{pip install -r requirements.txt}
+
+\textbf{Please check that your virtual environment is setup before running this command}.
+
+\item \texttt{cd} into the inner \texttt{nydkcd11} folder,\footnote{Please ignore the naming discrepancy.} and re-generate the tables for the database. 
+
+\snippet{python manage.py migrate}
+
+You should have a basic understanding of the basic \texttt{makemigrations} $\to$ \texttt{migrate} workflow for making changes to the website's database.
+If you do not, please visit Django's documentation.
+
+\item Run the test development server with \texttt{python manage.py runserver}. 
+Enter \texttt{http://127.0.0.1:8000/} into your web browser, and you should see a (very minimal) version of the website.
+It should appear that way because you haven't put any test assets into the website yet.
+Be sure that all the components of the website that should be functional are working before you start developing.
+
+\end{enumerate}
+
+\end{document}
