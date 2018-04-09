@@ -65,8 +65,11 @@ This is accomplishable with
 You should have a basic understanding of the basic \texttt{makemigrations} $\to$ \texttt{migrate} workflow for making changes to the website's database.
 If you do not, please visit Django's documentation.
 
-\item Run the test development server with \texttt{python manage.py runserver}. 
-Enter \texttt{http://127.0.0.1:8000/} into your web browser, and you should see a (very minimal) version of the website.
+\item Run the test development server with 
+
+\snippet{python manage.py runserver}
+
+and enter \texttt{http://127.0.0.1:8000/} into your web browser, and you should see a (very minimal) version of the website.
 It should appear that way because you haven't put any test assets into the website yet.
 Be sure that all the components of the website that should be functional are working before you start developing.
 
