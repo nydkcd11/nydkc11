@@ -27,7 +27,7 @@
 					@font-face{
 						font-family: 'Myriad Pro';
 						src:url('{% static "css/myriadpro.ttf" %}')	;
->>>>>>> pr/1
+
 					}
 					
 			</style>
@@ -39,11 +39,6 @@
 			{% block header %}
 			<div class = "container-fluid">
 				<div style = "margin-left: auto; margin-right: auto; length: 90%; text-align: center;" id = "top">
-					{% if number == 69 %}
-					<p style = "font-size:1em;padding:1em;">Welcome home, onii-chan! Do you want your dinner? Your bath? Or perhaps ... me?</p>
-					{% else %}
-					<p style = "font-size:1em;padding:1em;">おかえりなさい, お兄ちゃん! Your lucky number is: {{number}}</p>
-					{% endif %}
 					<a href = "/">
 						<picture>
 							<source media="(max-width:768px)" srcset="{% static 'img/keyclubsmall.png' %}">
@@ -51,11 +46,8 @@
 							<img src = "{% static 'img/key.png' %}" style = "margin-right: auto; margin-left: auto;" class = "img-responsive">
 						</picture>
 					</a>
-<<<<<<< HEAD
-					<h1 style="font-variant:small-caps;">New York District Key Club <span style = "font-family:'Helvetica';">Division 11</span></h1>
-=======
 					<h1 style="font-variant:small-caps;">New York District Key Club <span style = "font-family:'Myriad Pro';">Division 11</span></h1>
->>>>>>> pr/1
+
 				</div>
 			</div>	
 			<nav class="navbar navbar-default">
