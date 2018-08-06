@@ -1,4 +1,4 @@
-{% load staticfiles %}
+﻿{% load staticfiles %}
 {% load bootstrap3 %}
 <!DOCTYPE html>
 	<html>
@@ -155,7 +155,7 @@
 						<div class = "col-sm-6" id = "footer-left">
 							<h1>Sign Up for Email Updates</h1>
 							<h2>Interested in following Division 11? Add your email and join the fun!</h2>
-							{% comment %}<h3>Email LTG Eric Zhao your email</h3>{% endcomment %}
+							{% comment %}<h3>Email LTG Mara Yella your email</h3>{% endcomment %}
 							<form method = "POST" class = "form-inline" action = "{% url 'contact:email_process' %}">{% csrf_token %}
 							
 								{% bootstrap_form email_form %}
@@ -174,7 +174,7 @@
 									<li><a href = "http://nydkc.org/" target = "_blank">New York District Key Club</a></li>
 									<li><a href = "http://keyclub.org" target = "_blank">Key Club International</a></li>
 									<li><a href = "http://www.circlek.org/" target = "_blank">Circle K</a></li>
-									<li><a href = "http://www.kiwanis.org/" target = "_blank">Kiwannis</a></li>
+									<li><a href = "http://www.kiwanis.org/" target = "_blank">Kiwanis</a></li>
 								</ul>
 							</div>
 							<h3>Quick Contact</h3>
