@@ -10,7 +10,7 @@ inflect==0.2.5
 jaraco.itertools==2.1
 more-itertools==4.0.1
 olefile==0.44
-Pillow==4.1.0
+Pillow==9.0.1
 python-dateutil==2.6.1
 pytz==2018.3
 requests==2.18.1
